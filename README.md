@@ -1,20 +1,24 @@
 # 看见不可见｜松山湖科技现场笔记
 
-**2026 全国高校校媒精英特训营 · 东莞松山湖**
+2026 全国高校校媒精英特训营 · 东莞松山湖
 
-这是《看见不可见》交互式现场报道的 GitHub 项目仓库，记录中国散裂中子源、材料研究、机器人创新、华为运动健康科学实验室、松山湖生活体验与大湾区人才交流。
+## 已发布的原网站
 
-## 在线参观
+[立即浏览《看见不可见》](https://see-the-unseen-songshan-2026.cheneason985.chatgpt.site/)
 
-**[打开《看见不可见》已发布网站](https://see-the-unseen-songshan-2026.cheneason985.chatgpt.site/)**
+## GitHub Pages 镜像
 
-> 当前可直接访问的是上述站点。GitHub Pages 版本尚未部署；此仓库目前还没有导入原站的完整 HTML、CSS、JavaScript、图片及视频，因此不应把仓库首页当作已经发布的网站。
+本仓库包含 `scripts/mirror.py` 和 `.github/workflows/pages.yml`，用于将原网站**公开部署版本**的 HTML、CSS、JavaScript 和公开媒体资源镜像到 GitHub Pages。
 
-## 迁移计划
+- 部署流程：GitHub → Settings → Pages → Build and deployment → Source: **GitHub Actions**。
+- 首次部署：GitHub → Actions → **Mirror live site and deploy GitHub Pages** → **Run workflow**。
+- 后续：每天尝试自动更新，也支持手动运行。
+- 预期 GitHub Pages 地址：`https://easonchengenius.github.io/songshan-lake-2026/`。**必须等 Actions 成功部署并完成页面功能检查后才能作为正式访问地址。**
 
-1. 从原网站工程导出最新版本的完整源文件及静态资源。
-2. 核对图片、视频、字体及文件路径。
-3. 部署至 GitHub Pages 并测试桌面和移动设备。
-4. 确认新站与原站显示一致后，在本页更新正式 Pages 链接。
+> 注意：镜像不等于原始 React/TypeScript 工程，可能无法完美覆盖运行时动态请求、绝对路径或部分视频播放限制。本仓库不会将 GitHub Pages 的内容冒充为已验证的完整原工程。遇到镜像失败请直接访问上述原网站。
 
-作者：陈逸琛
+## 版权与作品说明
+
+这是现场参访的交互式纪实作品。图片、现场视频、文案及机构标识可能有各自的署名或使用条件，公开仓库中仅收录在线可访问的资源镜像；使用和转载前请注意原作者及机构的相关权益。
+
+制作：陈逸琛。
