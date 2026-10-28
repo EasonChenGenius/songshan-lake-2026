@@ -1,15 +1,19 @@
-name: Mirror live site and deploy GitHub Pages
+name: Deploy original static site to GitHub Pages
+
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
-  schedule:
-    - cron: '23 4 * * *'
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: github-pages
   cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -21,8 +25,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install requests
-      - run: python scripts/mirror.py
+      - name: Recover and verify original static files once
+        if: ${{ hashFiles('dist/index.html') == '' }}
+        run: python scripts/import_source.py
       - uses: actions/configure-pages@v5
         with:
           enablement: true
