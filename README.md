@@ -5,13 +5,13 @@
 - [GitHub Pages 展示网站](https://easonchengenius.github.io/songshan-lake-2026/)
 - [原站](https://see-the-unseen-songshan-2026.cheneason985.chatgpt.site/)
 
-## 网站源码与部署
+## 部署方式
 
-`dist/index.html`、`dist/*.css`、`dist/main.js` 和 `dist/assets/` 是可直接运行的静态网站。GitHub Actions 在推送 `main` 后，将 `dist` 发布到 GitHub Pages。页面使用相对资源路径，可在仓库子路径下正常加载。修改这些文件并推送，即可更新网站。
+GitHub Actions 在推送 `main` 后发布网站。仓库暂未收录二进制图片和视频；当 `dist/index.html` 不存在时，`scripts/import_source.py` 会从已发布的 GitHub Pages 读取静态文件，并按 `scripts/source-manifest.json` 中的 SHA-256 校验后生成 `dist`。这一步不依赖原站的访问权限，且工作流只有仓库读取权限。
 
-首次迁移时，`scripts/import_source.py` 根据 `scripts/source-manifest.json` 中的 SHA-256 清单，从已有 Pages 发布内容取回并核对原站文件，随后提交到本仓库。以后部署使用仓库内的 `dist`，不再依赖原站的访问权限或每日抓取。
+当前清单对应原站的 58 个实际使用文件，包括首页、样式、交互脚本、图片和视频。导入时会移除原有镜像首页混入的 Cloudflare 验证脚本。页面使用相对资源路径，可在 GitHub Pages 的仓库子路径下加载。
 
-本地预览：在仓库根目录运行 `python3 -m http.server 8000 --directory dist`，打开 `http://localhost:8000/`。
+如需长期直接维护网站文件，可把完整 `dist` 提交到本仓库；工作流将优先使用仓库中的 `dist`。本地预览可运行 `python3 -m http.server 8000 --directory dist`。
 
 ## 内容说明
 
