@@ -1,0 +1,386 @@
+/* Day One photographic chapter covers. */
+.stage-blue .image-neutron {
+  background-image: url("assets/day1-science-03.jpg");
+  background-position: center 44%;
+  background-attachment: scroll !important;
+}
+
+.stage-lilac .image-material {
+  background-image: url("assets/materials-lecture-01.jpg");
+  background-position: center 49%;
+  background-attachment: scroll !important;
+}
+
+.stage-blue .stage-overlay {
+  background:
+    linear-gradient(90deg, rgba(7, 17, 30, .88), rgba(11, 22, 36, .60) 55%, rgba(12, 24, 38, .22)),
+    linear-gradient(0deg, rgba(7, 11, 21, .74), transparent 55%, rgba(7, 12, 22, .18));
+}
+
+/* Chapter 04: cinematic lake footage underneath the editorial title. */
+.stage-pearl .image-life {
+  background-image: url("assets/kayaking-hero-poster.jpg");
+  background-position: center center;
+  background-attachment: scroll !important;
+}
+
+.stage-pearl .stage-video-kayaking {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.015);
+  z-index: -2;
+  pointer-events: none;
+  background: transparent;
+}
+
+.stage-pearl .stage-overlay {
+  background:
+    linear-gradient(90deg, rgba(7, 13, 25, .90), rgba(9, 14, 26, .64) 51%, rgba(10, 17, 31, .25)),
+    linear-gradient(0deg, rgba(7, 11, 21, .70), transparent 55%, rgba(7, 12, 22, .19));
+}
+
+.health-gallery {
+  --gallery-duration: 3000ms;
+  display: grid;
+  grid-template-columns: minmax(0, 1.92fr) minmax(270px, 1fr);
+  gap: clamp(28px, 4vw, 72px);
+  /* Keep each grid track independent when the reader uses browser zoom.
+     Stretching a ratio-sized image to a taller caption row can make it grow
+     beyond its grid column and cover the adjacent text. */
+  align-items: start;
+  margin-top: clamp(18px, 3vw, 45px);
+  margin-bottom: 0;
+  color: #202936;
+}
+
+.health-gallery-visual {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  align-self: start;
+  aspect-ratio: 2048 / 1365;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #c7c9c8;
+  isolation: isolate;
+}
+
+.health-gallery-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.035);
+  transition:
+    opacity 1050ms cubic-bezier(.25, .68, .25, 1),
+    transform 6700ms cubic-bezier(.16, .46, .18, 1);
+  will-change: opacity, transform;
+}
+
+.health-gallery-slide.is-current {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.health-gallery-image-count {
+  position: absolute;
+  right: clamp(16px, 2vw, 31px);
+  bottom: clamp(16px, 2vw, 31px);
+  z-index: 2;
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  text-shadow: 0 1px 16px rgba(0,0,0,.28);
+}
+
+.health-gallery-image-count::before {
+  content: "";
+  position: absolute;
+  inset: -9px -11px;
+  z-index: -1;
+  border-radius: 100px;
+  background: rgba(11, 20, 30, .25);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+}
+
+.health-gallery-image-count strong {
+  font-size: clamp(15px, 1.35vw, 21px);
+  font-weight: 350;
+  letter-spacing: -.055em;
+  line-height: 1;
+}
+
+.health-gallery-image-count span {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .15em;
+  opacity: .83;
+}
+
+.health-gallery-aside {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  align-self: stretch;
+  margin: 0;
+}
+
+.health-gallery-label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 18px;
+  border-top: 1px solid #aea9a1;
+  color: #8a7867;
+  font: 600 11px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  letter-spacing: .105em;
+}
+
+.health-gallery-story {
+  margin-block: auto;
+  padding-block: 36px;
+}
+
+.health-gallery-kicker {
+  display: block;
+  margin-bottom: clamp(16px, 2.2vw, 29px);
+  color: #8c8175;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .085em;
+}
+
+.health-gallery-story h3 {
+  min-height: 2.75em;
+  white-space: pre-line;
+  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+  font-size: clamp(29px, 2.65vw, 45px);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.35;
+  color: #20252b;
+}
+
+.health-gallery-story p {
+  max-width: 290px;
+  min-height: 4.2em;
+  margin-top: 15px;
+  color: #686b71;
+  font-size: clamp(12px, .95vw, 15px);
+  line-height: 1.95;
+}
+
+.health-gallery-progress {
+  display: grid;
+  grid-template-columns: repeat(var(--gallery-count, 5), minmax(0, 1fr));
+  gap: 7px;
+  width: 100%;
+  padding-block: 8px 20px;
+}
+
+.health-gallery-progress span {
+  position: relative;
+  height: 2px;
+  overflow: hidden;
+  background: #d4d2cd;
+}
+
+.health-gallery-progress span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #967653;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.health-gallery-progress span.is-complete::after { transform: scaleX(1); }
+.health-gallery-progress span.is-current::after {
+  animation: health-gallery-fill var(--gallery-duration) linear both;
+}
+.health-gallery.is-paused .health-gallery-progress span.is-current::after {
+  animation-play-state: paused;
+}
+
+@keyframes health-gallery-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.health-gallery-actions {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.health-gallery-actions button {
+  display: grid;
+  place-items: center;
+  width: 41px;
+  height: 41px;
+  padding: 0;
+  border: 1px solid rgba(56, 61, 64, .24);
+  border-radius: 50%;
+  background: transparent;
+  color: #343c42;
+  cursor: pointer;
+  transition: background .3s ease, color .3s ease, border-color .3s ease, transform .3s ease;
+}
+
+.health-gallery-actions button:hover,
+.health-gallery-actions button:focus-visible {
+  color: #fff;
+  background: #283642;
+  border-color: #283642;
+}
+.health-gallery-actions button:active { transform: scale(.93); }
+.health-gallery-actions button:focus-visible { outline: 2px solid #9c7a56; outline-offset: 3px; }
+
+.health-gallery-actions svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.health-gallery-actions .health-icon-play { display: none; }
+.health-gallery-actions button[data-state="paused"] .health-icon-pause { display: none; }
+.health-gallery-actions button[data-state="paused"] .health-icon-play { display: block; }
+.health-gallery-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* A quieter second field note within Chapter 04: life on the lake. */
+.kayak-note {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.25fr);
+  gap: clamp(32px, 7vw, 125px);
+  margin-top: clamp(100px, 12vw, 176px);
+  padding-top: clamp(29px, 4.5vw, 62px);
+  border-top: 1px solid #cec6bc;
+}
+.kayak-note-side {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vw, 54px);
+  color: #827f7b;
+  font-size: 10px;
+  line-height: 2;
+  letter-spacing: .13em;
+}
+.kayak-note-index { color: #a07f57; font-weight: 700; }
+.kayak-note-copy { max-width: 780px; }
+.kayak-note-eyebrow { color: #90785c; letter-spacing: .19em; font-size: 10px; font-weight: 650; }
+.kayak-note-copy h3 {
+  margin: 19px 0 32px;
+  color: #202c36;
+  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-size: clamp(39px, 5vw, 72px);
+  font-weight: 600;
+  letter-spacing: -.065em;
+  line-height: 1.35;
+}
+.kayak-note-copy h3 i { color: #a58059; font-style: normal; }
+.kayak-note-copy p {
+  max-width: 680px;
+  margin-bottom: 18px;
+  color: #59626b;
+  font-size: clamp(15px, 1.2vw, 18px);
+  letter-spacing: .025em;
+  line-height: 2.05;
+}
+.kayaking-gallery { margin-top: clamp(40px, 5.5vw, 80px); }
+
+/* Reserve breathing room for the caption at laptop widths and higher zoom. */
+@media (min-width: 721px) and (max-width: 1250px) {
+  .health-gallery {
+    grid-template-columns: minmax(0, 1.6fr) minmax(285px, 1fr);
+    gap: clamp(24px, 3vw, 42px);
+  }
+
+  .health-gallery-story h3 {
+    min-height: 0;
+    font-size: clamp(27px, 2.9vw, 37px);
+  }
+}
+
+@media (max-width: 900px) {
+  .health-gallery { grid-template-columns: minmax(0, 1.4fr) minmax(230px, 1fr); gap: 26px; }
+  .health-gallery-story h3 { font-size: clamp(27px, 3vw, 34px); }
+}
+
+@media (max-width: 720px) {
+  .stage-pearl .image-life { background-position: 55% center; }
+  .stage-pearl .stage-video-kayaking { object-position: 53% center; }
+  .kayak-note { display: block; margin-top: 82px; padding-top: 27px; }
+  .kayak-note-side { flex-direction: row; justify-content: space-between; gap: 16px; margin-bottom: 25px; }
+  .kayak-note-copy h3 { font-size: clamp(36px, 9vw, 56px); margin-bottom: 20px; }
+  .kayak-note-copy p { line-height: 1.9; }
+  .health-gallery { display: block; margin-top: 8px; }
+  .kayaking-gallery { margin-top: 39px; }
+  .health-gallery-visual { aspect-ratio: 3 / 2; border-radius: 10px; }
+  .health-gallery-image-count { right: 20px; bottom: 18px; }
+  .health-gallery-aside { margin-top: 20px; }
+  .health-gallery-label { padding-top: 14px; font-size: 10px; }
+  .health-gallery-story { padding-block: 25px 20px; }
+  .health-gallery-kicker { margin-bottom: 16px; }
+  .health-gallery-story h3 { min-height: 0; font-size: clamp(28px, 7vw, 39px); }
+  .health-gallery-story p { min-height: 0; margin-top: 12px; font-size: 13px; max-width: 100%; }
+  .health-gallery-progress { padding-top: 14px; }
+  .health-gallery-actions button { width: 39px; height: 39px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-pearl .stage-video-kayaking { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .health-gallery-slide { transition: none; transform: none !important; }
+  .health-gallery-progress span.is-current::after { animation: none; }
+  .health-gallery-actions button { transition: none; }
+}
+
+/* Chapter 05 uses the wider 16:9 frames of the talent event. */
+.stage-violet .image-future {
+  background-image: url("assets/talent-event-02.jpg");
+  background-position: center 48%;
+  background-attachment: scroll !important;
+}
+
+.stage-violet .stage-overlay {
+  background:
+    linear-gradient(90deg, rgba(6, 12, 27, .88), rgba(8, 15, 31, .60) 54%, rgba(5, 12, 24, .19)),
+    linear-gradient(0deg, rgba(5, 12, 25, .71), transparent 56%, rgba(5, 12, 26, .25));
+}
+
+.talent-gallery .health-gallery-visual { aspect-ratio: 2048 / 1151; }
+
+@media (max-width: 720px) {
+  .stage-violet .image-future { background-position: 54% center; }
+  .talent-gallery .health-gallery-visual { aspect-ratio: 3 / 2; }
+}

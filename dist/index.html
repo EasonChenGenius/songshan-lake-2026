@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070d19" />
+  <meta name="description" content="从微观探测到湖面夕阳，从实验室到青年人才现场。跟随陈逸琛的松山湖笔记，追问科技如何一步步抵达生活。" />
+  <meta property="og:title" content="看见不可见｜松山湖科技现场笔记" />
+  <meta property="og:description" content="五个现场，一路追问：让未知被看见，让可能慢慢成为现实。" />
+  <meta property="og:image" content="assets/hero.jpg" />
+  <title>看见不可见｜松山湖科技现场笔记</title>
+  <link rel="preload" as="image" href="assets/hero.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="chapter-images.css" />
+  <link rel="stylesheet" href="motion.css" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="field-video.css" />
+  <link rel="stylesheet" href="questions.css" />
+  <link rel="stylesheet" href="robot-motion.css" />
+  <link rel="stylesheet" href="editorial-meta.css" />
+  <link rel="stylesheet" href="opening-editorial.css" />
+  <link rel="stylesheet" href="stage-meta.css" />
+  <link rel="stylesheet" href="chapter-polish.css" />
+  <link rel="stylesheet" href="health-gallery.css" />
+  <link rel="stylesheet" href="robot-field-photo.css" />
+  <link rel="stylesheet" href="editorial-typography.css" />
+  <link rel="stylesheet" href="lake-map.css" />
+  <link rel="stylesheet" href="hero-refinement.css" />
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="scroll-meter" aria-hidden="true"><span id="scrollProgress"></span></div>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="masthead" id="masthead">
+    <div class="masthead-brands" aria-label="松山湖与南方日报">
+      <a class="wordmark official-logo-link" href="#top" aria-label="松山湖｜回到文章顶部"><img src="assets/songshan-official-logo.png" width="208" height="54" alt="松山湖官方 Logo" decoding="async" /></a>
+      <span class="masthead-brand-divider" aria-hidden="true"></span>
+      <a class="southern-daily-logo-link" href="https://epaper.southcn.com/" target="_blank" rel="noopener noreferrer" aria-label="南方日报｜查看官方电子报（新窗口）" title="南方日报">
+        <img src="assets/nanfang-daily-transparent.png" width="2119" height="742" alt="南方日报红色报头 Logo" decoding="async" />
+      </a>
+    </div>
+    <nav class="desktop-nav" aria-label="章节导航">
+      <a href="#prologue">序</a><a href="#chapter-1">探测</a><a href="#chapter-2">材料</a><a href="#chapter-3">机器人</a><a href="#chapter-4">生活</a><a href="#chapter-5">人才</a>
+    </nav>
+    <a class="masthead-end" href="#epilogue"><span class="masthead-end-text">终章 · 回望</span><span class="masthead-end-arrow" aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-art" role="img" aria-label="以金属微观结构表现科学探索的概念视觉，并非松山湖真实科研装置影像"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-scan-ring" aria-hidden="true"></div>
+      <div class="hero-content wrap">
+        <div class="hero-eyebrow" aria-label="2026 全国高校校媒精英特训营，东莞松山湖，10月21日至28日">
+          <span class="status-dot" aria-hidden="true"></span>
+          <div class="hero-event-lockup"><strong class="hero-event-name">2026 全国高校校媒精英特训营</strong><span class="hero-event-location">东莞 · 松山湖 <span aria-hidden="true">/</span> 2026.10.21—28</span></div>
+        </div>
+        <div class="hero-title-wrap"><span class="micro-label">AN EDITORIAL INTERACTIVE STORY</span><h1 id="heroTitle">看见<br /><span class="hero-unseen">不</span>可见<span class="title-stop">.</span></h1></div>
+        <div class="hero-bottom">
+          <p class="hero-subtitle">从微观深处，到湖面夕阳<br />五个现场，追问科技的来路与去处</p>
+        </div>
+      </div>
+      <div class="hero-floor wrap"><a class="scroll-callout" href="#prologue" aria-label="向下阅读正文"><span class="scroll-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15m-6-6 6 6 6-6" /></svg></span><span class="scroll-callout-label">进入正文<small>SCROLL TO EXPLORE</small></span></a><span class="media-caveat">封面为 AI 概念视觉，非真实科研设备影像</span></div>
+      <div class="hero-index" aria-hidden="true">01—05 / THE STORY</div>
+    </section>
+
+    <section class="prologue section-pad" id="prologue" data-chapter="0" aria-labelledby="prologueTitle">
+      <div class="wrap prologue-grid">
+        <div class="prologue-atlas">
+          <div class="atlas-heading"><span class="atlas-eyebrow">00 / PROLOGUE</span><span class="atlas-heading-line"></span><span>湖区地标 · 浮雕示意</span></div>
+          <figure class="lake-atlas" aria-label="松山湖湖岸及周边代表地标示意图，非导航地图">
+            <img src="assets/songshan-lake-relief.svg" alt="依照真实湖岸轮廓绘制的松山湖艺术化地图，湖面采用立体浮雕风格" width="640" height="640" loading="lazy" decoding="async" />
+            <span class="lake-marker lake-marker--mist"><i aria-hidden="true"></i><b>松湖烟雨</b></span>
+            <span class="lake-marker lake-marker--huawei"><i aria-hidden="true"></i><b>华为欧洲小镇</b></span>
+            <span class="lake-marker lake-marker--materials"><i aria-hidden="true"></i><b>松山湖材料实验室</b></span>
+            <span class="lake-marker lake-marker--neutron"><i aria-hidden="true"></i><b>中国散裂中子源</b></span>
+            <span class="lake-atlas-id">22°54′ N <small>113°53′ E</small></span>
+          </figure>
+          <div class="atlas-footer"><span>松山湖 · 东莞</span><span>立体艺术示意 / NOT TO SCALE</span></div>
+          <p class="atlas-credit">湖岸轮廓依据 <a href="https://www.openstreetmap.org/relation/1113501" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> 数据绘制（<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© 贡献者 / ODbL</a>）。地标位置仅作近似示意，非导航用途。</p>
+        </div>
+        <div class="prologue-body">
+          <p class="eyebrow gold">THE QUESTION</p>
+          <h2 id="prologueTitle">一项技术，要走多远，<br />才能<span class="accent-italic">抵达日常？</span></h2>
+          <p>十月的松山湖，我从中国散裂中子源启程，走近肉眼难及的物质世界；又循着材料研究、广东省智能机器人研究院、XbotPark 与松灵机器人，看见创意从图纸走向现实。在华为运动健康科学实验室，我感受到技术与日常的距离；悠兰里的皮划艇和湖上晚风，则为密集的行程留下片刻从容。</p>
+          <p>直到走进大湾区大学的人才交流现场，我才愈发意识到：<strong>科技的故事，终究也是人的故事。</strong>散落在湖畔的地点，渐渐汇成同一个追问——从最初的疑问到真正有用的成果，我们究竟还需要走过多少路？</p>
+          <div class="author-strip"><img class="author-portrait" src="assets/eason-portrait.jpg" alt="作者陈逸琛的个人肖像" width="78" height="84" loading="lazy" decoding="async" /><div class="author-info"><span class="author-kicker">文字与现场记录</span><strong>陈逸琛</strong><small>四川师范大学 · 金融工程</small></div><span class="edition">21—28 OCT. 2026</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="route-section section-pad" aria-labelledby="routeTitle">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">A FIELD MAP / 五个现场</p><span class="hairline"></span><span class="count">05 STOPS</span></div>
+        <div class="route-header"><h2 id="routeTitle">沿着一条线索<br /><em>进入松山湖。</em></h2><p>循着五个现场，读完一次从未知走向日常的追问。<br />这只是我理解创新的观察路径，并不意味着各机构之间存在直接的技术转化关系。</p></div>
+        <div class="route-grid" role="list" aria-label="故事章节列表">
+          <a href="#chapter-1" class="route-card" role="listitem"><span class="route-index">01 / 发现</span><span class="route-sign" aria-hidden="true">◉</span><strong>让微观可见</strong><small>中国散裂中子源</small><span class="card-arrow" aria-hidden="true">↗</span></a>
+          <a href="#chapter-2" class="route-card" role="listitem"><span class="route-index">02 / 研究</span><span class="route-sign" aria-hidden="true">◇</span><strong>让材料可知</strong><small>中科院材料研究现场</small><span class="card-arrow" aria-hidden="true">↗</span></a>
+          <a href="#chapter-3" class="route-card" role="listitem"><span class="route-index">03 / 转化</span><span class="route-sign" aria-hidden="true">⌘</span><strong>让机器行动</strong><small>机器人与创业生态</small><span class="card-arrow" aria-hidden="true">↗</span></a>
+          <a href="#chapter-4" class="route-card" role="listitem"><span class="route-index">04 / 生活</span><span class="route-sign" aria-hidden="true">◎</span><strong>让科技可感</strong><small>华为运动健康科学实验室 · 悠兰里</small><span class="card-arrow" aria-hidden="true">↗</span></a>
+          <a href="#chapter-5" class="route-card" role="listitem"><span class="route-index">05 / 未来</span><span class="route-sign" aria-hidden="true">✧</span><strong>让人才留下</strong><small>大湾区大学 · 人才现场</small><span class="card-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <article>
+      <section class="chapter" id="chapter-1" data-chapter="1" aria-labelledby="chapterOneTitle">
+        <div class="chapter-stage stage-blue"><div class="stage-image image-neutron" role="img" aria-label="2026年10月22日，学员认真聆听与拍摄讲解的真实现场照片"></div><div class="stage-overlay"></div><div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 01</span><span>22 OCT · 中国散裂中子源</span></div><div class="stage-title"><span class="stage-giant">01</span><div><span class="eyebrow gold">DISCOVERY / 探测</span><h2 id="chapterOneTitle">看不见的世界，<br /><i>怎样被看见？</i></h2></div></div><span class="image-badge">科研参访现场实拍 · 2026.10.22</span></div></div>
+        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 01</span><p>参访地点<br /><strong>中国散裂中子源</strong></p><p>时间<br /><strong>2026.10.22 上午</strong></p></div><div class="chapter-copy"><p class="lede">真正让我停下来思考的，并非装置的体量，而是它所指向的、肉眼无法抵达的世界。</p><p>物质内部的结构、运动与变化，常常沉默在表象之下。中国散裂中子源为研究者提供中子散射实验条件，让他们从测量所得的数据中寻找线索，研究材料、能源与生命科学等领域的问题。在这里，“看见”不再只是凝视，更是测量、求证与不断修正。</p><p>我想到的还有另一层问题：如此深入的探索，为什么离不开大型共享设施、不同团队的协作和长久的投入？<strong>有些未知，单凭一间实验室难以照亮；许多人把知识、时间与资源汇聚起来，世界的边界才可能被一点点推开。</strong></p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>科学不总是从一件新产品开始；更多时候，它始于承认未知，并耐心地把问题看清。</strong></div></div><div class="source-line">事实核对：<a href="https://csns.ihep.cas.cn/gk/" target="_blank" rel="noopener noreferrer">散裂中子源科学中心官方介绍 ↗</a></div></div></div>
+        <figure class="health-gallery neutron-gallery wrap is-paused" id="neutronGallery" aria-label="2026年10月22日科研参访现场图集，按第一至第三张顺序循环展示">
+          <div class="health-gallery-visual">
+            <img class="health-gallery-slide is-current" src="assets/day1-science-01.jpg" width="2048" height="1365" alt="第一张：特训营学员在材料科学与技术研究所的标识前集体合影" decoding="async" />
+            <img class="health-gallery-slide" src="assets/day1-science-03.jpg" width="2048" height="1365" alt="第二张：学员在参访现场专注聆听，并用手机和拍摄设备记录" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/day1-science-04.jpg" width="2048" height="1365" alt="第三张：参访学员围绕展厅建筑科技沙盘聆听讲解" aria-hidden="true" decoding="async" />
+            <span class="health-gallery-image-count" aria-hidden="true"><strong id="neutronGalleryCount">01</strong><span>/ 03</span></span>
+          </div>
+          <figcaption class="health-gallery-aside">
+            <div class="health-gallery-label"><span>01 / FIELD IMAGES</span><span>2026.10.22</span></div>
+            <div class="health-gallery-story"><span class="health-gallery-kicker">在场 / DAY ONE SCIENCE VISITS</span><h3 id="neutronGalleryTitle">站在门前，<br />也站在问题的起点。</h3><p id="neutronGalleryDescription">第一张 · 研究所门前的一张合影，为这次参访留下坐标。</p></div>
+            <div class="health-gallery-bottom">
+              <div class="health-gallery-progress" aria-hidden="true"><span class="is-current"></span><span></span><span></span></div>
+              <div class="health-gallery-actions" aria-label="图集控制">
+                <button type="button" id="neutronGalleryPrev" aria-label="上一张照片" title="上一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7" /></svg></button>
+                <button type="button" id="neutronGalleryNext" aria-label="下一张照片" title="下一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7" /></svg></button>
+              </div>
+            </div>
+            <span class="health-gallery-sr-only" id="neutronGalleryAnnouncement" aria-live="polite"></span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="chapter" id="chapter-2" data-chapter="2" aria-labelledby="chapterTwoTitle">
+        <div class="chapter-stage stage-lilac"><div class="stage-image image-material" role="img" aria-label="2026年10月22日，材料研究讲座的现场照片，研究人员向学员讲解微观结构相关技术"></div><div class="stage-overlay"></div><div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 02</span><span>22 OCT · 中科院材料研究现场</span></div><div class="stage-title"><span class="stage-giant">02</span><div><span class="eyebrow gold">EXPERIMENT / 研究</span><h2 id="chapterTwoTitle">从一种材料，<br /><i>看见更多可能。</i></h2></div></div><span class="image-badge">材料研究现场实拍 · 2026.10.22</span></div></div>
+        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 02</span><p>参访地点<br /><strong>中科院材料研究现场</strong></p><p>时间<br /><strong>2026.10.22 下午</strong></p></div><div class="chapter-copy"><p class="lede">走进材料研究现场，抽象的科学忽然有了质地：展柜里的样品、屏幕上的结构图，都在提醒我，一项成果从来不只是一串漂亮的数据。</p><p>那天下午，我们走过展厅与实验室，听到关于非晶材料以及 AI 辅助材料研究的介绍。一边是面对真实材料的观察、实验和检验，一边是试着从复杂信息中寻找规律、辅助判断。方法各异，却都要求研究者对结果保持谨慎。</p><p>一个现象能在实验中发生，尚不意味着它可以在生活中经得起考验。<strong>能否重复、能否制造、成本是否可控、究竟替谁解决问题</strong>——从发现到应用之间，横亘着一道道朴素而严格的关口。</p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>灵感也许发生在一瞬间，可靠的成果却要在无数次验证中慢慢成形。</strong></div></div></div></div>
+        <figure class="health-gallery materials-gallery wrap is-paused" id="materialsGallery" aria-label="2026年10月22日材料研究现场图集，按照第一至第四张顺序循环展示">
+          <div class="health-gallery-visual">
+            <img class="health-gallery-slide is-current" src="assets/day1-science-05.jpg" width="2048" height="1365" alt="第一张：学员在标有非晶材料研究室的科研展区与讲解人员交流" decoding="async" />
+            <img class="health-gallery-slide" src="assets/day1-science-06.jpg" width="2048" height="1365" alt="第二张：研究人员在玻璃展柜前向学员介绍展示内容" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/day1-science-07.jpg" width="2048" height="1365" alt="第三张：学员围绕材料研究展柜进行交流与提问" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/materials-lecture-01.jpg" width="2048" height="1365" alt="第四张：学员在明亮的大厅中听取材料研究相关技术讲座，前方有展示屏幕" aria-hidden="true" decoding="async" />
+            <span class="health-gallery-image-count" aria-hidden="true"><strong id="materialsGalleryCount">01</strong><span>/ 04</span></span>
+          </div>
+          <figcaption class="health-gallery-aside">
+            <div class="health-gallery-label"><span>02 / FIELD IMAGES</span><span>2026.10.22</span></div>
+            <div class="health-gallery-story"><span class="health-gallery-kicker">在场 / MATERIALS RESEARCH</span><h3 id="materialsGalleryTitle">从一件展品，<br />追问材料的另一面。</h3><p id="materialsGalleryDescription">第一张 · 非晶材料展区里，讲解与提问从一件件展品展开。</p></div>
+            <div class="health-gallery-bottom">
+              <div class="health-gallery-progress" aria-hidden="true"><span class="is-current"></span><span></span><span></span><span></span></div>
+              <div class="health-gallery-actions" aria-label="图集控制">
+                <button type="button" id="materialsGalleryPrev" aria-label="上一张照片" title="上一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7" /></svg></button>
+                <button type="button" id="materialsGalleryNext" aria-label="下一张照片" title="下一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7" /></svg></button>
+              </div>
+            </div>
+            <span class="health-gallery-sr-only" id="materialsGalleryAnnouncement" aria-live="polite"></span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="chapter" id="chapter-3" data-chapter="3" aria-labelledby="chapterThreeTitle">
+        <div class="chapter-stage stage-copper">
+          <div class="stage-image image-robot" role="img" aria-label="四足机器人的艺术化概念场景，非参访机构真实设备"></div>
+          <div class="robot-contact-shadow" aria-hidden="true"></div>
+          <div class="robot-walker" aria-hidden="true">
+            <img class="robot-static" src="assets/robot-cutout.webp" width="1536" height="1024" alt="" decoding="async" />
+            <span class="robot-gait">
+              <span class="gait-pose gait-pose-a"></span>
+              <span class="gait-pose gait-pose-b"></span>
+              <span class="gait-pose gait-pose-c"></span>
+              <span class="gait-pose gait-pose-d"></span>
+            </span>
+          </div>
+          <div class="stage-overlay"></div>
+          <div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 03</span><span>22—23 OCT · 机器人创新现场</span></div><div class="stage-title"><span class="stage-giant">03</span><div><span class="eyebrow gold">TRANSLATION / 转化</span><h2 id="chapterThreeTitle">让技术，<br /><i>开始行动。</i></h2></div></div><span class="image-badge">AI 概念视觉 · 非企业产品图</span></div>
+        </div>
+        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 03</span><p>参访地点<br /><strong>广东省智能机器人研究院<br />XbotPark / 松灵机器人</strong></p><p>时间<br /><strong>2026.10.22—23</strong></p></div><div class="chapter-copy"><p class="lede">站在机器人展示区前，惊叹几乎是本能；可离开现场，我更想知道：它究竟会在哪个人的生活里，真正派上用场？</p><p>两天里，从广东省智能机器人研究院到 XbotPark，再到松灵机器人，我先后接触研究、创业培育与产品应用的不同侧面。它们并非一条现成的产业链，却共同提醒我：技术一旦离开实验室，面对的就不再只是技术问题。</p><p>一台机器即使能在演示中流畅地完成动作，也还要在真实环境中回答更多追问：<strong>谁愿意使用？能否长久稳定地工作？出了故障怎么办？成本与维护由谁承担？</strong>展示让人看见可能，日复一日的使用，才真正检验价值。</p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>真正的进步，不止于机器迈出一步，而在于它能否为人长久地做些什么。</strong></div></div></div></div>
+        <section class="question-module wrap" aria-labelledby="questionsTitle">
+          <div class="question-intro">
+            <span class="eyebrow">采访手记 <span aria-hidden="true">/</span> 03</span>
+            <h3 id="questionsTitle">离开现场后，<br /><em>还想问的三件事。</em></h3>
+          </div>
+          <div class="question-list">
+            <details>
+              <summary><span class="question-number">01</span><span class="question-text">机器人如何走出展示台，找到第一个愿意使用它的人？</span><b aria-hidden="true">＋</b></summary>
+              <p>想继续问：最初设想的场景与真实需求有何落差？第一批用户的反馈，曾让团队改动过什么？</p>
+            </details>
+            <details>
+              <summary><span class="question-number">02</span><span class="question-text">从一次成功演示，到千百次可靠运行，要跨过什么？</span><b aria-hidden="true">＋</b></summary>
+              <p>想继续问：可靠性、供应链、成本和后续维护，哪一道关口最难？能否分享一次具体的挫折与调整？</p>
+            </details>
+            <details>
+              <summary><span class="question-number">03</span><span class="question-text">选择扎根松山湖，团队最需要怎样的支持？</span><b aria-hidden="true">＋</b></summary>
+              <p>想继续问：人才、资金、试验场景和上下游协作，哪些支持真正帮团队走过难关？</p>
+            </details>
+          </div>
+        </section>
+        <div class="photo-slot wrap field-video-row">
+          <div class="field-video-shell" id="xbotparkMedia">
+            <video id="xbotparkVideo" width="1280" height="720" poster="assets/xbotpark-field-poster.jpg" preload="none" controls muted loop playsinline aria-label="XbotPark 机器人基地参访现场短片，时长约七秒">
+              <source src="assets/xbotpark-field-clip.mp4" type="video/mp4" />
+              你的浏览器暂不支持播放此视频。
+            </video>
+            <div class="field-video-controls" aria-label="视频播放控制">
+              <button type="button" id="xbotparkPlayback" data-state="play" aria-controls="xbotparkVideo" aria-label="播放视频" title="播放视频">
+                <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5 18.5 12 8 18.5Z" fill="currentColor" /></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5.5" width="4" height="13" rx="1" fill="currentColor" /><rect x="13.5" y="5.5" width="4" height="13" rx="1" fill="currentColor" /></svg>
+              </button>
+              <button type="button" id="xbotparkAudio" data-state="muted" aria-controls="xbotparkVideo" aria-label="开启现场声音" aria-pressed="false" title="开启现场声音">
+                <svg class="icon-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 5.5 6.3 9H3.5v6h2.8l4.2 3.5z" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round" /><path d="m15 9 5 6m0-6-5 6" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" /></svg>
+                <svg class="icon-volume" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 5.5 6.3 9H3.5v6h2.8l4.2 3.5z" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round" /><path d="M14.5 9a4 4 0 0 1 0 6M17.5 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" /></svg>
+              </button>
+            </div>
+          </div>
+          <div class="photo-caption field-video-caption"><span>03 / 现场影像 · XbotPark</span><h3>在 XbotPark，<br />留下一段现场。</h3><p>镜头里是学员在展厅中的交流与互动；这是一段参访记录，并非机器人运行演示。</p></div>
+        </div>
+        <figure class="robot-field-photo wrap" aria-labelledby="xbotparkGroupTitle">
+          <div class="robot-field-photo-visual">
+            <img src="assets/xbotpark-group-20261023.jpg" width="2048" height="1365" loading="lazy" decoding="async" alt="2026年全国高校校媒精英特训营学员在 XbotPark 机器人基地的阶梯空间合影，前方展示松山湖特训营横幅及 XBOT PARK 标识" />
+          </div>
+          <figcaption class="robot-field-photo-caption">
+            <span class="robot-field-photo-index">03 / 同行者 · XBOT PARK</span>
+            <span class="robot-field-photo-rule" aria-hidden="true"></span>
+            <h3 id="xbotparkGroupTitle">把这一天，<br />留在同一张合影里。</h3>
+            <p>10月23日，走访 XbotPark 机器人基地后，同行的校媒学员在阶梯前留下合影。研究与创业的故事仍在向前，而这一刻，属于亲自来到现场的我们。</p>
+            <small>现场实拍 · 2026.10.23</small>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="chapter" id="chapter-4" data-chapter="4" aria-labelledby="chapterFourTitle">
+        <div class="chapter-stage stage-pearl"><div class="stage-image image-life" role="img" aria-label="2026年10月24日松山湖夕阳下的双人皮划艇现场照片，作为动态背景的静态备用画面"></div><video class="stage-video stage-video-kayaking" id="chapterLifeBackgroundVideo" autoplay muted loop playsinline preload="metadata" poster="assets/kayaking-hero-poster.jpg" aria-hidden="true" tabindex="-1"><source src="assets/kayaking-hero-loop.mp4" type="video/mp4" /></video><div class="stage-overlay"></div><div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 04</span><span>23—24 OCT · 华为实验室 / 悠兰里</span></div><div class="stage-title"><span class="stage-giant">04</span><div><span class="eyebrow gold">APPLICATION / 应用</span><h2 id="chapterFourTitle">当科技不再遥远，<br /><i>而是关乎每一天。</i></h2></div></div><span class="image-badge">松山湖皮划艇现场影像 · 2026.10.24</span></div></div>
+        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 04</span><p>参访地点<br /><strong>华为运动健康科学实验室</strong></p><p>生活体验<br /><strong>松山湖·悠兰里</strong></p><p>时间<br /><strong>2026.10.23—24</strong></p></div><div class="chapter-copy"><p class="lede">前一天我还在运动健康实验室里思考数据与设备，第二天便坐上松山湖的皮划艇。原来“应用”二字，一头连着精密研究，一头连着最寻常的身体感受。</p><p>在华为运动健康科学实验室，运动不再只是一个动作，也可以被观察、测量与记录。听着现场讲解，我开始留心那些看似细小的问题：数据怎样被采集和理解？研究怎样进入产品设计？一项功能能否让普通人在日复一日的使用中感到安心与便利？</p><p>我渐渐明白，科技与生活之间的距离，并不靠宏大的概念来缩短。<strong>好的应用既需要精密的能力，也需要体察日常的耐心；它最终面对的，不是展台，而是一个个具体的人。</strong></p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>科技的价值，最终要在真实生活的细节里得到回答。</strong></div></div></div></div>
+        <figure class="health-gallery wrap is-paused" id="huaweiGallery" aria-label="华为运动健康科学实验室参访现场图集，按照1至5的顺序循环展示">
+          <div class="health-gallery-visual">
+            <img class="health-gallery-slide is-current" src="assets/huawei-health-01.jpg" width="2048" height="1365" alt="第一张：特训营学员在华为运动健康科学实验室入口合影，手持蓝色活动横幅" decoding="async" />
+            <img class="health-gallery-slide" src="assets/huawei-health-02.jpg" width="2048" height="1365" alt="第二张：实验室讲解人员向学员介绍运动健康研究与展示内容" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/huawei-health-03.jpg" width="2048" height="1365" alt="第三张：学员在华为标识前专注聆听现场讲解" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/huawei-health-04.jpg" width="2047" height="1365" alt="第四张：学员在运动测试区域观察讲解及相关设备" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/huawei-health-05.jpg" width="2048" height="1365" alt="第五张：学员在室内羽毛球区域进行互动体验，背景是华为运动手表展示" aria-hidden="true" decoding="async" />
+            <span class="health-gallery-image-count" aria-hidden="true"><strong id="healthGalleryCount">01</strong><span>/ 05</span></span>
+          </div>
+          <figcaption class="health-gallery-aside">
+            <div class="health-gallery-label"><span>04 / FIELD IMAGES</span><span>2026.10.23</span></div>
+            <div class="health-gallery-story"><span class="health-gallery-kicker">在场 / HUAWEI HEALTH LAB</span><h3 id="healthGalleryTitle">从一扇门出发，<br />走近运动的另一面。</h3><p id="healthGalleryDescription">第一张 · 实验室入口的一张合影，是这天参访的开场。</p></div>
+            <div class="health-gallery-bottom">
+              <div class="health-gallery-progress" aria-hidden="true"><span class="is-current"></span><span></span><span></span><span></span><span></span></div>
+              <div class="health-gallery-actions" aria-label="图集控制">
+                <button type="button" id="healthGalleryPrev" aria-label="上一张照片" title="上一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7" /></svg></button>
+                <button type="button" id="healthGalleryNext" aria-label="下一张照片" title="下一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7" /></svg></button>
+              </div>
+            </div>
+            <span class="health-gallery-sr-only" id="healthGalleryAnnouncement" aria-live="polite"></span>
+          </figcaption>
+        </figure>
+        <div class="kayak-note wrap" aria-labelledby="kayakNoteTitle">
+          <div class="kayak-note-side"><span class="kayak-note-index">04.2 / FIELD MOMENT</span><span>24 OCT 2026<br />松山湖 · 悠兰里</span></div>
+          <div class="kayak-note-copy"><span class="kayak-note-eyebrow">FROM THE LAB TO THE LAKE</span><h3 id="kayakNoteTitle">离开展厅，<br /><i>划进湖光里。</i></h3><p>10月24日下午，在悠兰里穿上救生衣，和同伴坐进皮划艇。船身随着水波轻轻晃动，桨叶划过湖面，原本在实验室里反复思考的“运动体验”，忽然有了极具体的模样：掌握平衡，也学着与身边的人配合节奏。</p><p>夕阳慢慢落向湖岸，水面铺开细碎的金光。前一天，我试着理解科学如何认识身体；这一天，我把注意力还给了身体本身。<strong>科技能帮助我们记录运动的轨迹，而亲身经历的快乐，终究要由自己完成。</strong></p></div>
+        </div>
+        <figure class="health-gallery kayaking-gallery wrap is-paused" id="kayakingGallery" aria-label="2026年10月24日悠兰里皮划艇体验现场照片，按第一至第三张顺序循环展示">
+          <div class="health-gallery-visual">
+            <img class="health-gallery-slide is-current" src="assets/kayaking-01-lakeside.jpg" width="2048" height="1365" alt="第一张：特训营学员穿着活动服站在松山湖边，举手与镜头互动" decoding="async" />
+            <img class="health-gallery-slide" src="assets/kayaking-02-gear.jpg" width="2048" height="1365" alt="第二张：几位学员穿着救生衣，在水上运动嘉年华背景前合影" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/kayaking-03-sunset.jpg" width="2048" height="1365" alt="第三张：夕阳映照松山湖水面，两位学员乘皮划艇经过金色波光" aria-hidden="true" decoding="async" />
+            <span class="health-gallery-image-count" aria-hidden="true"><strong id="kayakingGalleryCount">01</strong><span>/ 03</span></span>
+          </div>
+          <figcaption class="health-gallery-aside">
+            <div class="health-gallery-label"><span>04 / LIFE MOMENTS</span><span>2026.10.24</span></div>
+            <div class="health-gallery-story"><span class="health-gallery-kicker">在场 / KAYAKING AT SONGSHAN LAKE</span><h3 id="kayakingGalleryTitle">挥挥手，<br />向湖面出发。</h3><p id="kayakingGalleryDescription">第一张 · 湖边举起的手，留住了出发前轻松的一刻。</p></div>
+            <div class="health-gallery-bottom">
+              <div class="health-gallery-progress" aria-hidden="true"><span class="is-current"></span><span></span><span></span></div>
+              <div class="health-gallery-actions" aria-label="图集控制">
+                <button type="button" id="kayakingGalleryPrev" aria-label="上一张照片" title="上一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7" /></svg></button>
+                <button type="button" id="kayakingGalleryNext" aria-label="下一张照片" title="下一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7" /></svg></button>
+              </div>
+            </div>
+            <span class="health-gallery-sr-only" id="kayakingGalleryAnnouncement" aria-live="polite"></span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="chapter" id="chapter-5" data-chapter="5" aria-labelledby="chapterFiveTitle">
+        <div class="chapter-stage stage-violet"><div class="stage-image image-future" role="img" aria-label="2026年10月25日，大湾区人才高质量发展大会现场主舞台实拍"></div><div class="stage-overlay"></div><div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 05</span><span>25 OCT · 大湾区大学</span></div><div class="stage-title"><span class="stage-giant">05</span><div><span class="eyebrow gold">PEOPLE / 人才</span><h2 id="chapterFiveTitle">最终推动技术向前的，<br /><i>仍然是人。</i></h2></div></div><span class="image-badge">人才活动现场实拍 · 2026.10.25</span></div></div>
+        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 05</span><p>参访地点<br /><strong>大湾区大学</strong></p><p>时间<br /><strong>2026.10.25 上午</strong></p></div><div class="chapter-copy"><p class="lede">在大湾区大学的活动现场，我看见另一种不同于实验室的忙碌：有人讲述研究，有人倾听、记录，也有人试着判断一个想法的下一程。</p><p>开幕式与博士博士后创新创业大赛相关活动，让抽象的“人才发展”有了具体的面孔与声音。站上路演台的研究者，不只要讲明白技术本身，还需解释它回应了什么现实需求，为什么值得继续投入。创新离不开专业知识，也离不开与世界沟通的能力。</p><p>我学金融工程，因而格外在意技术之外的另一种时间：<strong>一项尚未成熟的研究，怎样获得继续试错的资金、耐心与机会？</strong>吸引人才是一时的选择；让他们有条件把事情做成，才是一座城市更长久的承诺。</p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>创新的土壤，不只需要人才汇聚，也需要容得下漫长试错的耐心。</strong></div></div></div></div>
+        <figure class="health-gallery talent-gallery wrap is-paused" id="talentGallery" style="--gallery-count:6" aria-label="大湾区大学及人才活动现场图集，按第一至第六张的顺序循环展示">
+          <div class="health-gallery-visual">
+            <img class="health-gallery-slide is-current" src="assets/talent-event-01.jpg" width="2048" height="1151" alt="第一张：校媒学员在粤港澳大湾区人才高质量发展大会的活动标识前合影" decoding="async" />
+            <img class="health-gallery-slide" src="assets/talent-event-07.jpg" width="2048" height="1365" alt="第二张：特训营学员在大湾区大学校园活动吉祥物布景前留影" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/talent-event-06.jpg" width="2048" height="1365" alt="第三张：傍晚时分的大湾区大学校名石、校园建筑及活动吉祥物布景" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/talent-event-04.jpg" width="2048" height="1151" alt="第四张：大会同期东莞城市形象及科技产品展区" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/talent-event-05.jpg" width="2048" height="1151" alt="第五张：活动展区的白色人形机器人及背景展示板" aria-hidden="true" decoding="async" />
+            <img class="health-gallery-slide" src="assets/talent-event-03.jpg" width="2048" height="1151" alt="第六张：活动现场的学员与媒体工作者，画面前景有摄影设备" aria-hidden="true" decoding="async" />
+            <span class="health-gallery-image-count" aria-hidden="true"><strong id="talentGalleryCount">01</strong><span>/ 06</span></span>
+          </div>
+          <figcaption class="health-gallery-aside">
+            <div class="health-gallery-label"><span>05 / FIELD IMAGES</span><span>2026.10.25</span></div>
+            <div class="health-gallery-story"><span class="health-gallery-kicker">在场 / GREATER BAY AREA</span><h3 id="talentGalleryTitle">人群汇聚之处，<br />故事有了新的主角。</h3><p id="talentGalleryDescription">第一张 · 大湾区人才活动标识前，校媒学员留下合影。</p></div>
+            <div class="health-gallery-bottom">
+              <div class="health-gallery-progress" aria-hidden="true"><span class="is-current"></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="health-gallery-actions" aria-label="图集控制">
+                <button type="button" id="talentGalleryPrev" aria-label="上一张照片" title="上一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7" /></svg></button>
+                <button type="button" id="talentGalleryNext" aria-label="下一张照片" title="下一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7" /></svg></button>
+              </div>
+            </div>
+            <span class="health-gallery-sr-only" id="talentGalleryAnnouncement" aria-live="polite"></span>
+          </figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <section class="epilogue section-pad" id="epilogue" data-chapter="6" aria-labelledby="epilogueTitle"><div class="epilogue-light"></div><div class="wrap epilogue-inner"><span class="eyebrow gold">EPILOGUE / 写在最后</span><h2 id="epilogueTitle">看见不可见，<br /><em>然后看见可能。</em></h2><p>这几天的走访很短，短到不足以理解一个研究领域的全貌，也不能凭一次演示便断言成果的命运。可它让我渐渐懂得：面对一项令人惊叹的技术，赞叹只是开始；更重要的是停下来，多问一句“为什么”，再问一句“然后呢”。</p><p>从中子源里对微观世界的追问，到材料研究的反复验证；从机器人走向真实场景的艰难一步，到湖风里切身的运动感受，再到青年人才对未来的选择——五个现场并未替我回答所有问题，却让我更清楚下一次该问什么。<strong>看见未知，需要好奇；把可能变成现实，需要时间、协作与不轻言放弃的耐心。</strong></p><div class="closing-line"><span>END OF FIELD NOTES</span><span>陈逸琛 · 2026.10</span></div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-grid"><div><span class="footer-symbol" aria-hidden="true">✳</span><p>看见不可见<br /><small>AN EDITORIAL FIELD JOURNAL</small></p></div><div class="footer-information"><p>文字与编辑：陈逸琛<br />四川师范大学 · 金融工程</p><p>根据 2026 全国高校校媒精英特训营（松山湖）的实际行程和个人现场观察撰写。未获采访核实的内容仅作为追问呈现，不代表任何机构立场。</p><p>影像说明：个别科幻场景为 AI 辅助生成的艺术化视觉，不代表参访机构的实际设备、研究成果或产品。</p></div><a href="#top" class="back-top">回到顶部 ↑</a></div></footer>
+  <nav class="mobile-chapter-nav" aria-label="快速切换文章章节"><button type="button" id="chaptersToggle" aria-expanded="false" aria-controls="chaptersSheet"><span>章节目录</span><span class="mobile-chapter-current" id="mobileCurrent">序</span><span class="toggle-icon" aria-hidden="true">＋</span></button><div class="chapters-sheet" id="chaptersSheet" hidden><a href="#prologue">00 / 序 · 问题的起点</a><a href="#chapter-1">01 / 让微观可见</a><a href="#chapter-2">02 / 让材料可知</a><a href="#chapter-3">03 / 让机器行动</a><a href="#chapter-4">04 / 让科技可感</a><a href="#chapter-5">05 / 让人才留下</a><a href="#epilogue">结语 / 看见可能</a></div></nav>
+</body>
+</html>

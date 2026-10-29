@@ -1,0 +1,202 @@
+/* 2026 Songshan Lake / Field Notes motion direction:
+   a light probe reveals detail; a route line traces the narrative;
+   image depth stays subordinate to text. All key frames remain readable without JS. */
+:root {
+  --motion-ease: cubic-bezier(.22, .68, .2, 1);
+  --motion-gentle: cubic-bezier(.4, 0, .2, 1);
+}
+
+/* 01 / One restrained editorial entrance; never a blocking loader. */
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-on .hero-art { animation-duration: 1.15s; }
+  html.motion-on .hero-eyebrow { animation: field-arrive .65s var(--motion-ease) .08s both; }
+  html.motion-on .micro-label { animation: field-arrive .7s var(--motion-ease) .17s both; }
+  html.motion-on .hero h1 { animation: title-emerge .95s var(--motion-ease) .22s both; }
+  html.motion-on .hero-subtitle { animation: field-arrive .75s var(--motion-ease) .44s both; }
+  html.motion-on .hero-floor { animation: field-arrive .7s var(--motion-ease) .51s both; }
+  @keyframes field-arrive {
+    from { opacity: 0; transform: translate3d(0, 18px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes title-emerge {
+    from { opacity: 0; transform: translate3d(0, 33px, 0); filter: blur(5px); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+  }
+}
+
+/* 02 / "See the unseen": a spotlight reveals a more luminous focus on hover.
+   Only fine-pointer devices opt in, and the title remains a permanent frame. */
+.hero { --lens-x: 68%; --lens-y: 38%; }
+.hero-scan-ring { display: none; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url("assets/hero.jpg") center center / cover no-repeat;
+    -webkit-mask-image: radial-gradient(circle 188px at var(--lens-x) var(--lens-y), #000 2%, rgba(0,0,0,.86) 38%, transparent 100%);
+    mask-image: radial-gradient(circle 188px at var(--lens-x) var(--lens-y), #000 2%, rgba(0,0,0,.86) 38%, transparent 100%);
+    filter: brightness(1.4) saturate(1.2);
+    opacity: 0;
+    transition: opacity .45s var(--motion-gentle);
+  }
+  .hero.is-scanning::after { opacity: .78; }
+  .hero-scan-ring {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: var(--lens-y);
+    left: var(--lens-x);
+    width: 222px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid rgba(190,226,255,.53);
+    outline: 1px solid rgba(255,255,255,.09);
+    outline-offset: -19px;
+    box-shadow: 0 0 45px rgba(123,189,255,.15), inset 0 0 32px rgba(176,218,255,.08);
+    transform: translate3d(-50%, -50%, 0) scale(.88);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease, transform .5s var(--motion-ease);
+  }
+  .hero.is-scanning .hero-scan-ring { transform: translate3d(-50%, -50%, 0) scale(1); opacity: .65; }
+}
+
+/* 03 / Read progress is a real route rather than decorative bars. */
+/* The broad route-section orbit resolves as the section enters view, instead
+   of being visible ahead of the surrounding scroll choreography. */
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-on .route-section::after {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translate3d(0, 12px, 0);
+    transition: clip-path 1.45s cubic-bezier(.22, .68, .2, 1),
+                opacity .8s ease,
+                transform 1.45s cubic-bezier(.22, .68, .2, 1);
+  }
+
+  html.motion-on .route-section.motion-visible::after {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.route-grid { --route-trace: 0%; position: relative; isolation: isolate; }
+.route-grid::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: -2px;
+  height: 3px;
+  width: var(--route-trace);
+  background: linear-gradient(90deg, #a68a6c, #d0f0ff, #fff);
+  box-shadow: 0 0 18px rgba(98,161,213,.42);
+  pointer-events: none;
+}
+.route-card { overflow: hidden; }
+.route-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(118deg, transparent 19%, rgba(255,255,255,.16) 49%, transparent 79%);
+  transform: translate3d(-120%,0,0);
+  pointer-events: none;
+  transition: transform .62s var(--motion-gentle);
+}
+.route-card:hover::before, .route-card:focus-visible::before { transform: translate3d(120%,0,0); }
+.route-card:is(:hover,:focus-visible) .card-arrow { transform: translate3d(3px,-3px,0); }
+.card-arrow { transition: transform .24s var(--motion-ease); }
+.route-sign { transition: transform .45s var(--motion-ease), color .35s; }
+.route-card:is(:hover,:focus-visible) .route-sign { transform: scale(1.11) rotate(-7deg); color: #e2c093; }
+
+/* 04 / Stage images respond reversibly to their place in the viewport.
+   Keep the scene visible and static when JS, media, or motion is absent. */
+.chapter-stage { overflow: hidden; }
+.chapter-stage .stage-image {
+  inset: -6%;
+  background-attachment: scroll !important;
+  transform: translate3d(0,var(--scene-y,0px),0) scale(1.055);
+}
+.chapter-stage::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: auto 0 0;
+  height: 29%;
+  background: linear-gradient(transparent, rgba(5,10,20,.24));
+  pointer-events: none;
+}
+.stage-title h2, .stage-giant, .stage-eyebrow, .image-badge {
+  transition: opacity .85s var(--motion-ease), transform .9s var(--motion-ease);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-on .chapter-stage:not(.motion-visible) .stage-title h2 { opacity: .02; transform: translate3d(0,38px,0); }
+  html.motion-on .chapter-stage:not(.motion-visible) .stage-giant { opacity: 0; transform: translate3d(0,19px,0) scale(.94); }
+  html.motion-on .chapter-stage:not(.motion-visible) .stage-eyebrow { opacity: 0; transform: translate3d(0,13px,0); }
+  html.motion-on .chapter-stage:not(.motion-visible) .image-badge { opacity: 0; }
+  html.motion-on .chapter-stage.motion-visible .stage-title h2 { transition-delay: .11s; }
+  html.motion-on .chapter-stage.motion-visible .stage-giant { transition-delay: .04s; }
+  html.motion-on .chapter-stage.motion-visible .image-badge { transition-delay: .26s; }
+}
+
+/* 05 / Written observation remains legible while accent strokes resolve. */
+.insight { position: relative; }
+.insight::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 34%;
+  height: 1px;
+  background: linear-gradient(90deg, #b38e63, #e3be88);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .85s var(--motion-ease);
+}
+.insight.motion-visible::before { transform: scaleX(1); }
+.question-list details[open] p { animation: answer-enter .32s var(--motion-ease) both; }
+@keyframes answer-enter { from { opacity: 0; transform: translate3d(0,-7px,0); } to { opacity: 1; transform: translate3d(0,0,0); } }
+
+/* 06 / Navigation respects direction without hiding keyboard focus. */
+.masthead { transition: background .3s, border-color .3s, backdrop-filter .3s, transform .4s var(--motion-gentle); }
+.masthead.is-hidden:not(:focus-within) { transform: translate3d(0,-110%,0); }
+.scroll-meter span { box-shadow: 0 0 15px rgba(148,212,255,.53); }
+@media (hover: hover) and (pointer: fine) {
+  .scroll-callout:active .scroll-circle { transform: scale(.94); }
+  .back-top:hover, .masthead-end:hover { color: var(--gold); }
+}
+
+@media (max-width:720px) {
+  .hero::after,.hero-scan-ring { display: none !important; }
+  .chapter-stage .stage-image { inset: -3%; transform: translate3d(0,var(--scene-y,0px),0) scale(1.025); }
+  .route-grid::before {
+    top: 0;
+    bottom: auto;
+    left: -12px;
+    width: 2px;
+    height: var(--route-trace);
+    background: linear-gradient(#ba9a74,#8caecb,#fff);
+  }
+  .route-card::before { display: none; }
+  .route-card:active { background: #17253a; color: #fff; transform: scale(.995); }
+  .route-card:active small { color: #cfdae9; }
+  .masthead.is-hidden { transform: translate3d(0,-110%,0); }
+  .question-list details[open] p { animation-duration: .22s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.motion-on *, html.motion-on *::before, html.motion-on *::after {
+    animation: none !important;
+    transition-duration: .01ms !important;
+  }
+  .chapter-stage .stage-image { transform: none !important; }
+  .stage-title h2,.stage-giant,.stage-eyebrow,.image-badge { opacity: 1 !important; transform: none !important; }
+  .route-grid::before { width: 100%; }
+  .masthead.is-hidden { transform: none !important; }
+  .insight::before { transform: scaleX(1); }
+}

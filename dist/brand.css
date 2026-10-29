@@ -1,0 +1,141 @@
+/* The supplied Songshan Lake mark is white artwork on transparency.
+   Keep its own proportions and space in the masthead without effects. */
+.masthead .official-logo-link {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 0;
+  min-height: 45px;
+  line-height: 1;
+}
+
+.official-logo-link img {
+  display: block;
+  width: 172px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.official-logo-link:focus-visible {
+  outline: 2px solid #dfc397;
+  outline-offset: 7px;
+  border-radius: 2px;
+}
+
+/* Keep the two partner identities legible without altering either mark. */
+.masthead-brands {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 15px;
+  min-width: 0;
+}
+
+.masthead-brand-divider {
+  display: block;
+  width: 1px;
+  height: 25px;
+  flex: 0 0 1px;
+  background: rgba(233, 228, 219, .42);
+}
+
+.southern-daily-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: filter .25s ease, transform .25s ease;
+}
+
+.southern-daily-logo-link:hover {
+  filter: drop-shadow(0 0 10px rgba(241, 65, 65, .25));
+  transform: translateY(-1px);
+}
+
+.southern-daily-logo-link:focus-visible {
+  outline: 2px solid #dfc397;
+  outline-offset: 5px;
+}
+
+.southern-daily-logo-link img {
+  display: block;
+  width: 138px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,.18));
+}
+
+/* Keep the chapter navigation typographic and borderless. A broad, fading
+   masthead scrim keeps the type legible without a boxed-in control. */
+.masthead {
+  border-bottom: 0;
+}
+
+.masthead:not(.scrolled) {
+  background: linear-gradient(180deg, rgba(3, 9, 22, .81) 0%, rgba(3, 9, 22, .50) 58%, rgba(3, 9, 22, 0) 100%);
+}
+
+.masthead.scrolled {
+  border-bottom: 0;
+}
+
+.desktop-nav {
+  gap: clamp(22px, 2.25vw, 35px);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  color: rgba(242, 246, 252, .92);
+}
+
+.desktop-nav a {
+  padding: 11px 0 12px;
+  text-shadow: 0 1px 10px rgba(1, 6, 16, .16);
+}
+
+.desktop-nav a.active { color: #fff; }
+.desktop-nav a.active::after {
+  bottom: 4px;
+  height: 1px;
+  background: rgba(231, 198, 148, .92);
+}
+
+.desktop-nav a:focus-visible {
+  outline: 2px solid #e7c694;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (max-width: 1100px) and (min-width: 721px) {
+  .desktop-nav { gap: 18px; font-size: 13px; }
+  .masthead-brands { gap: 10px; }
+  .official-logo-link img { width: 148px; }
+  .southern-daily-logo-link img { width: 119px; }
+}
+
+@media (max-width: 720px) {
+  .masthead .official-logo-link { min-height: 37px; }
+  .masthead-brands { gap: 10px; }
+  .official-logo-link img { width: 136px; }
+  .masthead-brand-divider { height: 20px; }
+  .southern-daily-logo-link img { width: 109px; }
+}
+
+@media (max-width: 360px) {
+  .masthead-brands { gap: 7px; }
+  .official-logo-link img { width: 123px; }
+  .southern-daily-logo-link img { width: 100px; }
+}

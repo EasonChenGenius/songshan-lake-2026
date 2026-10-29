@@ -22,12 +22,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Recover and verify original static files once
-        if: ${{ hashFiles('dist/index.html') == '' }}
-        run: python scripts/import_source.py
+      - name: Verify committed site files
+        run: |
+          test -s dist/index.html
+          test -s dist/styles.css
+          test -s dist/main.js
       - uses: actions/configure-pages@v5
         with:
           enablement: true

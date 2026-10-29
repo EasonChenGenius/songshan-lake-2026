@@ -7,11 +7,21 @@
 
 ## 部署方式
 
-GitHub Actions 在推送 `main` 后发布网站。仓库暂未收录二进制图片和视频；当 `dist/index.html` 不存在时，`scripts/import_source.py` 会从已发布的 GitHub Pages 读取静态文件，并按 `scripts/source-manifest.json` 中的 SHA-256 校验后生成 `dist`。这一步不依赖原站的访问权限，且工作流只有仓库读取权限。
+本仓库已保存可直接运行的完整静态网页文件。`dist/` 包含 HTML、CSS、JavaScript、图片和视频；`source-assets/` 与 `data/` 保留部分素材及地图数据，便于后续维护。
 
-当前清单对应原站的 58 个实际使用文件，包括首页、样式、交互脚本、图片和视频。导入时会移除原有镜像首页混入的 Cloudflare 验证脚本。页面使用相对资源路径，可在 GitHub Pages 的仓库子路径下加载。
+GitHub Actions 在每次推送到 `main` 后自动校验并发布 `dist/` 到 GitHub Pages。网页使用相对资源路径，可在仓库子路径下正常加载。本地预览可运行：
 
-如需长期直接维护网站文件，可把完整 `dist` 提交到本仓库；工作流将优先使用仓库中的 `dist`。本地预览可运行 `python3 -m http.server 8000 --directory dist`。
+```bash
+python3 -m http.server 8000 --directory dist
+```
+
+## 后续修改与同步
+
+1. 以本仓库 `main` 分支中的 `dist/` 为对外发布版本；在此处修改网页代码和资源。
+2. 每次修改完成后，提交并推送到 `main`，GitHub Actions 就会自动重新发布，公开链接保持不变。
+3. 通过 GitHub 的 **Code → Download ZIP** 可获取完整站点文件；打开页面时建议使用本地静态服务器，以确保资源与交互正常加载。
+
+**注意：** 上方“原站”属于独立的 ChatGPT Site。直接在原站编辑不会自动同步到本仓库；如在原站做了新的修改，仍需将更新后的文件提交到这里，才能更新 GitHub Pages。
 
 ## 内容说明
 

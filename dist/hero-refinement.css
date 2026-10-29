@@ -1,0 +1,85 @@
+/* The training programme is a primary editorial identity, not a tiny caption. */
+.hero .hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  max-width: 100%;
+  color: #fff8ed;
+  text-transform: none;
+}
+.hero .hero-eyebrow .status-dot {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  background: #f0ce91;
+  box-shadow: 0 0 0 5px rgba(240, 206, 145, .10), 0 0 23px rgba(250, 199, 126, .64);
+}
+.hero-event-lockup { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.hero-event-name {
+  font-family: 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'SimSun', serif;
+  font-size: clamp(22px, 2.3vw, 34px);
+  font-weight: 600;
+  letter-spacing: .095em;
+  line-height: 1.5;
+  text-shadow: 0 2px 23px rgba(0, 0, 0, .42);
+}
+.hero-event-location {
+  color: rgba(232, 235, 244, .83);
+  font-family: Georgia, 'PingFang SC', sans-serif;
+  font-size: clamp(10px, .86vw, 13px);
+  font-weight: 400;
+  letter-spacing: .16em;
+  line-height: 1.65;
+}
+.hero-event-location > span { padding-inline: 7px; color: rgba(230, 200, 153, .83); }
+.hero .hero-eyebrow { transform: translateY(-13px); }
+.hero .hero-title-wrap { margin-top: clamp(16px, 2.6vh, 28px); }
+.hero h1 { line-height: 1.025; }
+.hero h1 .hero-unseen { color: #d8e9ff; }
+.hero h1 .title-stop { display: inline-block; transform: translateX(.10em); }
+.hero .hero-bottom { margin-top: clamp(23px, 3.5vh, 48px); }
+.hero .scroll-callout { gap: 16px; }
+.hero .scroll-callout-label {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .075em;
+  color: #f9f5ee;
+}
+.hero .scroll-arrow {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(231, 212, 180, .58);
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .015));
+  color: #e9cb97;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .11), 0 5px 22px rgba(0, 0, 0, .15);
+  font-size: inherit;
+  line-height: 1;
+}
+.hero .scroll-arrow svg { display: block; }
+.hero .scroll-callout:hover .scroll-arrow,
+.hero .scroll-callout:focus-visible .scroll-arrow { transform: translateY(4px); border-color: rgba(245, 220, 175, .9); }
+@media (min-width: 721px) {
+  .hero .hero-content { padding-bottom: 2vh; }
+  .hero .hero-floor { padding-block: 18px 16px; }
+}
+
+@media (max-width: 720px) {
+  .hero .hero-eyebrow { max-width: 100%; gap: 12px; }
+  .hero .hero-eyebrow { transform: translateY(-8px); }
+  .hero-event-name { font-size: clamp(18px, 5.2vw, 24px); letter-spacing: .04em; }
+  .hero-event-location { font-size: 10px; letter-spacing: .08em; }
+  .hero .hero-title-wrap { margin-top: auto; }
+  .hero h1 { font-size: clamp(79px, 20.2vw, 130px); line-height: 1.035; }
+  .hero .scroll-callout { gap: 11px; }
+  .hero .scroll-callout-label { font-size: 13px; }
+  .hero .scroll-arrow { width: 36px; height: 36px; }
+  .hero .scroll-arrow svg { width: 17px; height: 17px; }
+}
+@media (max-width: 360px) {
+  .hero-event-name { font-size: 16px; }
+  .hero h1 { font-size: 75px; }
+}

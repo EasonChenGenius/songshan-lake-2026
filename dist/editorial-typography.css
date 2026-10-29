@@ -1,0 +1,150 @@
+/* The opening field-note lede sets the typographic voice for the entire story.
+   Songti carries Chinese prose and headings; small Roman indexing remains quiet. */
+:root {
+  --editorial-serif: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", serif;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--editorial-serif);
+}
+
+/* Let the first image's generous Songti texture continue through every chapter. */
+.chapter .chapter-copy .lede,
+.chapter .chapter-copy > p:not(.lede),
+.chapter .chapter-copy .insight strong,
+.chapter .chapter-meta p,
+.chapter .chapter-meta strong,
+.chapter .chapter-stage h2,
+.chapter .chapter-stage .stage-eyebrow span:last-child,
+.question-module .question-intro h3,
+.question-module .question-list summary .question-text,
+.question-module .question-list details p,
+.health-gallery .health-gallery-story h3,
+.health-gallery .health-gallery-story p,
+.field-video-caption h3,
+.field-video-caption p,
+.kayak-note .kayak-note-copy h3,
+.kayak-note .kayak-note-copy p {
+  font-family: var(--editorial-serif);
+}
+
+/* Visit / place / date: the formerly bold sans-serif block in screenshot two. */
+.chapter .chapter-meta p {
+  font-size: clamp(15px, 1.08vw, 17px);
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: .025em;
+}
+
+.chapter .chapter-meta strong {
+  margin-top: 8px;
+  font-size: clamp(22px, 1.9vw, 28px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -.045em;
+  color: #1d2530;
+}
+
+/* Reading copy is slightly larger; ledes keep their existing expressive scale. */
+.chapter .chapter-copy > p:not(.lede) {
+  font-size: clamp(17px, 1.3vw, 19px);
+  line-height: 2.15;
+  letter-spacing: .012em;
+}
+
+.chapter .chapter-copy > p strong {
+  font-weight: 600;
+}
+
+.chapter .chapter-copy .insight strong {
+  font-weight: 500;
+}
+
+/* Common editorial rhythm for the rest of the story. */
+.prologue .prologue-body > p:not(.eyebrow),
+.epilogue .epilogue-inner > p,
+.kayak-note .kayak-note-copy p {
+  font-family: var(--editorial-serif);
+  font-size: clamp(17px, 1.27vw, 19px);
+  line-height: 2.15;
+  letter-spacing: .012em;
+}
+
+.route-section .route-header p,
+.health-gallery .health-gallery-story p,
+.field-video-caption p,
+.photo-caption p,
+.footer .footer-information p {
+  font-family: var(--editorial-serif);
+  font-size: clamp(14px, 1.02vw, 16px);
+  line-height: 1.9;
+  letter-spacing: .01em;
+}
+
+.health-gallery .health-gallery-story h3,
+.field-video-caption h3,
+.kayak-note .kayak-note-copy h3 {
+  font-weight: 500;
+}
+
+.question-module .question-list details p {
+  font-size: clamp(15px, 1.08vw, 17px);
+  line-height: 1.9;
+}
+
+/* UI shares the same Chinese typography; indexing retains its neat alignment. */
+.masthead .desktop-nav,
+.masthead .masthead-end,
+.route-section .route-card strong,
+.route-section .route-card small,
+.mobile-chapter-nav,
+.back-top {
+  font-family: var(--editorial-serif);
+}
+
+.chapter .chapter-meta > span,
+.health-gallery .health-gallery-label,
+.health-gallery .health-gallery-image-count,
+.chapter .stage-giant,
+.route-section .route-index {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@media (max-width: 720px) {
+  .chapter .chapter-meta p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .chapter .chapter-meta strong {
+    margin-top: 0;
+    font-size: clamp(19px, 5.3vw, 23px);
+    line-height: 1.5;
+  }
+
+  .chapter .chapter-copy > p:not(.lede),
+  .prologue .prologue-body > p:not(.eyebrow),
+  .epilogue .epilogue-inner > p,
+  .kayak-note .kayak-note-copy p {
+    font-size: 16px;
+    line-height: 2.05;
+  }
+
+  .route-section .route-header p,
+  .health-gallery .health-gallery-story p,
+  .field-video-caption p,
+  .photo-caption p,
+  .footer .footer-information p {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .question-module .question-list details p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+}

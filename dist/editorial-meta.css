@@ -1,0 +1,84 @@
+/* Field-note metadata: legible, quiet editorial hierarchy.
+   The visit/place/date facts deserve more weight than micro-caption chrome. */
+.chapter .chapter-meta {
+  color: #68717b;
+  font-size: 14px;
+  letter-spacing: .035em;
+}
+
+.chapter .chapter-meta > span {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 36px;
+  padding-top: 17px;
+  border-top: 1px solid #c9bdae;
+  color: #78634f;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.5;
+  letter-spacing: .15em;
+}
+
+.chapter .chapter-meta > span::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 54px;
+  height: 3px;
+  background: #b59571;
+}
+
+.chapter .chapter-meta p {
+  margin: 0 0 31px;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: .045em;
+}
+
+.chapter .chapter-meta strong {
+  display: block;
+  margin-top: 8px;
+  color: #252b35;
+  font-size: clamp(20px, 1.55vw, 24px);
+  font-weight: 600;
+  line-height: 1.52;
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .chapter .chapter-meta {
+    display: block;
+    margin-bottom: 43px;
+  }
+
+  .chapter .chapter-meta > span {
+    margin-bottom: 15px;
+    padding-top: 16px;
+    font-size: 12px;
+  }
+
+  .chapter .chapter-meta p {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    align-items: baseline;
+    column-gap: 17px;
+    margin: 0;
+    padding: 17px 0;
+    border-bottom: 1px solid #d9d1c7;
+    font-size: 13px;
+    line-height: 1.7;
+    letter-spacing: .025em;
+  }
+
+  .chapter .chapter-meta p br { display: none; }
+
+  .chapter .chapter-meta strong {
+    margin: 0;
+    font-size: clamp(17px, 4.6vw, 19px);
+    line-height: 1.5;
+    letter-spacing: -.025em;
+  }
+}

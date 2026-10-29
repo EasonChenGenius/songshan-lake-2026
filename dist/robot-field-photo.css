@@ -1,0 +1,90 @@
+/* Chapter 03 / XbotPark group photograph. A quiet editorial closing image. */
+.robot-field-photo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(285px, 1fr);
+  align-items: center;
+  gap: clamp(30px, 4.6vw, 82px);
+  margin-top: clamp(65px, 8vw, 118px);
+  margin-bottom: 0;
+  color: #202936;
+}
+
+.robot-field-photo-visual {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #dbd2c5;
+}
+
+.robot-field-photo-visual img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2048 / 1365;
+  object-fit: cover;
+}
+
+.robot-field-photo-caption {
+  min-width: 0;
+  margin: 0;
+  align-self: center;
+}
+
+.robot-field-photo-index {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .13em;
+  color: #92765a;
+}
+
+.robot-field-photo-rule {
+  display: block;
+  width: 58px;
+  height: 2px;
+  margin: clamp(25px, 3vw, 39px) 0 clamp(23px, 2.8vw, 36px);
+  background: #ae8b65;
+}
+
+.robot-field-photo-caption h3 {
+  font-family: var(--editorial-serif, "Songti SC", "STSong", serif);
+  font-size: clamp(30px, 3.15vw, 48px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -.045em;
+  color: #242b36;
+}
+
+.robot-field-photo-caption p {
+  max-width: 410px;
+  margin-top: 24px;
+  font-family: var(--editorial-serif, "Songti SC", "STSong", serif);
+  font-size: clamp(15px, 1.14vw, 17px);
+  line-height: 2;
+  letter-spacing: .012em;
+  color: #616b72;
+}
+
+.robot-field-photo-caption small {
+  display: block;
+  margin-top: 25px;
+  color: #8d8b87;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+
+@media (min-width: 721px) and (max-width: 1100px) {
+  .robot-field-photo { grid-template-columns: minmax(0, 1.5fr) minmax(270px, 1fr); gap: 32px; }
+  .robot-field-photo-caption h3 { font-size: clamp(29px, 3vw, 37px); }
+}
+
+@media (max-width: 720px) {
+  .robot-field-photo { display: block; margin-top: 55px; }
+  .robot-field-photo-visual { border-radius: 10px; }
+  .robot-field-photo-caption { padding-top: 28px; }
+  .robot-field-photo-rule { margin-block: 18px 21px; }
+  .robot-field-photo-caption h3 { font-size: clamp(31px, 7.6vw, 41px); line-height: 1.46; }
+  .robot-field-photo-caption p { margin-top: 16px; font-size: 15px; line-height: 1.95; }
+  .robot-field-photo-caption small { margin-top: 18px; }
+}

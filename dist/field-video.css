@@ -1,0 +1,134 @@
+/* The field clip replaces chapter 03's placeholder: borderless video,
+   automatic silent looping in view, and minimal optional controls. */
+.field-video-row {
+  align-items: center;
+}
+
+.field-video-shell {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0d1117;
+}
+
+.field-video-shell video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.field-video-controls {
+  display: none;
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1;
+  align-items: center;
+  gap: 9px;
+}
+
+.field-video-shell.is-enhanced .field-video-controls {
+  display: flex;
+}
+
+.field-video-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .54);
+  border-radius: 50%;
+  background: rgba(8, 13, 20, .43);
+  color: #fff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: background .22s ease, border-color .22s ease, transform .22s ease;
+}
+
+.field-video-controls button:hover {
+  background: rgba(8, 13, 20, .72);
+  border-color: rgba(255, 255, 255, .9);
+  transform: translateY(-1px);
+}
+
+.field-video-controls button:active {
+  transform: scale(.95);
+}
+
+.field-video-controls svg {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
+.field-video-controls [data-state="play"] .icon-play,
+.field-video-controls [data-state="pause"] .icon-pause,
+.field-video-controls [data-state="muted"] .icon-muted,
+.field-video-controls [data-state="audible"] .icon-volume {
+  display: block;
+}
+
+.field-video-controls button:focus-visible {
+  outline: 2px solid #e7c694;
+  outline-offset: 3px;
+}
+
+.field-video-caption {
+  border-top: 0;
+  padding: 0 0 0 clamp(0px, 1vw, 15px);
+}
+
+.field-video-caption::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin-bottom: 23px;
+  background: #b9956c;
+}
+
+.field-video-caption span {
+  color: #816f60;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .13em;
+}
+
+.field-video-caption h3 {
+  margin: 23px 0 20px;
+  color: #202733;
+  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-size: clamp(29px, 2.7vw, 42px);
+  font-weight: 600;
+  line-height: 1.47;
+  letter-spacing: -.045em;
+}
+
+.field-video-caption p {
+  max-width: 29em;
+  margin: 0;
+  color: #626a72;
+  font-size: clamp(14px, 1.12vw, 17px);
+  line-height: 1.95;
+  letter-spacing: .015em;
+}
+
+@media (max-width: 720px) {
+  .field-video-shell { aspect-ratio: 16 / 9; }
+  .field-video-controls { right: 12px; bottom: 12px; gap: 8px; }
+  .field-video-controls button { width: 44px; height: 44px; }
+  .field-video-caption { padding: 8px 0 0; }
+  .field-video-caption h3 { margin: 16px 0 13px; font-size: 30px; }
+  .field-video-caption p { font-size: 14px; line-height: 1.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-video-controls button { transition: none; transform: none !important; }
+}

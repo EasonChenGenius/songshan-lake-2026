@@ -1,0 +1,163 @@
+/* Chapter 03: one original scene is now two layers — empty lab and robot cutout.
+   Movement occurs only as the chapter enters; never an infinite attention loop. */
+.stage-copper .image-robot {
+  z-index: -4;
+  background-image: url("assets/robot-lab-clean.webp");
+  background-position: center center;
+}
+
+.stage-copper .robot-contact-shadow {
+  position: absolute;
+  z-index: -3;
+  left: 55%;
+  bottom: 7.5%;
+  width: 32%;
+  height: 8%;
+  background: radial-gradient(ellipse at center, rgba(3,6,11,.7), rgba(3,6,11,.18) 50%, transparent 73%);
+  filter: blur(9px);
+  opacity: .5;
+  pointer-events: none;
+}
+
+.stage-copper .robot-walker {
+  position: absolute;
+  z-index: -2;
+  left: 39%;
+  bottom: 7%;
+  width: auto;
+  height: 78%;
+  aspect-ratio: 3 / 2;
+  max-width: none;
+  transform-origin: 55% 92%;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.stage-copper .robot-static {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+}
+
+.stage-copper .robot-gait {
+  display: none;
+  position: absolute;
+  inset: 0;
+  transform: translateZ(0);
+}
+
+/* Four consistent leg poses share one small atlas. A brief dissolve between
+   poses avoids the hard 4-fps snap of a single stepped background image. */
+.stage-copper .gait-pose {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-image: url("assets/robot-gait-atlas.webp");
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  will-change: opacity;
+}
+
+.stage-copper .gait-pose-a { background-position: 0 0; opacity: 1; }
+.stage-copper .gait-pose-b { background-position: 100% 0; }
+.stage-copper .gait-pose-c { background-position: 0 100%; }
+.stage-copper .gait-pose-d { background-position: 100% 100%; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .stage-copper.robot-stage-ready .robot-gait { display: block; }
+  .stage-copper.robot-stage-ready .robot-static { visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .stage-copper.robot-stage-ready:not(.robot-approaching) .robot-walker {
+    opacity: 0;
+    transform: translate3d(12%, -9%, 0) scale(.74);
+  }
+
+  .stage-copper.robot-stage-ready:not(.robot-approaching) .robot-contact-shadow {
+    opacity: 0;
+    transform: translate3d(9%, 0, 0) scale(.65);
+  }
+
+  .stage-copper.robot-approaching .robot-walker {
+    animation: robot-walk-in 3.2s cubic-bezier(.22,.62,.26,1) both;
+    will-change: transform, opacity;
+  }
+
+  .stage-copper.robot-approaching .gait-pose-a {
+    animation: gait-a .64s linear 0s 5 both;
+  }
+  .stage-copper.robot-approaching .gait-pose-b {
+    animation: gait-b .64s linear 0s 5 both;
+  }
+  .stage-copper.robot-approaching .gait-pose-c {
+    animation: gait-c .64s linear 0s 5 both;
+  }
+  .stage-copper.robot-approaching .gait-pose-d {
+    animation: gait-d .64s linear 0s 5 both;
+  }
+
+  @keyframes gait-a {
+    0%, 18% { opacity: 1; }
+    25%, 93% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes gait-b {
+    0%, 18% { opacity: 0; }
+    25%, 43% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  @keyframes gait-c {
+    0%, 43% { opacity: 0; }
+    50%, 68% { opacity: 1; }
+    75%, 100% { opacity: 0; }
+  }
+  @keyframes gait-d {
+    0%, 68% { opacity: 0; }
+    75%, 93% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  .stage-copper.robot-approaching .robot-contact-shadow {
+    animation: robot-shadow-in 3.2s cubic-bezier(.22,.62,.26,1) both;
+  }
+
+  @keyframes robot-walk-in {
+    0% { opacity: .55; transform: translate3d(12%,-7%,0) scale(.7); }
+    10% { opacity: 1; }
+    100% { opacity: 1; transform: translate3d(0,0,0) scale(1); }
+  }
+
+  @keyframes robot-shadow-in {
+    0% { opacity: .08; transform: translate3d(9%,0,0) scale(.65); }
+    100% { opacity: .5; transform: translate3d(0,0,0) scale(1); }
+  }
+}
+
+@media (max-width: 720px) {
+  .stage-copper .image-robot { background-position: 59% center; }
+  .stage-copper .robot-walker {
+    left: 6%;
+    bottom: 26%;
+    height: 53%;
+    transform-origin: 58% 90%;
+  }
+  .stage-copper .robot-contact-shadow {
+    left: 26%;
+    bottom: 26%;
+    width: 69%;
+    height: 5%;
+    opacity: .42;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-copper .robot-walker,
+  .stage-copper .robot-contact-shadow { animation: none !important; transform: none !important; opacity: 1; }
+  .stage-copper .robot-gait { display: none !important; }
+  .stage-copper .robot-static { visibility: visible !important; }
+  .stage-copper .robot-contact-shadow { opacity: .5; }
+}

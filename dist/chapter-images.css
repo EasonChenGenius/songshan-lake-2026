@@ -1,0 +1,8 @@
+/* Purpose-made conceptual imagery for the reporting theme, not actual footage. */
+.image-robot { background-image: url("assets/robot-editorial.jpg"); }
+.image-life { background-image: url("assets/life-editorial.jpg"); }
+.image-future { background-image: url("assets/people-editorial.jpg"); }
+
+/* A full-bleed chapter should slide under the translucent fixed masthead. */
+html { scroll-padding-top: 0; }
+[data-chapter] { scroll-margin-top: 0; }
