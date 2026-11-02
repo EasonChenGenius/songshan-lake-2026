@@ -66,6 +66,8 @@
   /* Scale the two-line cover title by viewport height, not width alone.
      This keeps the subtitle and scroll cue inside the first screen. */
   .hero .hero-content { padding-top: clamp(105px, 14vh, 172px); padding-bottom: 0; }
+  /* Lift the complete cover lockup together, preserving its internal spacing. */
+  .hero .hero-content, .hero .hero-floor { translate: 0 clamp(-56px, -4vh, -30px); }
   .hero .hero-title-wrap { margin-top: clamp(8px, 1.5vh, 18px); }
   .hero h1 { font-size: clamp(92px, min(12vw, 18vh), 208px); line-height: .94; margin-top: clamp(6px, 1vh, 12px); }
   .hero .hero-bottom { margin-top: clamp(12px, 2vh, 25px); }
