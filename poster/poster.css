@@ -181,6 +181,158 @@ strong { font-weight: 650; }
 .poster-footer p { max-width: 670px; font-size: 12px; line-height: 2; }
 .poster-footer > span { white-space: nowrap; }
 
+/* Rounded glass surfaces: still imagery, no motion, carefully restrained sheen. */
+.poster { border-radius: 30px; }
+.cover::after { border-radius: 28px; }
+
+.atlas-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 32px;
+  border-color: rgba(225, 244, 238, .46);
+  background: linear-gradient(145deg, rgba(36, 99, 101, .92), rgba(15, 55, 64, .96) 48%, rgba(7, 39, 51, .98));
+  box-shadow: inset 0 2px 2px rgba(255, 255, 255, .20), inset 0 -2px 18px rgba(5, 32, 41, .14), 0 24px 48px rgba(20, 47, 54, .17);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+}
+.atlas-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(129deg, rgba(255, 255, 255, .16), transparent 31%, transparent 75%, rgba(176, 226, 228, .05));
+}
+.atlas-legend span { border-radius: 999px; background: rgba(230, 251, 243, .075); }
+.author-card {
+  padding: 21px 23px;
+  border: 1px solid rgba(255, 255, 255, .84);
+  border-radius: 23px;
+  background: linear-gradient(138deg, rgba(255, 255, 255, .76), rgba(255, 255, 255, .30));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95), 0 11px 26px rgba(36, 45, 53, .045);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.story-index-grid { gap: 14px; border: 0; }
+.story-index-grid > div,
+.story-index-grid > div:first-child {
+  border: 1px solid rgba(255, 255, 255, .78);
+  border-radius: 25px;
+  background: linear-gradient(146deg, rgba(255, 255, 255, .66), rgba(255, 255, 255, .19) 67%, rgba(233, 220, 204, .38));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .86), 0 12px 26px rgba(55, 47, 42, .045);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Bring back the five original large-title images as static, framed art. */
+.chapter-visual {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: 56px;
+  border: 1px solid rgba(255, 255, 255, .78);
+  border-radius: 35px;
+  background: #15273b;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, .3), 0 24px 50px rgba(26, 35, 46, .15);
+}
+.chapter-visual > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: saturate(.96) contrast(1.02);
+}
+.chapter-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: inherit;
+  box-shadow: inset 0 15px 30px rgba(255, 255, 255, .075), inset 0 -70px 85px rgba(3, 11, 25, .18);
+  pointer-events: none;
+}
+.chapter-visual figcaption {
+  position: absolute;
+  z-index: 2;
+  left: 26px;
+  right: 26px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 15px 23px;
+  border: 1px solid rgba(255, 255, 255, .30);
+  border-radius: 20px;
+  color: #fbfaf9;
+  background: linear-gradient(130deg, rgba(13, 23, 41, .67), rgba(18, 31, 51, .38));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .20), 0 8px 30px rgba(0, 0, 0, .13);
+  backdrop-filter: blur(22px) saturate(1.24);
+  -webkit-backdrop-filter: blur(22px) saturate(1.24);
+  font-size: 17px;
+  letter-spacing: .09em;
+}
+.chapter-visual figcaption span:last-child { color: #d9d6d1; font: 550 12px/1.6 var(--serif); white-space: nowrap; }
+.chapter-visual--dark { border-color: rgba(209, 223, 240, .25); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .16), 0 20px 50px rgba(0, 0, 0, .28); }
+.chapter-visual + .chapter-editorial { margin-top: 72px; }
+
+.takeaway {
+  padding: 27px 32px 32px;
+  border: 1px solid rgba(255, 255, 255, .84);
+  border-radius: 25px;
+  background: linear-gradient(128deg, rgba(255, 255, 255, .77), rgba(255, 255, 255, .31) 65%, rgba(225, 210, 190, .20));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .85), 0 13px 26px rgba(34, 39, 46, .05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.photo-card {
+  overflow: hidden;
+  border-radius: 25px;
+  border-color: rgba(255, 255, 255, .85);
+  background: linear-gradient(145deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .46) 65%, rgba(239, 229, 217, .72));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .98), 0 16px 35px rgba(29, 37, 44, .10);
+  backdrop-filter: blur(15px) saturate(1.08);
+  -webkit-backdrop-filter: blur(15px) saturate(1.08);
+}
+.photo-card > img { border-bottom: 1px solid rgba(255, 255, 255, .46); }
+
+.robotic-backdrop {
+  height: 485px;
+  margin: 60px 90px 0;
+  border: 1px solid rgba(218, 232, 244, .23);
+  border-radius: 34px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 30px 55px rgba(0, 0, 0, .18);
+}
+.robotic-backdrop > span { right: 32px; bottom: 28px; }
+.chapter--dark .takeaway {
+  border-color: rgba(198, 218, 233, .28);
+  background: linear-gradient(135deg, rgba(51, 77, 101, .50), rgba(20, 39, 59, .62));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16), 0 19px 35px rgba(0, 0, 0, .12);
+}
+.question {
+  border-color: rgba(195, 215, 231, .27);
+  border-radius: 27px;
+  background: linear-gradient(145deg, rgba(60, 80, 103, .46), rgba(20, 37, 55, .68) 75%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .13), 0 16px 34px rgba(0, 0, 0, .12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.question-reflection { border: 1px solid rgba(197, 174, 139, .32); border-left: 3px solid #b99b76; border-radius: 20px; background: rgba(39, 60, 82, .44); }
+.lake-interlude {
+  overflow: hidden;
+  margin: 106px 0 0;
+  border: 1px solid rgba(206, 228, 230, .35);
+  border-radius: 34px;
+  background: linear-gradient(133deg, rgba(24, 71, 85, .93), #102b3a 70%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16), 0 24px 42px rgba(19, 54, 65, .16);
+}
+.talent-stage { overflow: hidden; border-radius: 30px; border: 1px solid rgba(255, 255, 255, .75); box-shadow: 0 22px 42px rgba(35, 45, 51, .13); }
+.talent-stage figcaption { right: 20px; bottom: 20px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 16px; background: rgba(11, 25, 43, .52); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.epilogue-grid > div { padding: 28px 30px 32px; border: 1px solid rgba(203, 221, 235, .20); border-radius: 27px; background: linear-gradient(135deg, rgba(68, 87, 115, .32), rgba(31, 47, 72, .23)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .11); }
+
 @media (max-width: 1100px) {
   .cover { min-height: 810px; }
   .cover h1 { font-size: 17vw; }
@@ -193,7 +345,8 @@ strong { font-weight: 650; }
   .chapter-heading { grid-template-columns: 190px 1fr; gap: 35px; }
   .chapter-number { font-size: 175px; }
   .chapter-inner { padding-inline: 55px; }
-  .lake-interlude { margin-left: -55px; margin-right: -55px; }
+  .robotic-backdrop { margin-left: 55px; margin-right: 55px; }
+  .lake-interlude { margin-left: 0; margin-right: 0; }
   .lake-interlude > div { padding: 44px 45px; }
   .lake-interlude h3 { font-size: 45px; }
   .lake-interlude p { font-size: 16px; }
@@ -234,9 +387,7 @@ strong { font-weight: 650; }
   .story-index-heading h2 { font-size: 46px; }
   .story-index-heading > p:not(.eyebrow) { font-size: 16px; }
   .story-index-grid { grid-template-columns: 1fr; margin-top: 37px; }
-  .story-index-grid > div { min-height: 105px; display: grid; grid-template-columns: 65px 1fr; grid-template-rows: auto auto; align-items: center; padding: 20px 4px; gap: 5px 18px; border-right: none; border-bottom: 1px solid #b9b1a6; text-align: left; }
-  .story-index-grid > div:first-child { border-left: none; }
-  .story-index-grid > div:last-child { border-bottom: none; }
+  .story-index-grid > div { min-height: 105px; display: grid; grid-template-columns: 65px 1fr; grid-template-rows: auto auto; align-items: center; padding: 20px 18px; gap: 5px 18px; text-align: left; }
   .story-index-grid span { grid-column: 1; font-size: 12px; }
   .story-index-grid b { grid-column: 1; grid-row: 2; margin: 0; font-size: 33px; }
   .story-index-grid strong, .story-index-grid small { grid-column: 2; }
@@ -246,7 +397,11 @@ strong { font-weight: 650; }
   .chapter-number { font-size: 135px; }
   .chapter-heading-body h2 { font-size: 42px; }
   .chapter-heading-body > p { font-size: 14px; }
+  .chapter-visual { margin-top: 35px; border-radius: 24px; }
+  .chapter-visual figcaption { left: 14px; right: 14px; bottom: 14px; gap: 10px; flex-wrap: wrap; padding: 11px 13px; border-radius: 14px; font-size: 12px; }
+  .chapter-visual figcaption span:last-child { font-size: 10px; }
   .chapter-editorial { margin-top: 46px; }
+  .chapter-visual + .chapter-editorial { margin-top: 46px; }
   .chapter-lede { font-size: 26px; }
   .chapter-columns { gap: 17px; margin-top: 30px; }
   .chapter-columns p { font-size: 16px; }
@@ -258,7 +413,7 @@ strong { font-weight: 650; }
   .photo-card figcaption { padding: 12px; grid-template-columns: 21px 1fr; gap: 8px; min-height: 100px; font-size: 12px; }
   .photo-card figcaption b { font-size: 12px; }
   .photo-card figcaption strong { font-size: 18px; }
-  .robotic-backdrop { height: 300px; }
+  .robotic-backdrop { height: 300px; margin: 28px 28px 0; border-radius: 24px; }
   .robotic-backdrop > span { right: 24px; bottom: 26px; font-size: 9px; }
   .chapter-inner { padding: 60px 28px 84px; }
   .questions-intro { margin-top: 57px; }
@@ -267,7 +422,7 @@ strong { font-weight: 650; }
   .question h4 { min-height: auto; font-size: 23px; }
   .question p { font-size: 15px; }
   .question-reflection { font-size: 17px; }
-  .lake-interlude { display: block; margin: 74px -28px 0; }
+  .lake-interlude { display: block; margin: 74px 0 0; border-radius: 24px; }
   .lake-interlude > img { min-height: 0; height: 260px; }
   .lake-interlude > div { padding: 35px 28px 47px; }
   .lake-interlude h3 { font-size: 42px; }
