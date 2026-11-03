@@ -62,6 +62,7 @@ strong { font-weight: 650; }
 .atlas-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 8px 24px; }
 .atlas-legend span { padding: 5px 10px; border: 1px solid rgba(216, 233, 225, .26); border-radius: 2px; font-size: 12px; color: #caddd4; }
 .atlas-card p { font-size: 11px; line-height: 1.7; color: #b2c9c4; }
+.atlas-card a { color: #d9e9df; text-decoration-color: rgba(217, 233, 223, .45); text-underline-offset: 3px; }
 .prologue-copy { padding-top: 26px; }
 .prologue-copy h2 { margin: 29px 0 39px; font-size: clamp(45px, 4.5vw, 67px); font-weight: 600; letter-spacing: -.05em; line-height: 1.5; }
 .prologue-copy > p:not(.eyebrow) { margin-bottom: 25px; color: #56616b; font-size: 18px; line-height: 2.06; }
