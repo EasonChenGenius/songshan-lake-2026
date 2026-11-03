@@ -1,0 +1,180 @@
+/* Field notes / more legible personal judgements and a paced editorial ending. */
+
+/* Conclusions should read as the author's argument, not tiny footnotes. */
+.chapter .chapter-copy .insight,
+.question-conclusion .insight {
+  display: block;
+  position: relative;
+  isolation: isolate;
+  margin-top: clamp(45px, 5.5vw, 74px);
+  padding: clamp(28px, 3.2vw, 46px) clamp(26px, 3.4vw, 48px);
+  border: 0;
+  border-left: 3px solid #ba9365;
+  background: linear-gradient(135deg, rgba(255,255,255,.7), rgba(240,231,216,.5) 84%);
+  box-shadow: 0 18px 50px rgba(55,47,38,.045), inset 0 1px rgba(255,255,255,.6);
+}
+.chapter .chapter-copy .insight::before,
+.question-conclusion .insight::before {
+  top: 0; left: 0; width: 100%; height: 1px;
+  background: linear-gradient(90deg, rgba(181,144,101,.46), rgba(181,144,101,0) 75%);
+}
+.chapter .insight-icon,
+.question-conclusion .insight-icon { display: none; }
+.chapter .chapter-copy .insight small,
+.question-conclusion .insight small {
+  display: block;
+  margin: 0 0 clamp(18px,2vw,28px);
+  color: #876f55;
+  font-size: clamp(15px,1.2vw,18px);
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: .075em;
+}
+.chapter .chapter-copy .insight strong,
+.question-conclusion .insight strong {
+  display: block;
+  max-width: 790px;
+  color: #27313d;
+  font-family: var(--editorial-serif), 'Songti SC', serif;
+  font-size: clamp(25px,2.15vw,34px);
+  font-weight: 600;
+  letter-spacing: -.025em;
+  line-height: 1.68;
+  text-wrap: pretty;
+}
+.chapter .chapter-copy .insight > div::after,
+.question-conclusion .insight > div::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 2px;
+  margin-top: 27px;
+  background: #b6926b;
+}
+/* The third chapter now concludes after the three questions, in reading order. */
+#chapter-3 .chapter-copy > .insight { display: none; }
+
+/* The three questions have an answer in the narrator's voice, not another list of prompts. */
+.question-list details p {
+  color: #4a5361;
+  font-family: var(--editorial-serif), 'Songti SC', serif;
+  font-size: clamp(17px,1.35vw,20px);
+  line-height: 2.05;
+  letter-spacing: .005em;
+}
+.question-list details[open] { background: linear-gradient(90deg,rgba(223,210,192,.17),transparent 75%); }
+.question-list details[open] summary { padding-inline: clamp(0px,.4vw,8px); }
+.question-conclusion { margin-top: clamp(-28px,-2vw,-10px); margin-bottom: clamp(75px,9vw,124px); }
+.question-conclusion-index {
+  display: block;
+  padding-top: 24px;
+  border-top: 1px solid #cbbda9;
+  color: #977b5c;
+  font-size: clamp(13px,.95vw,15px);
+  font-weight: 600;
+  letter-spacing: .13em;
+}
+.question-conclusion > p {
+  max-width: 1000px;
+  margin-top: 26px;
+  color: #56606b;
+  font-family: var(--editorial-serif), 'Songti SC', serif;
+  font-size: clamp(22px,2.1vw,32px);
+  line-height: 1.85;
+}
+.question-conclusion > p strong { color: #1f2c3d; font-weight: 600; }
+.question-conclusion .insight { max-width: 1040px; margin-top: 38px; }
+
+/* A cinematic closing sequence: statement, two reflections, then one takeaway. */
+#epilogue { background: radial-gradient(ellipse 85% 80% at 95% 15%,#16263e 0%,#0b1425 65%,#070d19 100%); }
+#epilogue .epilogue-light { opacity: .55; }
+#epilogue .epilogue-inner { max-width: 1230px; }
+#epilogue h2 { margin-bottom: clamp(48px,6vw,86px); }
+#epilogue .epilogue-inner > p.epilogue-lead {
+  max-width: 1000px;
+  margin: 0 0 clamp(76px,9vw,132px);
+  color: #d4dbe6;
+  font-size: clamp(23px,2vw,31px);
+  line-height: 1.95;
+  letter-spacing: .012em;
+  text-wrap: pretty;
+}
+.epilogue-reflections { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(35px,6vw,110px); }
+.epilogue-reflection {
+  min-width: 0;
+  padding: clamp(29px,3vw,42px) 0 0;
+  border-top: 1px solid rgba(218,198,166,.6);
+}
+.epilogue-number {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: #d5b98e;
+  font-family: Georgia,'Songti SC',serif;
+  font-size: clamp(15px,1.13vw,18px);
+  font-weight: 500;
+  letter-spacing: .12em;
+}
+.epilogue-number i { display: block; width: 35px; height: 1px; background: rgba(213,185,142,.55); }
+.epilogue-reflection p {
+  margin: clamp(27px,3vw,43px) 0 0;
+  color: #bac8d7;
+  font-family: var(--editorial-serif), 'Songti SC', serif;
+  font-size: clamp(19px,1.48vw,24px);
+  line-height: 2.05;
+}
+.epilogue-reflection p strong { color: #f0e5d4; font-weight: 600; }
+#epilogue .epilogue-inner > p.epilogue-lastword {
+  max-width: 1100px;
+  margin: clamp(100px,12vw,180px) 0 0;
+  padding-left: clamp(22px,3vw,45px);
+  border-left: 2px solid #d4b68b;
+  color: #bbc8d6;
+  font-size: clamp(27px,3.4vw,52px);
+  line-height: 1.75;
+}
+#epilogue .epilogue-lastword strong { color: #e5c69a; font-weight: 600; }
+#epilogue .closing-line { margin-top: clamp(92px,12vw,170px); font-size: clamp(12px,.9vw,15px); }
+
+/* One reveal language across Q&A, field notes and epilogue, with reading-order offsets. */
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-on .editorial-reveal:not(.is-visible),
+  html.motion-on .chapter .insight:not(.motion-visible) {
+    opacity: 0;
+    transform: translate3d(0,44px,0);
+    filter: blur(3px);
+  }
+  html.motion-on .editorial-reveal,
+  html.motion-on .chapter .insight {
+    transition: opacity 1.03s cubic-bezier(.16,1,.3,1),
+                transform 1.16s cubic-bezier(.16,1,.3,1),
+                filter 1s ease;
+    transition-delay: var(--editorial-delay,0ms);
+  }
+  html.motion-on .editorial-reveal.is-visible,
+  html.motion-on .chapter .insight.motion-visible {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    filter: blur(0);
+  }
+  .epilogue-reflection .epilogue-number i { transform-origin: left; transition: transform 1.1s cubic-bezier(.16,1,.3,1) .4s; }
+  html.motion-on .epilogue-reflection:not(.is-visible) .epilogue-number i { transform: scaleX(0); }
+}
+
+@media (max-width: 720px) {
+  .chapter .chapter-copy .insight,
+  .question-conclusion .insight { padding: 25px 22px 27px; border-left-width: 2px; margin-top: 36px; }
+  .chapter .chapter-copy .insight small,
+  .question-conclusion .insight small { font-size: 14px; margin-bottom: 14px; }
+  .chapter .chapter-copy .insight strong,
+  .question-conclusion .insight strong { font-size: clamp(22px,5.8vw,28px); line-height: 1.78; }
+  .question-list details p { font-size: 16px; line-height: 1.95; }
+  .question-conclusion { margin-top: -9px; margin-bottom: 78px; }
+  .question-conclusion-index { font-size: 12px; }
+  .question-conclusion > p { font-size: 22px; }
+  .epilogue-reflections { grid-template-columns: 1fr; gap: 54px; }
+  #epilogue .epilogue-inner > p.epilogue-lead { font-size: 21px; line-height: 1.85; margin-bottom: 72px; }
+  .epilogue-reflection p { font-size: 19px; line-height: 1.95; }
+  #epilogue .epilogue-inner > p.epilogue-lastword { margin-top: 90px; padding-left: 17px; font-size: 28px; }
+  #epilogue .closing-line { margin-top: 90px; font-size: 11px; }
+}
