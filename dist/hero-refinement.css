@@ -17,7 +17,7 @@
 .hero-event-lockup { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
 .hero-event-name {
   font-family: 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'SimSun', serif;
-  font-size: clamp(26px, 2.75vw, 41px);
+  font-size: clamp(27px, 3.4vw, 44px);
   font-weight: 600;
   letter-spacing: .095em;
   line-height: 1.5;
@@ -26,7 +26,7 @@
 .hero-event-location {
   color: rgba(232, 235, 244, .83);
   font-family: Georgia, 'PingFang SC', sans-serif;
-  font-size: clamp(12px, 1.07vw, 16px);
+  font-size: clamp(13px, 1.45vw, 17px);
   font-weight: 400;
   letter-spacing: .16em;
   line-height: 1.65;
@@ -63,15 +63,13 @@
 .hero .scroll-callout:hover .scroll-arrow,
 .hero .scroll-callout:focus-visible .scroll-arrow { transform: translateY(4px); border-color: rgba(245, 220, 175, .9); }
 @media (min-width: 721px) {
-  /* Scale the two-line cover title by viewport height, not width alone.
-     This keeps the subtitle and scroll cue inside the first screen. */
-  .hero .hero-content { padding-top: clamp(105px, 14vh, 172px); padding-bottom: 0; }
-  /* Lift the complete cover lockup together, preserving its internal spacing. */
-  .hero .hero-content, .hero .hero-floor { translate: 0 clamp(-56px, -4vh, -30px); }
-  .hero .hero-title-wrap { margin-top: clamp(8px, 1.5vh, 18px); }
-  .hero h1 { font-size: clamp(92px, min(12vw, 18vh), 208px); line-height: .94; margin-top: clamp(6px, 1vh, 12px); }
-  .hero .hero-bottom { margin-top: clamp(12px, 2vh, 25px); }
-  .hero .hero-floor { padding-block: 12px 14px; }
+  .hero .hero-content { position: relative; padding-top: clamp(100px, 13vh, 160px); padding-bottom: 0; }
+  /* Keep the programme identity just below the masthead, independently of the title. */
+  .hero .hero-eyebrow { position: absolute; top: clamp(107px, 13vh, 135px); left: 0; transform: none; }
+  .hero .hero-title-wrap { margin-top: clamp(10px, 2vh, 22px); translate: 0 -35px; }
+  .hero h1 { font-size: clamp(88px, min(11.5vw, 18vh), 208px); line-height: .96; margin-top: 8px; }
+  .hero .hero-bottom { margin-top: clamp(14px, 2vh, 25px); translate: 0 -35px; }
+  .hero .hero-floor { padding-block: 12px 14px; translate: 0 -35px; }
 }
 
 @media (max-width: 720px) {
