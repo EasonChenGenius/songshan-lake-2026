@@ -63,13 +63,15 @@
 .hero .scroll-callout:hover .scroll-arrow,
 .hero .scroll-callout:focus-visible .scroll-arrow { transform: translateY(4px); border-color: rgba(245, 220, 175, .9); }
 @media (min-width: 721px) {
+  /* Keep the title, subtitle and scroll cue moving as a single editorial group. */
+  .hero { --hero-copy-lift: clamp(90px, 12vh, 120px); }
   .hero .hero-content { position: relative; padding-top: clamp(100px, 13vh, 160px); padding-bottom: 0; }
   /* Keep the programme identity just below the masthead, independently of the title. */
   .hero .hero-eyebrow { position: absolute; top: clamp(107px, 13vh, 135px); left: 0; transform: none; }
-  .hero .hero-title-wrap { margin-top: clamp(10px, 2vh, 22px); translate: 0 -35px; }
+  .hero .hero-title-wrap { margin-top: clamp(10px, 2vh, 22px); translate: 0 calc(-1 * var(--hero-copy-lift)); }
   .hero h1 { font-size: clamp(88px, min(11.5vw, 18vh), 208px); line-height: .96; margin-top: 8px; }
-  .hero .hero-bottom { margin-top: clamp(14px, 2vh, 25px); translate: 0 -35px; }
-  .hero .hero-floor { padding-block: 12px 14px; translate: 0 -35px; }
+  .hero .hero-bottom { margin-top: clamp(14px, 2vh, 25px); translate: 0 calc(-1 * var(--hero-copy-lift)); }
+  .hero .hero-floor { padding-block: 12px 14px; translate: 0 calc(-1 * var(--hero-copy-lift)); }
 }
 
 @media (max-width: 720px) {
