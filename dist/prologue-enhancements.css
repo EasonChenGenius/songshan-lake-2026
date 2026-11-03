@@ -1,0 +1,52 @@
+/* Prologue and field-route refinements: restrained editorial motion and clearer field graphics. */
+@media (min-width: 721px) {
+  .hero .hero-floor { translate: 0 calc(-1 * var(--hero-copy-lift) + 23px); }
+}
+
+/* A technical field-atlas treatment without changing the sourced lake outline. */
+.lake-atlas { background: #102c36; border-color: rgba(195, 222, 209, .42); box-shadow: 0 35px 90px rgba(0,0,0,.37), 0 0 0 7px rgba(216,229,210,.035), inset 0 1px rgba(255,255,255,.18); }
+.lake-atlas::before {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background-image: linear-gradient(rgba(220,239,228,.085) 1px,transparent 1px), linear-gradient(90deg,rgba(220,239,228,.085) 1px,transparent 1px);
+  background-size: 11.5% 11.5%;
+  mask-image: linear-gradient(135deg,rgba(0,0,0,.78),transparent 78%);
+}
+.lake-atlas > img { filter: saturate(1.18) contrast(1.1) brightness(1.07); }
+.lake-marker b { border-radius: 7px; background: rgba(7,27,34,.79); border-color: rgba(234,240,216,.48); box-shadow: 0 7px 20px rgba(3,15,22,.26); }
+.lake-marker i { background: #f6dc9d; box-shadow: 0 0 0 4px rgba(238,217,165,.14), 0 0 16px 3px rgba(238,217,165,.52); }
+.atlas-compass { position: absolute; z-index: 4; top: 5.5%; right: 6%; display: grid; justify-items: center; gap: 4px; font: 700 12px Georgia,serif; color: #eef4dd; text-shadow: 0 1px 5px #061b22; }
+.atlas-compass i { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 20px solid #e9c78e; filter: drop-shadow(0 2px 4px rgba(0,0,0,.3)); }
+.atlas-map-note { position: absolute; z-index: 4; top: 6%; left: 6%; font: 10px Georgia,serif; letter-spacing: .14em; color: rgba(242,244,229,.9); text-shadow: 0 1px 5px #061b22; }
+.atlas-map-note small { display: block; margin-top: 6px; font: 12px 'PingFang SC',sans-serif; letter-spacing: .08em; }
+.prologue-atlas { translate: 0 var(--atlas-shift,0px); }
+
+/* Reveal copy in reading order. The page remains fully visible without JS or with reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-on .prologue-reveal { opacity: 0; transform: translate3d(0,32px,0); filter: blur(3px); transition: opacity .9s cubic-bezier(.22,.68,.2,1), transform 1.05s cubic-bezier(.22,.68,.2,1), filter .9s ease; transition-delay: var(--reveal-delay,0ms); }
+  html.motion-on .prologue-reveal.is-revealed { opacity: 1; transform: translate3d(0,0,0); filter: blur(0); }
+}
+
+/* More legible field cards with centered, elevated symbols and tighter composition. */
+.route-section .route-header { justify-content: flex-start; gap: clamp(25px,4.5vw,62px); }
+.route-section .route-header p { max-width: 395px; font-size: clamp(15px,1.15vw,17px); line-height: 1.95; color: #46515e; }
+.route-section .route-card { min-height: 266px; padding: 22px 15px 25px; }
+.route-section .route-sign { align-self: center; text-align: center; margin: 24px auto 14px; font-size: clamp(44px,4.6vw,60px); line-height: 1.05; }
+.route-section .route-card strong { text-align: center; font-size: clamp(21px,1.8vw,25px); line-height: 1.45; }
+.route-section .route-card small { align-self: center; text-align: center; margin-top: 12px; font-size: clamp(12px,1vw,14px); line-height: 1.65; max-width: 170px; }
+.route-section .route-index { font-size: 11px; }
+
+@media (max-width: 900px) {
+  .route-section .route-header { gap: 24px; }
+  .route-section .route-header p { max-width: 340px; }
+}
+@media (max-width: 720px) {
+  .prologue-atlas { translate: none; }
+  .atlas-map-note small { font-size: 10px; }
+  .atlas-compass { font-size: 10px; }
+  .atlas-compass i { border-left-width: 4px; border-right-width: 4px; border-bottom-width: 15px; }
+  .route-section .route-header p { max-width: none; font-size: 15px; }
+  .route-section .route-card { min-height: 210px; }
+  .route-section .route-sign { margin: 17px auto 12px; font-size: 45px; }
+  .route-section .route-card strong { font-size: 22px; }
+  .route-section .route-card small { font-size: 13px; }
+}
