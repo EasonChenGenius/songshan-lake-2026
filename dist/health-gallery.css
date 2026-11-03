@@ -177,12 +177,28 @@
 }
 
 .health-gallery-story p {
-  max-width: 290px;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: clamp(13px, 1.4vw, 22px);
+  width: 100%;
+  max-width: none;
   min-height: 4.2em;
   margin-top: 15px;
   color: #686b71;
   font-size: clamp(12px, .95vw, 15px);
   line-height: 1.95;
+}
+
+.health-gallery-description-index {
+  white-space: nowrap;
+  color: #9b856c;
+  font-weight: 600;
+}
+
+.health-gallery-description-text {
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .health-gallery-progress {
