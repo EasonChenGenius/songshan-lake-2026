@@ -286,7 +286,7 @@
     updateFieldControls();
   }
 
-  // Numbered field-photo galleries: a shared three-second interval, cycling only while visible.
+  // Numbered field-photo galleries: a shared two-second interval, cycling only while visible.
   // The same motion and controls keep the photo essays visually consistent.
   const gallerySequences = [
     {id:'neutronGallery', entries:[
@@ -333,8 +333,8 @@
     const description = gallery.querySelector('.health-gallery-story p');
     const announcement = gallery.querySelector('.health-gallery-sr-only');
     const [previous, next] = gallery.querySelectorAll('.health-gallery-actions button');
-    // The standard timing for this and all future photo galleries is 3 seconds.
-    const duration = 3000;
+    // The standard timing for this and all future photo galleries is 2 seconds.
+    const duration = 2000;
     gallery.style.setProperty('--gallery-duration', `${duration}ms`);
     gallery.style.setProperty('--gallery-count', String(frames.length));
     if (totalCount) totalCount.textContent = `/ ${String(frames.length).padStart(2, '0')}`;
