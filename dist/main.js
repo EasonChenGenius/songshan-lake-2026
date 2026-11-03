@@ -8,6 +8,7 @@
   const desktopLinks = [...document.querySelectorAll('.desktop-nav a')];
   const stages = [...document.querySelectorAll('.chapter-stage')];
   const routeGrid = document.querySelector('.route-grid');
+  const prologueAtlas = document.querySelector('.prologue-atlas');
   const hero = document.querySelector('.hero');
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
@@ -31,6 +32,21 @@
     revealTargets.forEach(node => appearance.observe(node));
   } else {
     revealTargets.forEach(node => node.classList.add('motion-visible'));
+  }
+
+  const prologueReveals = [...document.querySelectorAll('.prologue-reveal')];
+  if ('IntersectionObserver' in window) {
+    const prologueObserver = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          prologueObserver.unobserve(entry.target);
+        }
+      }
+    }, {rootMargin:'0px 0px -12% 0px', threshold:.1});
+    prologueReveals.forEach(node => prologueObserver.observe(node));
+  } else {
+    prologueReveals.forEach(node => node.classList.add('is-revealed'));
   }
 
   // The Chapter 04 title film is decorative: muted, seamless, and without controls.
@@ -88,11 +104,19 @@
       hero.classList.remove('is-scanning');
       stages.forEach(stage => stage.style.removeProperty('--scene-y'));
       routeGrid.style.removeProperty('--route-trace');
+      if (prologueAtlas) prologueAtlas.style.removeProperty('--atlas-shift');
       masthead.classList.remove('is-hidden');
       return;
     }
 
     const vh = window.innerHeight;
+    if (prologueAtlas && window.innerWidth > 720) {
+      const atlasBounds = prologueAtlas.getBoundingClientRect();
+      if (atlasBounds.bottom > 0 && atlasBounds.top < vh) {
+        const shift = Math.max(-12, Math.min(12, (vh / 2 - (atlasBounds.top + atlasBounds.height / 2)) * .025));
+        prologueAtlas.style.setProperty('--atlas-shift', `${shift.toFixed(1)}px`);
+      }
+    }
     const routeBounds = routeGrid.getBoundingClientRect();
     if (routeBounds.bottom > -50 && routeBounds.top < vh + 50) {
       const progressOnRoute = clamp((vh * .85 - routeBounds.top) / (vh * .65 + routeBounds.height * .55));
