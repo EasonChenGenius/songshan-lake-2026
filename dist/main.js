@@ -347,6 +347,11 @@
     const totalCount = gallery.querySelector('.health-gallery-image-count span');
     const headline = gallery.querySelector('.health-gallery-story h3');
     const description = gallery.querySelector('.health-gallery-story p');
+    const descriptionIndex = document.createElement('span');
+    const descriptionText = document.createElement('span');
+    descriptionIndex.className = 'health-gallery-description-index';
+    descriptionText.className = 'health-gallery-description-text';
+    description.replaceChildren(descriptionIndex, descriptionText);
     const announcement = gallery.querySelector('.health-gallery-sr-only');
     const [previous, next] = gallery.querySelectorAll('.health-gallery-actions button');
     // The standard timing for this and all future photo galleries is 2 seconds.
@@ -399,7 +404,10 @@
       });
       counter.textContent = String(photoIndex + 1).padStart(2, '0');
       headline.textContent = entries[photoIndex].title;
-      description.textContent = entries[photoIndex].description;
+      const galleryCaption = entries[photoIndex].description;
+      const separator = galleryCaption.indexOf(' · ');
+      descriptionIndex.textContent = separator === -1 ? '' : `${galleryCaption.slice(0, separator)} ·`;
+      descriptionText.textContent = separator === -1 ? galleryCaption : galleryCaption.slice(separator + 3);
       if (manuallySelected) announcement.textContent = `第 ${photoIndex + 1} 张，共 ${frames.length} 张。${entries[photoIndex].description}`;
       syncGalleryPlayback();
     }
@@ -425,6 +433,6 @@
       if (motionPreference.matches) autoplayRequested = false;
       syncGalleryPlayback();
     });
-    syncGalleryPlayback();
+    showGalleryPhoto(0);
   }
 })();
