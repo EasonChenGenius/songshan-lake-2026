@@ -178,3 +178,47 @@
   #epilogue .epilogue-inner > p.epilogue-lastword { margin-top: 90px; padding-left: 17px; font-size: 28px; }
   #epilogue .closing-line { margin-top: 90px; font-size: 11px; }
 }
+
+/* Chapter 04's lake interlude: a readable side masthead, not faint metadata. */
+.kayak-note .kayak-note-side {
+  align-self: start;
+  gap: clamp(30px, 3.4vw, 48px);
+  padding-left: clamp(16px, 1.8vw, 27px);
+  border-left: 2px solid #bc9569;
+  color: #374351;
+  font-family: var(--editorial-serif), 'Songti SC', serif;
+  font-size: clamp(18px, 1.5vw, 23px);
+  line-height: 1.85;
+  letter-spacing: .025em;
+}
+.kayak-note .kayak-note-index {
+  color: #956d44;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(18px, 1.6vw, 24px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .095em;
+}
+.kayak-note .kayak-note-location {
+  color: #3a4652;
+  font-size: clamp(19px, 1.48vw, 23px);
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: .045em;
+}
+.kayak-note .kayak-note-copy p:first-of-type strong {
+  color: #946d46;
+  font-weight: 650;
+}
+@media (max-width: 720px) {
+  .kayak-note .kayak-note-side {
+    flex-direction: column;
+    justify-content: start;
+    gap: 14px;
+    margin-bottom: 32px;
+    padding-left: 15px;
+    font-size: 18px;
+  }
+  .kayak-note .kayak-note-index { font-size: 19px; }
+  .kayak-note .kayak-note-location { font-size: 19px; line-height: 1.9; }
+}
