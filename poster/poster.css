@@ -123,10 +123,6 @@ strong { font-weight: 650; }
 
 /* Chapter three converts the former accordion/video portion into readable static cards. */
 .chapter--dark { padding: 0; background: var(--navy); }
-.robotic-backdrop { position: relative; height: 515px; overflow: hidden; background: #12243a; }
-.robotic-backdrop > img { width: 100%; height: 100%; object-fit: cover; object-position: center 52%; filter: saturate(.83) brightness(.78); }
-.robotic-backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, #07111f 0%, transparent 67%); }
-.robotic-backdrop > span { position: absolute; right: 90px; bottom: 58px; z-index: 1; color: #d3c4b6; font: 600 12px var(--roman); letter-spacing: .17em; }
 .chapter-inner { padding: 90px 90px 128px; }
 .chapter--dark .chapter-heading { border-color: #41505e; }
 .chapter--dark .chapter-number { color: #937457; }
@@ -226,59 +222,6 @@ strong { font-weight: 650; }
   -webkit-backdrop-filter: blur(14px);
 }
 
-/* Bring back the five original large-title images as static, framed art. */
-.chapter-visual {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  margin-top: 56px;
-  border: 1px solid rgba(255, 255, 255, .78);
-  border-radius: 35px;
-  background: #15273b;
-  box-shadow: inset 0 2px 0 rgba(255, 255, 255, .3), 0 24px 50px rgba(26, 35, 46, .15);
-}
-.chapter-visual > img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  filter: saturate(.96) contrast(1.02);
-}
-.chapter-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border: 1px solid rgba(255, 255, 255, .22);
-  border-radius: inherit;
-  box-shadow: inset 0 15px 30px rgba(255, 255, 255, .075), inset 0 -70px 85px rgba(3, 11, 25, .18);
-  pointer-events: none;
-}
-.chapter-visual figcaption {
-  position: absolute;
-  z-index: 2;
-  left: 26px;
-  right: 26px;
-  bottom: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  padding: 15px 23px;
-  border: 1px solid rgba(255, 255, 255, .30);
-  border-radius: 20px;
-  color: #fbfaf9;
-  background: linear-gradient(130deg, rgba(13, 23, 41, .67), rgba(18, 31, 51, .38));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .20), 0 8px 30px rgba(0, 0, 0, .13);
-  backdrop-filter: blur(22px) saturate(1.24);
-  -webkit-backdrop-filter: blur(22px) saturate(1.24);
-  font-size: 17px;
-  letter-spacing: .09em;
-}
-.chapter-visual figcaption span:last-child { color: #d9d6d1; font: 550 12px/1.6 var(--serif); white-space: nowrap; }
-.chapter-visual--dark { border-color: rgba(209, 223, 240, .25); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .16), 0 20px 50px rgba(0, 0, 0, .28); }
-.chapter-visual + .chapter-editorial { margin-top: 72px; }
-
 .takeaway {
   padding: 27px 32px 32px;
   border: 1px solid rgba(255, 255, 255, .84);
@@ -299,14 +242,6 @@ strong { font-weight: 650; }
 }
 .photo-card > img { border-bottom: 1px solid rgba(255, 255, 255, .46); }
 
-.robotic-backdrop {
-  height: 485px;
-  margin: 60px 90px 0;
-  border: 1px solid rgba(218, 232, 244, .23);
-  border-radius: 34px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 30px 55px rgba(0, 0, 0, .18);
-}
-.robotic-backdrop > span { right: 32px; bottom: 28px; }
 .chapter--dark .takeaway {
   border-color: rgba(198, 218, 233, .28);
   background: linear-gradient(135deg, rgba(51, 77, 101, .50), rgba(20, 39, 59, .62));
@@ -333,6 +268,101 @@ strong { font-weight: 650; }
 .talent-stage figcaption { right: 20px; bottom: 20px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 16px; background: rgba(11, 25, 43, .52); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
 .epilogue-grid > div { padding: 28px 30px 32px; border: 1px solid rgba(203, 221, 235, .20); border-radius: 27px; background: linear-gradient(135deg, rgba(68, 87, 115, .32), rgba(31, 47, 72, .23)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .11); }
 
+/* Map place names and verified site addresses remain visible in the still poster. */
+.atlas-image-frame { position: relative; overflow: hidden; margin: 12px 0 20px; border-radius: 29px; background: #152f31; }
+.atlas-image-frame > img { display: block; width: 100%; max-height: none; height: auto; margin: 0; }
+.atlas-map-labels {
+  position: absolute;
+  right: 16px;
+  bottom: 17px;
+  left: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 13px 14px;
+  border: 1px solid rgba(220, 245, 237, .24);
+  border-radius: 18px;
+  background: rgba(9, 36, 44, .70);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .09);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+.atlas-map-labels small { width: 100%; color: #b7d2d0; font: 600 10px/1.5 var(--roman); letter-spacing: .13em; }
+.atlas-map-labels span { display: inline-block; padding: 4px 9px; border: 1px solid rgba(201, 233, 223, .30); border-radius: 999px; color: #edf8f3; font-size: 11px; line-height: 1.6; background: rgba(236, 250, 243, .07); }
+.atlas-addresses { margin-bottom: 20px; padding: 15px 17px; border: 1px solid rgba(215, 236, 231, .23); border-radius: 18px; background: rgba(228, 246, 239, .055); }
+.atlas-addresses > span { display: block; margin-bottom: 9px; color: #d7d5ba; font-size: 13px; letter-spacing: .11em; }
+.atlas-addresses p { margin-top: 5px; color: #e1e9e4; font-size: 12px; line-height: 1.8; }
+
+/* Keep each deliberate line of the prologue and section heading together. */
+.prologue-copy h2 { font-size: clamp(37px, 3.18vw, 47px); line-height: 1.55; letter-spacing: -.045em; }
+.prologue-title-line { display: block; white-space: nowrap; }
+.story-index-heading h2 { font-size: clamp(40px, 3.65vw, 53px); line-height: 1.4; }
+.story-index-heading h2 span { display: inline-block; white-space: nowrap; }
+
+/* An editorial chapter heading lives directly within its original concept photo. */
+.chapter-masthead {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: clamp(380px, 32vw, 475px);
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 35px;
+  background: #15283c;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .20), 0 23px 49px rgba(26, 36, 49, .16);
+}
+.chapter-masthead > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(.76) saturate(.87) contrast(1.05);
+}
+.chapter-masthead::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(7, 17, 31, .89), rgba(8, 19, 33, .66) 47%, rgba(7, 16, 29, .07) 100%), linear-gradient(0deg, rgba(4, 11, 23, .64), transparent 60%);
+}
+.chapter-masthead::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border: 1px solid rgba(255, 255, 255, .17);
+  border-radius: inherit;
+  box-shadow: inset 0 15px 30px rgba(255, 255, 255, .04);
+  pointer-events: none;
+}
+.chapter-masthead .chapter-heading {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 165px minmax(0, 1fr);
+  align-content: end;
+  align-items: end;
+  gap: 32px;
+  padding: 45px 43px 68px;
+  border: 0;
+}
+.chapter-masthead .chapter-number { font-size: clamp(114px, 10.8vw, 166px); color: rgba(236, 211, 181, .64); line-height: .86; letter-spacing: -.11em; }
+.chapter-masthead .eyebrow { color: #ebc79c; font-size: 12px; }
+.chapter-masthead .chapter-heading-body h2 { margin: 15px 0 16px; color: #fff; font-size: clamp(41px, 4.1vw, 61px); line-height: 1.24; white-space: nowrap; text-shadow: 0 8px 30px rgba(0, 0, 0, .34); }
+.chapter-masthead .chapter-heading-body h2 i { color: #e6bd86; }
+.chapter-masthead .chapter-heading-body > p { max-width: 850px; color: #e2dce0; font-size: 15px; line-height: 1.55; }
+.chapter-masthead figcaption { position: absolute; z-index: 2; top: 19px; right: 20px; padding: 7px 12px; border: 1px solid rgba(255, 255, 255, .20); border-radius: 999px; background: rgba(12, 23, 40, .38); color: #e3dfda; font-size: 10px; letter-spacing: .05em; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); }
+.chapter-masthead--dark { border-color: rgba(198, 223, 246, .27); }
+.chapter-masthead + .chapter-editorial { margin-top: 61px; }
+
+/* Short, balanced captions avoid a single dangling character on a new line. */
+.photo-card figcaption { grid-template-columns: 26px minmax(0, 1fr); gap: 10px; min-height: 0; padding: 17px 16px 20px; font-size: 15px; line-height: 1.72; }
+.photo-card figcaption span { text-wrap: pretty; }
+.takeaway strong { font-size: 26px; text-wrap: balance; }
+
 @media (max-width: 1100px) {
   .cover { min-height: 810px; }
   .cover h1 { font-size: 17vw; }
@@ -342,10 +372,13 @@ strong { font-weight: 650; }
   .story-index-grid > div { padding-inline: 8px; }
   .story-index-grid strong { font-size: 18px; }
   .story-index-grid small { font-size: 11px; }
+  .chapter-masthead .chapter-heading { grid-template-columns: 125px minmax(0, 1fr); gap: 23px; padding: 34px 32px 60px; }
+  .chapter-masthead .chapter-number { font-size: 128px; }
+  .chapter-masthead .chapter-heading-body h2 { font-size: clamp(36px, 4vw, 48px); }
+  .chapter-masthead .chapter-heading-body > p { font-size: 13px; }
   .chapter-heading { grid-template-columns: 190px 1fr; gap: 35px; }
   .chapter-number { font-size: 175px; }
   .chapter-inner { padding-inline: 55px; }
-  .robotic-backdrop { margin-left: 55px; margin-right: 55px; }
   .lake-interlude { margin-left: 0; margin-right: 0; }
   .lake-interlude > div { padding: 44px 45px; }
   .lake-interlude h3 { font-size: 45px; }
@@ -383,8 +416,10 @@ strong { font-weight: 650; }
   .atlas-legend span { font-size: 10px; }
   .prologue-copy { padding-top: 0; }
   .prologue-copy h2 { font-size: 42px; }
+  .prologue-copy h2 { font-size: clamp(27px, 5.7vw, 40px); }
   .prologue-copy > p:not(.eyebrow) { font-size: 16px; }
   .story-index-heading h2 { font-size: 46px; }
+  .story-index-heading h2 { font-size: clamp(36px, 6vw, 46px); }
   .story-index-heading > p:not(.eyebrow) { font-size: 16px; }
   .story-index-grid { grid-template-columns: 1fr; margin-top: 37px; }
   .story-index-grid > div { min-height: 105px; display: grid; grid-template-columns: 65px 1fr; grid-template-rows: auto auto; align-items: center; padding: 20px 18px; gap: 5px 18px; text-align: left; }
@@ -397,11 +432,15 @@ strong { font-weight: 650; }
   .chapter-number { font-size: 135px; }
   .chapter-heading-body h2 { font-size: 42px; }
   .chapter-heading-body > p { font-size: 14px; }
-  .chapter-visual { margin-top: 35px; border-radius: 24px; }
-  .chapter-visual figcaption { left: 14px; right: 14px; bottom: 14px; gap: 10px; flex-wrap: wrap; padding: 11px 13px; border-radius: 14px; font-size: 12px; }
-  .chapter-visual figcaption span:last-child { font-size: 10px; }
+  .chapter-masthead { height: 390px; border-radius: 26px; }
+  .chapter-masthead .chapter-heading { display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 10px; padding: 26px 24px 57px; }
+  .chapter-masthead .chapter-number { font-size: 82px; line-height: .75; }
+  .chapter-masthead .chapter-heading-body h2 { margin: 11px 0 12px; font-size: clamp(25px, 6.4vw, 41px); line-height: 1.29; }
+  .chapter-masthead .chapter-heading-body > p { font-size: 12px; }
+  .chapter-masthead .eyebrow { font-size: 10px; }
+  .chapter-masthead figcaption { top: 12px; right: 12px; font-size: 9px; }
   .chapter-editorial { margin-top: 46px; }
-  .chapter-visual + .chapter-editorial { margin-top: 46px; }
+  .chapter-masthead + .chapter-editorial { margin-top: 44px; }
   .chapter-lede { font-size: 26px; }
   .chapter-columns { gap: 17px; margin-top: 30px; }
   .chapter-columns p { font-size: 16px; }
@@ -413,8 +452,6 @@ strong { font-weight: 650; }
   .photo-card figcaption { padding: 12px; grid-template-columns: 21px 1fr; gap: 8px; min-height: 100px; font-size: 12px; }
   .photo-card figcaption b { font-size: 12px; }
   .photo-card figcaption strong { font-size: 18px; }
-  .robotic-backdrop { height: 300px; margin: 28px 28px 0; border-radius: 24px; }
-  .robotic-backdrop > span { right: 24px; bottom: 26px; font-size: 9px; }
   .chapter-inner { padding: 60px 28px 84px; }
   .questions-intro { margin-top: 57px; }
   .questions-intro h3 { font-size: 34px; }
@@ -443,6 +480,11 @@ strong { font-weight: 650; }
   .cover { min-height: 620px; }
   .cover h1 { font-size: 19vw; }
   .cover-subline { font-size: 15px; }
+  .prologue-copy h2 { font-size: clamp(24px, 7vw, 34px); }
+  .chapter-masthead { height: 355px; }
+  .chapter-masthead .chapter-heading { padding: 21px 17px 47px; }
+  .chapter-masthead .chapter-number { font-size: 68px; }
+  .chapter-masthead .chapter-heading-body h2 { font-size: clamp(23px, 6.4vw, 31px); }
   .photos-two, .photos-three { grid-template-columns: 1fr; }
   .photo-card--full { grid-column: auto; }
   .photo-card--full img { aspect-ratio: 3 / 2; }
