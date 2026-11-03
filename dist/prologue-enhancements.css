@@ -12,12 +12,14 @@
   mask-image: linear-gradient(135deg,rgba(0,0,0,.78),transparent 78%);
 }
 .lake-atlas > img { filter: saturate(1.18) contrast(1.1) brightness(1.07); }
-.lake-marker b { border-radius: 7px; background: rgba(7,27,34,.79); border-color: rgba(234,240,216,.48); box-shadow: 0 7px 20px rgba(3,15,22,.26); }
+.lake-marker { font-size: clamp(12px,1.12vw,16px); gap: 8px; }
+.lake-marker b { padding: 8px 11px; border-radius: 7px; background: rgba(7,27,34,.83); border-color: rgba(234,240,216,.48); box-shadow: 0 7px 20px rgba(3,15,22,.26); }
 .lake-marker i { background: #f6dc9d; box-shadow: 0 0 0 4px rgba(238,217,165,.14), 0 0 16px 3px rgba(238,217,165,.52); }
-.atlas-compass { position: absolute; z-index: 4; top: 5.5%; right: 6%; display: grid; justify-items: center; gap: 4px; font: 700 12px Georgia,serif; color: #eef4dd; text-shadow: 0 1px 5px #061b22; }
-.atlas-compass i { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 20px solid #e9c78e; filter: drop-shadow(0 2px 4px rgba(0,0,0,.3)); }
-.atlas-map-note { position: absolute; z-index: 4; top: 6%; left: 6%; font: 10px Georgia,serif; letter-spacing: .14em; color: rgba(242,244,229,.9); text-shadow: 0 1px 5px #061b22; }
-.atlas-map-note small { display: block; margin-top: 6px; font: 12px 'PingFang SC',sans-serif; letter-spacing: .08em; }
+/* North is up. Positions reflect mapped geographic bearings, not the earlier decorative arrangement. */
+.lake-atlas .lake-marker--mist { left: 55%; top: 19%; right: auto; flex-direction: row; transform: none; }
+.lake-atlas .lake-marker--materials { left: 15%; top: 38%; right: auto; flex-direction: row; transform: none; }
+.lake-atlas .lake-marker--huawei { left: 34%; top: 70%; right: auto; flex-direction: row; transform: none; }
+.lake-atlas .lake-marker--neutron { right: 4%; left: auto; top: 83%; flex-direction: row-reverse; transform: none; }
 .prologue-atlas { translate: 0 var(--atlas-shift,0px); }
 
 /* Reveal copy in reading order. The page remains fully visible without JS or with reduced motion. */
@@ -28,7 +30,7 @@
 
 /* More legible field cards with centered, elevated symbols and tighter composition. */
 .route-section .route-header { justify-content: flex-start; gap: clamp(25px,4.5vw,62px); }
-.route-section .route-header p { max-width: 395px; font-size: clamp(15px,1.15vw,17px); line-height: 1.95; color: #46515e; }
+.route-section .route-header p { max-width: 420px; font-size: clamp(17px,1.45vw,20px); line-height: 1.85; color: #46515e; }
 .route-section .route-card { min-height: 266px; padding: 22px 15px 25px; }
 .route-section .route-sign { align-self: center; text-align: center; margin: 24px auto 14px; font-size: clamp(44px,4.6vw,60px); line-height: 1.05; }
 .route-section .route-card strong { text-align: center; font-size: clamp(21px,1.8vw,25px); line-height: 1.45; }
@@ -37,16 +39,33 @@
 
 @media (max-width: 900px) {
   .route-section .route-header { gap: 24px; }
-  .route-section .route-header p { max-width: 340px; }
+  .route-section .route-header p { max-width: 390px; }
 }
 @media (max-width: 720px) {
   .prologue-atlas { translate: none; }
-  .atlas-map-note small { font-size: 10px; }
-  .atlas-compass { font-size: 10px; }
-  .atlas-compass i { border-left-width: 4px; border-right-width: 4px; border-bottom-width: 15px; }
-  .route-section .route-header p { max-width: none; font-size: 15px; }
+  .lake-atlas .lake-marker { font-size: clamp(10px,2.65vw,13px); gap: 5px; }
+  .lake-atlas .lake-marker b { padding: 5px 7px; }
+  .lake-atlas .lake-marker--mist { left: 54%; top: 19%; }
+  .lake-atlas .lake-marker--materials { left: 7%; top: 38%; }
+  .lake-atlas .lake-marker--huawei { left: 28%; top: 71%; }
+  .lake-atlas .lake-marker--neutron { right: 3%; top: 84%; }
+  .route-section .route-header p { max-width: none; font-size: 18px; }
   .route-section .route-card { min-height: 210px; }
   .route-section .route-sign { margin: 17px auto 12px; font-size: 45px; }
   .route-section .route-card strong { font-size: 22px; }
   .route-section .route-card small { font-size: 13px; }
+}
+
+/* All five chapter mastheads enter with the same editorial rise used for chapter 05. */
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-on .chapter-stage.motion-visible .stage-title h2 {
+    animation: chapter-heading-rise .96s cubic-bezier(.16,1,.3,1) both;
+  }
+  html.motion-on .chapter-stage.motion-visible .stage-giant {
+    animation: chapter-heading-rise 1.08s cubic-bezier(.16,1,.3,1) both;
+  }
+  @keyframes chapter-heading-rise {
+    from { opacity: 0; transform: translate3d(0,56px,0); filter: blur(4px); }
+    to { opacity: 1; transform: translate3d(0,0,0); filter: blur(0); }
+  }
 }
