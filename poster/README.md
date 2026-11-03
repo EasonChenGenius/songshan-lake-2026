@@ -12,7 +12,9 @@
 
 ## 本地查看和截长图
 
-在仓库根目录运行：
+如果下载的是离线 ZIP：**解压后直接双击 `poster/index.html`**，即可在 Chrome 中打开，图片会从压缩包内的 `dist/assets/` 目录加载。无需安装或登录。
+
+如果使用完整 GitHub 仓库，也可以在仓库根目录运行：
 
 ```bash
 python3 -m http.server 8000
