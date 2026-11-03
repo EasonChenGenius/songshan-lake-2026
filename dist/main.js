@@ -49,6 +49,22 @@
     prologueReveals.forEach(node => node.classList.add('is-revealed'));
   }
 
+  // Give each reflection its own entrance so the closing essay is read in layers.
+  const editorialReveals = [...document.querySelectorAll('.editorial-reveal')];
+  if ('IntersectionObserver' in window) {
+    const editorialObserver = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          editorialObserver.unobserve(entry.target);
+        }
+      }
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.12});
+    editorialReveals.forEach(node => editorialObserver.observe(node));
+  } else {
+    editorialReveals.forEach(node => node.classList.add('is-visible'));
+  }
+
   // The Chapter 04 title film is decorative: muted, seamless, and without controls.
   // Only play while the title is on screen; preserve the still poster for reduced motion.
   const lifeTitleVideo = document.getElementById('chapterLifeBackgroundVideo');
