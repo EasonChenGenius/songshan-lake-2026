@@ -699,7 +699,7 @@ strong { font-weight: 650; }
 #life .lake-interlude > img {
   aspect-ratio: 5 / 3;
   object-fit: cover;
-  object-position: 50% 47%;
+  object-position: 50% 63%;
 }
 /* Lower image crop, so the canoe sits a little higher in the third photo. */
 #life .photos-three > .photo-card:nth-child(3) > img {
