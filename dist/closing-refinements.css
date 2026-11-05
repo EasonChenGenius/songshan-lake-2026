@@ -254,3 +254,12 @@
   #epilogue .closing-signature strong { font-size: 14px; }
   #epilogue .closing-signature small { font-size: 12px; }
 }
+
+/* Independent production credit and compact two-line WeChat signature. */
+.author-strip .author-info .creator-roles { display: block; font-size: clamp(10px, .75vw, 12px); line-height: 1.7; margin-top: 5px; color: #ad967e; }
+#epilogue .closing-signature { flex-direction: column; align-items: flex-end; gap: 8px; }
+#epilogue .closing-signature small { display: block; }
+@media (max-width: 720px) {
+  .author-strip .author-info .creator-roles { font-size: 10px; }
+  #epilogue .closing-signature { gap: 5px; }
+}
