@@ -11,6 +11,7 @@
   --serif: "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif CJK SC", "SimSun", serif;
   --reading: "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
   --roman: "Baskerville", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -295,9 +296,6 @@ strong { font-weight: 650; }
 .atlas-map-key li { min-width: 0; display: flex; align-items: flex-start; gap: 9px; color: #e5eee9; font: 400 12px/1.65 var(--reading); }
 .atlas-map-key b { flex: none; font: 650 11px/1.8 var(--roman); color: #e4bd8b; letter-spacing: .08em; }
 .atlas-image-frame { border: 1px solid rgba(198, 234, 228, .27); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1); }
-.atlas-addresses { margin-bottom: 20px; padding: 15px 17px; border: 1px solid rgba(215, 236, 231, .23); border-radius: 18px; background: rgba(228, 246, 239, .055); }
-.atlas-addresses > span { display: block; margin-bottom: 9px; color: #d7d5ba; font-size: 13px; letter-spacing: .11em; }
-.atlas-addresses p { margin-top: 5px; color: #e1e9e4; font-size: 12px; line-height: 1.8; }
 
 /* Keep each deliberate line of the prologue and section heading together. */
 .prologue-copy h2 { font-size: clamp(37px, 3.18vw, 47px); line-height: 1.55; letter-spacing: -.045em; }
@@ -379,6 +377,14 @@ strong { font-weight: 650; }
 .takeaway strong { font-size: 26px; text-wrap: balance; }
 
 /* Keep the original lake relief and annotate real relative locations on top. */
+.atlas-title { align-items: end; padding-bottom: 8px; font-family: var(--apple); letter-spacing: 0; }
+.atlas-title > div { display: flex; flex-direction: column; gap: 8px; }
+.atlas-title .atlas-kicker { color: #bad3d1; font: 650 10px/1.4 var(--apple); letter-spacing: .15em; }
+.atlas-title strong { color: #f5f8f6; font: 680 clamp(23px, 2.25vw, 30px)/1.18 var(--apple); letter-spacing: -.045em; }
+.atlas-title small { color: #bad2d2; font: 500 11px/1.45 var(--apple); letter-spacing: .015em; text-align: right; }
+.atlas-map-key { font-family: var(--apple); }
+.atlas-map-note { border-top: 1px solid rgba(213, 236, 229, .15); padding-top: 15px; }
+.prologue-copy h2 { font-family: var(--apple); font-weight: 690; letter-spacing: -.06em; }
 .atlas-image-frame--relief > img { width: 100%; aspect-ratio: 1 / 1; }
 .atlas-map-pins { position: absolute; inset: 0; pointer-events: none; }
 .atlas-pin {
@@ -386,14 +392,14 @@ strong { font-weight: 650; }
   top: var(--pin-y);
   left: var(--pin-x);
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
   white-space: nowrap;
 }
 .atlas-pin b {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: grid;
   place-items: center;
   width: 31px;
@@ -403,19 +409,25 @@ strong { font-weight: 650; }
   color: #132f39;
   background: #eecb9d;
   box-shadow: 0 0 0 5px rgba(12, 42, 49, .65), 0 3px 13px rgba(6, 23, 27, .60);
-  font: 700 11px/1 var(--roman);
+  font: 700 11px/1 var(--apple);
+  transform: translate(-50%, -50%);
 }
 .atlas-pin small {
+  position: absolute;
+  top: 20px;
+  left: 0;
   padding: 4px 8px;
   border: 1px solid rgba(220, 237, 232, .34);
   border-radius: 9px;
   color: #f4f3e9;
   background: rgba(13, 44, 52, .86);
-  font: 600 10px/1.35 var(--reading);
+  font: 600 10px/1.35 var(--apple);
   text-shadow: 0 1px 3px rgba(0, 0, 0, .28);
+  transform: translateX(-50%);
 }
-.atlas-pin--02 small { transform: translateX(-25%); }
-.atlas-pin--04 small { transform: translateX(16%); }
+.atlas-pin--02 small,
+.atlas-pin--03 small { top: auto; bottom: 21px; }
+.atlas-pin--04 small { transform: translateX(-30%); }
 
 /* Materials chapter: an editorial marginal note instead of a giant white strip. */
 .takeaway--materials {
@@ -510,7 +522,8 @@ strong { font-weight: 650; }
   .prologue-grid, .story-index-heading, .chapter-columns, .epilogue-grid { grid-template-columns: 1fr; }
   .prologue-grid { gap: 38px; margin-top: 39px; }
   .atlas-card { padding: 20px; }
-  .atlas-title { font-size: 15px; }
+  .atlas-title strong { font-size: 25px; }
+  .atlas-title small { max-width: 140px; font-size: 10px; }
   .atlas-legend span { font-size: 10px; }
   .prologue-copy { padding-top: 0; }
   .prologue-copy h2 { font-size: 42px; }
@@ -600,6 +613,9 @@ strong { font-weight: 650; }
   .photo-card--full { grid-column: auto; }
   .photo-card--full img { aspect-ratio: 3 / 2; }
   .atlas-map-key { grid-template-columns: 1fr; }
+  .atlas-title { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .atlas-title small { text-align: left; max-width: none; }
+  .atlas-title strong { font-size: 23px; }
   .atlas-pin small { font-size: 8px; }
   .photo-card figcaption { min-height: 0; font-size: 14px; }
   .chapter-heading-body h2 { font-size: 36px; }
