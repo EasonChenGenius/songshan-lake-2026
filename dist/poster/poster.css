@@ -693,12 +693,19 @@ strong { font-weight: 650; }
   justify-self: center;
 }
 #life .lake-interlude {
-  width: min(100%, 940px);
-  margin-inline: auto;
+  width: min(100%, 1160px);
+  margin: 55px auto 0;
 }
 #life .lake-interlude > img {
-  aspect-ratio: 1536 / 1023;
-  object-fit: contain;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+  object-position: 50% 47%;
+}
+/* Lower image crop, so the canoe sits a little higher in the third photo. */
+#life .photos-three > .photo-card:nth-child(3) > img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: 50% 70%;
 }
 
 /* A discreet author contact sits with the closing signature, not in the QR artwork. */
