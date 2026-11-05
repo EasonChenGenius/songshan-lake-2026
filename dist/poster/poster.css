@@ -1051,3 +1051,7 @@ strong { font-weight: 650; }
   .poster-footer .footer-wordmark { font-size: 30px; }
   #people .chapter-masthead .chapter-number { line-height: 1.08; }
 }
+
+/* Precise full institutional attribution in the field-atlas pin. */
+.atlas-pin--02 small { width: 190px; max-width: 36vw; white-space: normal; text-align: center; line-height: 1.55; }
+@media (max-width: 760px) { .atlas-pin--02 small { width: 145px; max-width: 37vw; line-height: 1.4; } }
