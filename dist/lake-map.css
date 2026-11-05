@@ -157,3 +157,7 @@
   .atlas-heading { gap: 7px; font-size: 9px; }
   .atlas-footer { font-size: 8px; }
 }
+
+/* Keep the institute's full official name legible on the interactive lake atlas. */
+.lake-marker--materials b { display: block; max-width: clamp(145px, 17vw, 215px); white-space: normal; line-height: 1.5; text-align: center; }
+@media (max-width: 720px) { .lake-marker--materials b { max-width: 156px; line-height: 1.35; } }
