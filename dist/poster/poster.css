@@ -1025,3 +1025,15 @@ strong { font-weight: 650; }
   .cover, .photo-card, .chapter, .epilogue { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   figure, .takeaway, .question { break-inside: avoid; }
 }
+
+/* Independent creator credit: aligned, two-line end signature and fuller byline. */
+.cover-foot span:first-child { font-size: clamp(13px, 1.1vw, 16px); line-height: 1.7; letter-spacing: .065em; max-width: 52%; }
+.author-card div .creator-roles { font-size: 12px; line-height: 1.65; color: #8d7559; }
+.poster-author { flex-direction: column; align-items: flex-end; justify-content: center; flex-wrap: nowrap; gap: 9px; }
+.poster-author > span { font-size: 14px; }
+@media (max-width: 720px) {
+  .cover-foot span:first-child { font-size: 12px; max-width: 100%; }
+  .author-card div .creator-roles { font-size: 11px; }
+  .poster-author { gap: 5px; }
+  .poster-author > span { font-size: 12px; }
+}
