@@ -8,7 +8,7 @@
   --sand: #e9e1d6;
   --gold: #c49b65;
   --line: #c8c1b7;
-  --serif: "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif CJK SC", "SimSun", serif;
+  --serif: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
   --reading: "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
   --roman: "Baskerville", "Iowan Old Style", Georgia, "Times New Roman", serif;
   --apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
@@ -68,7 +68,7 @@ strong { font-weight: 650; }
 .atlas-card a { color: #d9e9df; text-decoration-color: rgba(217, 233, 223, .45); text-underline-offset: 3px; }
 .prologue-copy { padding-top: 26px; }
 .prologue-copy h2 { margin: 29px 0 39px; font-size: clamp(45px, 4.5vw, 67px); font-weight: 600; letter-spacing: -.05em; line-height: 1.5; }
-.prologue-copy > p:not(.eyebrow) { margin-bottom: 25px; color: #56616b; font-size: 18px; line-height: 2.06; }
+.prologue-copy > p:not(.eyebrow) { margin-bottom: 25px; color: #56616b; font-family: var(--serif); font-size: 18px; line-height: 2.06; }
 .prologue-copy > p strong { color: #24303b; }
 .author-card { display: flex; align-items: center; gap: 17px; border-top: 1px solid #c4bdb2; padding-top: 22px; margin-top: 42px; }
 .author-card img { width: 63px; height: 66px; object-fit: cover; object-position: 50% 15%; border-radius: 50%; }
@@ -84,7 +84,7 @@ strong { font-weight: 650; }
 .story-index-heading .eyebrow { grid-column: 1 / -1; }
 .story-index-heading h2 { font-size: 63px; line-height: 1.36; letter-spacing: -.05em; }
 .story-index-heading h2 span { color: #8e8276; }
-.story-index-heading > p:not(.eyebrow) { color: #5b6370; font-size: 18px; line-height: 1.85; }
+.story-index-heading > p:not(.eyebrow) { color: #5b6370; font-family: var(--serif); font-size: 18px; line-height: 1.85; }
 .story-index-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 67px; border-block: 1px solid #b9b1a6; }
 .story-index-grid > div { display: flex; flex-direction: column; align-items: center; padding: 25px 14px 32px; min-height: 270px; border-right: 1px solid #b9b1a6; text-align: center; }
 .story-index-grid > div:first-child { border-left: 1px solid #b9b1a6; }
@@ -102,9 +102,9 @@ strong { font-weight: 650; }
 .chapter-heading-body h2 { margin: 18px 0 19px; font-size: clamp(45px, 4.5vw, 68px); line-height: 1.35; font-weight: 600; letter-spacing: -.045em; }
 .chapter-heading-body > p { font-size: 17px; letter-spacing: .04em; line-height: 1.7; color: #68737e; }
 .chapter-editorial { margin: 75px 0 0; }
-.chapter-lede { max-width: 1130px; font-size: clamp(29px, 2.6vw, 38px); line-height: 1.66; font-weight: 500; letter-spacing: -.035em; }
+.chapter-lede { max-width: 1130px; font-family: var(--serif); font-size: clamp(29px, 2.6vw, 38px); line-height: 1.7; font-weight: 400; letter-spacing: -.028em; }
 .chapter-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 37px; }
-.chapter-columns p { color: #53606b; font-size: 18px; line-height: 2.02; }
+.chapter-columns p { color: #53606b; font-family: var(--serif); font-size: 18px; line-height: 2.02; }
 .chapter-columns strong { color: #253140; }
 .takeaway { display: grid; grid-template-columns: 230px 1fr; align-items: start; gap: 50px; margin: 63px 0 0; border-top: 1px solid #b7afa5; border-bottom: 1px solid #b7afa5; padding: 29px 0 35px; }
 .takeaway span { margin-top: 7px; color: #9b7955; font-size: 14px; letter-spacing: .12em; }
@@ -142,8 +142,8 @@ strong { font-weight: 650; }
 .question { padding: 28px 26px 33px; background: #162535; border: 1px solid #4d5a67; }
 .question > span { color: #cfad81; font: 650 22px var(--roman); }
 .question h4 { min-height: 165px; margin: 18px 0 20px; color: #f6f5f3; font-size: 25px; font-weight: 550; line-height: 1.55; }
-.question p { padding-top: 18px; border-top: 1px solid #596574; color: #c3ccd5; font-size: 16px; line-height: 1.95; }
-.question-reflection { margin-top: 42px; padding: 25px 28px; border-left: 3px solid #b99b76; color: #dce4ed; background: #122132; font-size: 19px; line-height: 1.9; }
+.question p { padding-top: 18px; border-top: 1px solid #596574; color: #c3ccd5; font-family: var(--serif); font-size: 16px; line-height: 1.95; }
+.question-reflection { margin-top: 42px; padding: 25px 28px; border-left: 3px solid #b99b76; color: #dce4ed; background: #122132; font-family: var(--serif); font-size: 19px; line-height: 1.9; }
 .question-reflection strong { color: #fff; }
 .chapter--dark .photo-card { background: #f4f1ec; }
 
@@ -153,7 +153,7 @@ strong { font-weight: 650; }
 .lake-interlude > div { padding: 66px 65px 72px; }
 .lake-interlude > div > span { color: #ddc19d; font: 600 13px var(--roman); letter-spacing: .16em; }
 .lake-interlude h3 { margin: 24px 0 30px; font-size: 55px; line-height: 1.4; font-weight: 550; }
-.lake-interlude p { margin-top: 24px; color: #d2dce0; font-size: 18px; line-height: 2; }
+.lake-interlude p { margin-top: 24px; color: #d2dce0; font-family: var(--serif); font-size: 18px; line-height: 2; }
 .lake-interlude p strong { color: #fff; }
 .talent-stage { margin-top: 82px; position: relative; }
 .talent-stage img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
@@ -163,13 +163,13 @@ strong { font-weight: 650; }
 .epilogue { padding: 109px 92px 111px; background: radial-gradient(circle at 98% 13%, rgba(45, 73, 110, .39), transparent 49%), #07111f; }
 .epilogue .section-identifier { color: #c1a17b; }
 .epilogue h2 { margin: 66px 0 56px; font-size: clamp(72px, 8.2vw, 119px); font-weight: 540; line-height: 1.52; letter-spacing: -.08em; }
-.epilogue-lede { max-width: 1160px; color: #d0d7df; font-size: 24px; line-height: 2.02; }
+.epilogue-lede { max-width: 1160px; color: #d0d7df; font-family: var(--serif); font-size: 24px; line-height: 2.02; }
 .epilogue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; margin-top: 71px; }
 .epilogue-grid > div { padding-top: 21px; border-top: 1px solid #536071; }
 .epilogue-grid span { color: #d0aa79; font-size: 15px; letter-spacing: .11em; }
-.epilogue-grid p { margin-top: 21px; color: #bfcbd7; font-size: 20px; line-height: 2.02; }
+.epilogue-grid p { margin-top: 21px; color: #bfcbd7; font-family: var(--serif); font-size: 20px; line-height: 2.02; }
 .epilogue-grid strong { color: #f5f1eb; }
-.epilogue-finale { margin-top: 90px; font-size: 33px; line-height: 1.9; color: #dde6ef; }
+.epilogue-finale { margin-top: 90px; font-family: var(--serif); font-size: 33px; line-height: 1.9; color: #dde6ef; }
 .epilogue-finale strong { color: #e8c18e; font-weight: 550; }
 .poster-endline { display: flex; justify-content: space-between; margin-top: 108px; padding-top: 28px; border-top: 1px solid #536071; color: #bfc5cb; font: 600 13px var(--roman); letter-spacing: .16em; }
 .poster-endline span:last-child { font-family: var(--serif); }
@@ -369,7 +369,7 @@ strong { font-weight: 650; }
 .photo-card--wide img { aspect-ratio: 16 / 10; object-fit: cover; }
 #people .photo-grid > .photo-card > img { aspect-ratio: 16 / 9; object-fit: cover; }
 #people .photo-grid > .photo-card:last-child > img { object-position: 50% 46%; }
-.photo-card figcaption { font-family: var(--reading); }
+.photo-card figcaption { font-family: var(--serif); }
 
 /* Short, balanced captions avoid a single dangling character on a new line. */
 .photo-card figcaption { grid-template-columns: 26px minmax(0, 1fr); gap: 10px; min-height: 0; padding: 17px 16px 20px; font-size: 15px; line-height: 1.72; }
@@ -426,7 +426,7 @@ strong { font-weight: 650; }
 .atlas-map-key li { gap: 7px; }
 .atlas-map-key li:nth-child(2) { white-space: nowrap; font-size: 11px; letter-spacing: -.025em; }
 .atlas-map-note { border-top: 1px solid rgba(213, 236, 229, .15); padding-top: 15px; }
-.prologue-copy h2 { font-family: var(--apple); font-weight: 690; letter-spacing: -.06em; }
+.prologue-copy h2 { font-family: var(--serif); font-weight: 550; letter-spacing: -.045em; }
 .atlas-image-frame--relief > img { width: 100%; aspect-ratio: 1 / 1; }
 .atlas-map-pins { position: absolute; inset: 0; pointer-events: none; }
 .atlas-pin {
@@ -559,7 +559,7 @@ strong { font-weight: 650; }
   letter-spacing: -.035em;
   white-space: nowrap;
 }
-.takeaway strong { font-size: clamp(24px, 2.15vw, 30px); font-weight: 660; line-height: 1.55; }
+.takeaway strong { font-family: var(--serif); font-size: clamp(24px, 2.15vw, 30px); font-weight: 450; line-height: 1.65; }
 .takeaway--materials {
   grid-template-columns: 280px minmax(0, 1fr);
   gap: 30px;
@@ -567,7 +567,7 @@ strong { font-weight: 650; }
   margin: 63px 0 0;
   padding: 30px 34px;
 }
-.takeaway--materials strong { font-size: clamp(23px, 2.08vw, 29px); font-weight: 650; line-height: 1.55; }
+.takeaway--materials strong { font-size: clamp(23px, 2.08vw, 29px); font-weight: 450; line-height: 1.65; }
 #robotics .takeaway { background: linear-gradient(125deg, #213247, #152537); border-color: rgba(207, 181, 147, .45); }
 #robotics .takeaway-label b { color: #f0c595; }
 #robotics .takeaway-label em { color: #e6c8a4; }
