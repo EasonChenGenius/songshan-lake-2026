@@ -222,3 +222,35 @@
   .kayak-note .kayak-note-index { font-size: 19px; }
   .kayak-note .kayak-note-location { font-size: 19px; line-height: 1.9; }
 }
+
+/* Mirror the poster's author/contact signature in the interactive ending. */
+#epilogue .closing-signature {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 7px 24px;
+  text-align: right;
+  letter-spacing: .035em;
+}
+#epilogue .closing-signature strong {
+  color: #efe4d5;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+  font-size: clamp(13px, 1.02vw, 17px);
+  font-weight: 600;
+}
+#epilogue .closing-signature small {
+  color: #c8cbd0;
+  font-size: clamp(11px, .86vw, 14px);
+  font-weight: 500;
+}
+#epilogue .closing-signature small b {
+  color: #e2bd88;
+  font-weight: 600;
+  letter-spacing: .07em;
+}
+@media (max-width: 720px) {
+  #epilogue .closing-signature { flex-direction: column; align-items: flex-end; gap: 5px; }
+  #epilogue .closing-signature strong { font-size: 14px; }
+  #epilogue .closing-signature small { font-size: 12px; }
+}
