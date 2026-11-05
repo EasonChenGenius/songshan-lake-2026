@@ -3,6 +3,7 @@
 2026 全国高校校媒精英特训营 · 东莞松山湖
 
 - [GitHub Pages 展示网站](https://easonchengenius.github.io/songshan-lake-2026/)
+- [长图海报版（含扫码入口）](https://easonchengenius.github.io/songshan-lake-2026/poster/)
 - [原站](https://see-the-unseen-songshan-2026.cheneason985.chatgpt.site/)
 
 ## 部署方式
