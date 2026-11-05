@@ -388,6 +388,31 @@ strong { font-weight: 650; }
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 3px 1px rgba(56, 38, 35, .46)) drop-shadow(0 15px 20px rgba(5, 12, 24, .28));
 }
+/* The first four chapter spreads extend beyond the editorial text measure. */
+#discovery .chapter-masthead,
+#materials .chapter-masthead,
+#robotics .chapter-masthead,
+#life .chapter-masthead {
+  height: clamp(455px, 38vw, 560px);
+  margin-inline: -28px;
+}
+#discovery .chapter-masthead .chapter-heading,
+#materials .chapter-masthead .chapter-heading,
+#robotics .chapter-masthead .chapter-heading,
+#life .chapter-masthead .chapter-heading {
+  padding-inline: 71px;
+}
+/* Bolder but still restrained section labels for the final two observations. */
+#life .takeaway > span,
+#people .takeaway > span {
+  margin-top: 4px;
+  color: #93714b;
+  font-family: var(--apple);
+  font-size: 19px;
+  font-weight: 720;
+  line-height: 1.5;
+  letter-spacing: .025em;
+}
 .photo-card figcaption { grid-template-columns: 30px minmax(0, 1fr); gap: 12px; padding: 21px 20px 23px; font-size: clamp(17px, 1.48vw, 20px); line-height: 1.67; }
 .photo-card figcaption b { font-family: var(--apple); font-weight: 700; font-size: 18px; line-height: 1.55; }
 
@@ -500,6 +525,14 @@ strong { font-weight: 650; }
   .story-index-grid strong { font-size: 18px; }
   .story-index-grid small { font-size: 11px; }
   .chapter-masthead .chapter-heading { grid-template-columns: 125px minmax(0, 1fr); gap: 23px; padding: 34px 32px 60px; }
+  #discovery .chapter-masthead,
+  #materials .chapter-masthead,
+  #robotics .chapter-masthead,
+  #life .chapter-masthead { margin-inline: -20px; }
+  #discovery .chapter-masthead .chapter-heading,
+  #materials .chapter-masthead .chapter-heading,
+  #robotics .chapter-masthead .chapter-heading,
+  #life .chapter-masthead .chapter-heading { padding-inline: 52px; }
   .chapter-masthead .chapter-number { font-size: 128px; }
   .chapter-masthead .chapter-heading-body h2 { font-size: clamp(36px, 4vw, 48px); }
   .chapter-masthead .chapter-heading-body > p { font-size: 13px; }
@@ -564,7 +597,15 @@ strong { font-weight: 650; }
   .chapter-heading-body h2 { font-size: 42px; }
   .chapter-heading-body > p { font-size: 14px; }
   .chapter-masthead { height: 390px; border-radius: 26px; }
+  #discovery .chapter-masthead,
+  #materials .chapter-masthead,
+  #robotics .chapter-masthead,
+  #life .chapter-masthead { height: 420px; margin-inline: -9px; }
   .chapter-masthead .chapter-heading { display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 10px; padding: 26px 24px 57px; }
+  #discovery .chapter-masthead .chapter-heading,
+  #materials .chapter-masthead .chapter-heading,
+  #robotics .chapter-masthead .chapter-heading,
+  #life .chapter-masthead .chapter-heading { padding-inline: 27px; }
   .chapter-masthead .chapter-number { font-size: 82px; line-height: .75; }
   .chapter-masthead .chapter-heading-body h2 { margin: 11px 0 12px; font-size: clamp(25px, 6.4vw, 41px); line-height: 1.29; }
   .chapter-masthead .chapter-heading-body > p { font-size: 12px; }
@@ -623,6 +664,10 @@ strong { font-weight: 650; }
   .cover-subline { font-size: 15px; }
   .prologue-copy h2 { font-size: clamp(24px, 7vw, 34px); }
   .chapter-masthead { height: 355px; }
+  #discovery .chapter-masthead,
+  #materials .chapter-masthead,
+  #robotics .chapter-masthead,
+  #life .chapter-masthead { height: 385px; }
   .chapter-masthead .chapter-heading { padding: 21px 17px 47px; }
   .chapter-masthead .chapter-number { font-size: 68px; }
   .chapter-masthead .chapter-heading-body h2 { font-size: clamp(23px, 6.4vw, 31px); }
