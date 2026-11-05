@@ -701,11 +701,11 @@ strong { font-weight: 650; }
   object-fit: cover;
   object-position: 50% 63%;
 }
-/* Lower image crop, so the canoe sits a little higher in the third photo. */
+/* Frame the lake photo to the selected sunset-and-kayak crop from the original 2048x1365 photo. */
 #life .photos-three > .photo-card:nth-child(3) > img {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2047 / 1213;
   object-fit: cover;
-  object-position: 50% 70%;
+  object-position: 50% 96%;
 }
 
 /* A discreet author contact sits with the closing signature, not in the QR artwork. */
