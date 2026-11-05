@@ -981,6 +981,17 @@ strong { font-weight: 650; }
   .epilogue-qr img { width: 156px; height: 156px; }
 }
 
+/* Keep the original cover, gently widen its composition on large screens. */
+@media (min-width: 1520px) {
+  .cover { min-height: 960px; }
+  .cover-top { padding-top: 46px; }
+  .cover-center { padding-top: 30px; margin-bottom: 55px; }
+  .cover h1.cover-title { font-size: 205px; margin-top: 26px; }
+  .cover-title-signature { margin-bottom: 26px; }
+  .cover-subline { font-size: 26px; gap: 7px; }
+  .cover-foot { padding-top: 17px; padding-bottom: 54px; }
+}
+
 /* Clean capture without changing the long-form layout. */
 .poster-export plasmo-csui,
 .poster-export [class*="aiinhbfoop"],
