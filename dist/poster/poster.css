@@ -686,6 +686,27 @@ strong { font-weight: 650; }
 .story-index-grid > div { justify-content: flex-start; }
 .story-index-grid b { margin-block: 28px 16px; }
 
+/* Two field photographs retain their full compositions at an editorial size,
+   instead of expanding to the complete two-column story width. */
+#life .photos-two > .photo-card--full {
+  width: min(100%, 790px);
+  justify-self: center;
+}
+#life .lake-interlude {
+  width: min(100%, 940px);
+  margin-inline: auto;
+}
+#life .lake-interlude > img {
+  aspect-ratio: 1536 / 1023;
+  object-fit: contain;
+}
+
+/* A discreet author contact sits with the closing signature, not in the QR artwork. */
+.poster-author { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 9px 25px; text-align: right; }
+.poster-author > strong { color: #f2e8dc; font: 600 16px/1.5 var(--serif); letter-spacing: .045em; }
+.poster-author > span { color: #c9c5bf; font: 500 13px/1.5 var(--apple); letter-spacing: .025em; }
+.poster-author b { color: #e6bd8b; font-weight: 700; letter-spacing: .045em; }
+
 /* Chapter 03: lift the title into the photograph instead of crowding the edge. */
 #robotics .chapter-masthead .chapter-heading { padding-bottom: 120px; }
 
@@ -908,6 +929,9 @@ strong { font-weight: 650; }
   .epilogue-grid p { font-size: 17px; }
   .epilogue-finale { margin-top: 55px; font-size: 24px; }
   .poster-endline { margin-top: 65px; font-size: 10px; }
+  .poster-author { flex-direction: column; align-items: flex-end; gap: 5px; }
+  .poster-author > strong { font-size: 14px; }
+  .poster-author > span { font-size: 11px; }
   .poster-footer { display: block; padding: 36px 28px 54px; }
   .poster-footer p { margin-top: 18px; }
   .poster-footer > span { display: block; margin-top: 24px; }
