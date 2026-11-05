@@ -169,3 +169,5 @@ body{background:#d8d4cd;color:var(--ink);font-family:var(--sans);-webkit-font-sm
 .export-mode .deck{gap:0;margin:0;align-items:flex-start}
 .export-mode .frame{box-shadow:none!important}
 .export-mode .deck-heading,.export-mode .deck-footer{display:none!important}
+/* Export-only: prevent injected learning-tool popups from appearing in poster captures. */
+.export-mode [class*="aiinhbfoop"],.export-mode [id^="el-popper-container-"]{display:none!important}
