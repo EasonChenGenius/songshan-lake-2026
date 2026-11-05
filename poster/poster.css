@@ -8,15 +8,17 @@
   --sand: #e9e1d6;
   --gold: #c49b65;
   --line: #c8c1b7;
-  --serif: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", serif;
-  --roman: Georgia, "Times New Roman", serif;
+  --serif: "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif CJK SC", "SimSun", serif;
+  --reading: "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  --roman: "Baskerville", "Iowan Old Style", Georgia, "Times New Roman", serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { background: #d5d1c9; }
-body { margin: 0; color: var(--ink); font-family: var(--serif); -webkit-font-smoothing: antialiased; }
+body { margin: 0; color: var(--ink); font-family: var(--reading); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 img { display: block; max-width: 100%; }
 h1, h2, h3, h4, p, figure { margin: 0; }
+h1, h2, h3, h4 { font-family: var(--serif); font-feature-settings: "palt" 1; }
 strong { font-weight: 650; }
 .poster { max-width: 1440px; margin: 0 auto; overflow: hidden; background: var(--paper); box-shadow: 0 28px 110px rgba(18, 25, 37, .18); }
 .surface-paper { background: var(--paper); }
@@ -57,7 +59,7 @@ strong { font-weight: 650; }
 .prologue-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr); align-items: start; gap: 78px; margin-top: 63px; }
 .atlas-card { padding: 33px; background: #123c3e; border: 1px solid rgba(185, 210, 204, .35); color: #e4e8e4; box-shadow: 0 15px 35px rgba(22, 36, 44, .1); }
 .atlas-title { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; font: 600 19px/1.4 var(--roman); letter-spacing: .12em; }
-.atlas-title small { font: 400 13px/1.5 var(--serif); letter-spacing: .12em; color: #b9cec8; }
+.atlas-title small { font: 400 13px/1.5 var(--reading); letter-spacing: .12em; color: #b9cec8; }
 .atlas-card img { margin: 10px auto 3px; width: 100%; max-height: 475px; object-fit: contain; }
 .atlas-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 8px 24px; }
 .atlas-legend span { padding: 5px 10px; border: 1px solid rgba(216, 233, 225, .26); border-radius: 2px; font-size: 12px; color: #caddd4; }
@@ -289,6 +291,10 @@ strong { font-weight: 650; }
 }
 .atlas-map-labels small { width: 100%; color: #b7d2d0; font: 600 10px/1.5 var(--roman); letter-spacing: .13em; }
 .atlas-map-labels span { display: inline-block; padding: 4px 9px; border: 1px solid rgba(201, 233, 223, .30); border-radius: 999px; color: #edf8f3; font-size: 11px; line-height: 1.6; background: rgba(236, 250, 243, .07); }
+.atlas-map-key { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 11px; padding: 0; margin: 2px 0 23px; list-style: none; }
+.atlas-map-key li { min-width: 0; display: flex; align-items: flex-start; gap: 9px; color: #e5eee9; font: 400 12px/1.65 var(--reading); }
+.atlas-map-key b { flex: none; font: 650 11px/1.8 var(--roman); color: #e4bd8b; letter-spacing: .08em; }
+.atlas-image-frame { border: 1px solid rgba(198, 234, 228, .27); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1); }
 .atlas-addresses { margin-bottom: 20px; padding: 15px 17px; border: 1px solid rgba(215, 236, 231, .23); border-radius: 18px; background: rgba(228, 246, 239, .055); }
 .atlas-addresses > span { display: block; margin-bottom: 9px; color: #d7d5ba; font-size: 13px; letter-spacing: .11em; }
 .atlas-addresses p { margin-top: 5px; color: #e1e9e4; font-size: 12px; line-height: 1.8; }
@@ -296,8 +302,8 @@ strong { font-weight: 650; }
 /* Keep each deliberate line of the prologue and section heading together. */
 .prologue-copy h2 { font-size: clamp(37px, 3.18vw, 47px); line-height: 1.55; letter-spacing: -.045em; }
 .prologue-title-line { display: block; white-space: nowrap; }
-.story-index-heading h2 { font-size: clamp(40px, 3.65vw, 53px); line-height: 1.4; }
-.story-index-heading h2 span { display: inline-block; white-space: nowrap; }
+.story-index-heading h2 { font-size: clamp(38px, 3.45vw, 50px); line-height: 1.42; text-wrap: balance; }
+.story-index-heading h2 span { display: block; white-space: nowrap; }
 
 /* An editorial chapter heading lives directly within its original concept photo. */
 .chapter-masthead {
@@ -357,6 +363,15 @@ strong { font-weight: 650; }
 .chapter-masthead figcaption { position: absolute; z-index: 2; top: 19px; right: 20px; padding: 7px 12px; border: 1px solid rgba(255, 255, 255, .20); border-radius: 999px; background: rgba(12, 23, 40, .38); color: #e3dfda; font-size: 10px; letter-spacing: .05em; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); }
 .chapter-masthead--dark { border-color: rgba(198, 223, 246, .27); }
 .chapter-masthead + .chapter-editorial { margin-top: 61px; }
+.chapter-lede span { display: block; text-wrap: balance; }
+
+/* Photographs fill their frames without the former navy sidebars. */
+.photo-card > img { background: transparent; object-fit: cover; object-position: center; }
+.photo-card--full img { aspect-ratio: 3 / 2; object-fit: cover; }
+.photo-card--wide img { aspect-ratio: 16 / 10; object-fit: cover; }
+#people .photo-grid > .photo-card > img { aspect-ratio: 16 / 9; object-fit: cover; }
+#people .photo-grid > .photo-card:last-child > img { object-position: 50% 46%; }
+.photo-card figcaption { font-family: var(--reading); }
 
 /* Short, balanced captions avoid a single dangling character on a new line. */
 .photo-card figcaption { grid-template-columns: 26px minmax(0, 1fr); gap: 10px; min-height: 0; padding: 17px 16px 20px; font-size: 15px; line-height: 1.72; }
@@ -418,6 +433,7 @@ strong { font-weight: 650; }
   .prologue-copy h2 { font-size: 42px; }
   .prologue-copy h2 { font-size: clamp(27px, 5.7vw, 40px); }
   .prologue-copy > p:not(.eyebrow) { font-size: 16px; }
+  .atlas-map-key { gap: 8px 12px; }
   .story-index-heading h2 { font-size: 46px; }
   .story-index-heading h2 { font-size: clamp(36px, 6vw, 46px); }
   .story-index-heading > p:not(.eyebrow) { font-size: 16px; }
@@ -442,6 +458,7 @@ strong { font-weight: 650; }
   .chapter-editorial { margin-top: 46px; }
   .chapter-masthead + .chapter-editorial { margin-top: 44px; }
   .chapter-lede { font-size: 26px; }
+  .chapter-lede span { display: inline; }
   .chapter-columns { gap: 17px; margin-top: 30px; }
   .chapter-columns p { font-size: 16px; }
   .takeaway { grid-template-columns: 1fr; gap: 16px; margin-top: 37px; padding-block: 25px; }
@@ -488,6 +505,7 @@ strong { font-weight: 650; }
   .photos-two, .photos-three { grid-template-columns: 1fr; }
   .photo-card--full { grid-column: auto; }
   .photo-card--full img { aspect-ratio: 3 / 2; }
+  .atlas-map-key { grid-template-columns: 1fr; }
   .photo-card figcaption { min-height: 0; font-size: 14px; }
   .chapter-heading-body h2 { font-size: 36px; }
   .chapter-number { font-size: 117px; }
