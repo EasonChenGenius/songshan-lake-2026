@@ -71,7 +71,7 @@ strong { font-weight: 650; }
 .prologue-copy > p:not(.eyebrow) { margin-bottom: 25px; color: #56616b; font-family: var(--serif); font-size: 18px; line-height: 2.06; }
 .prologue-copy > p strong { color: #24303b; }
 .author-card { display: flex; align-items: center; gap: 17px; border-top: 1px solid #c4bdb2; padding-top: 22px; margin-top: 42px; }
-.author-card img { width: 63px; height: 66px; object-fit: cover; object-position: 50% 15%; border-radius: 50%; }
+.author-card img { width: 63px; height: 66px; object-fit: cover; object-position: 50% 0%; border-radius: 50%; }
 .author-card div { display: flex; flex-direction: column; gap: 4px; }
 .author-card div span { font-size: 12px; color: #8d806e; }
 .author-card div strong { font-size: 20px; }
@@ -701,11 +701,25 @@ strong { font-weight: 650; }
   object-fit: cover;
   object-position: 50% 63%;
 }
-/* Frame the lake photo to the selected sunset-and-kayak crop from the original 2048x1365 photo. */
-#life .photos-three > .photo-card:nth-child(3) > img {
-  aspect-ratio: 2047 / 1213;
+/* Keep all three kayaking photo frames exactly the same height.
+   The third image is gently enlarged within a bottom-anchored crop, retaining the kayak. */
+#life .photos-three > .photo-card:nth-child(3) > .photo-crop {
+  aspect-ratio: 3 / 2;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, .46);
+}
+#life .photos-three > .photo-card:nth-child(3) > .photo-crop > img {
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 112%;
+  height: 112%;
+  max-width: none;
   object-fit: cover;
-  object-position: 50% 96%;
+  object-position: center bottom;
+  transform: translateX(-50%);
 }
 
 /* A discreet author contact sits with the closing signature, not in the QR artwork. */
