@@ -34,9 +34,18 @@
 .hero-event-location > span { padding-inline: 7px; color: rgba(230, 200, 153, .83); }
 .hero .hero-eyebrow { transform: translateY(-13px); }
 .hero .hero-title-wrap { margin-top: clamp(16px, 2.6vh, 28px); }
-.hero h1 { line-height: 1.025; }
-.hero h1 .hero-unseen { color: #d8e9ff; }
-.hero h1 .title-stop { display: inline-block; transform: translateX(.10em); }
+.hero h1 { line-height: 1.025; color: #f4ead9; }
+.hero h1 .hero-unseen {
+  color: rgba(236, 211, 174, .16);
+  -webkit-text-fill-color: rgba(236, 211, 174, .16);
+  -webkit-text-stroke: 2px rgba(244, 226, 201, .94);
+  text-shadow: none;
+}
+.hero h1 .title-stop {
+  display: inline-block;
+  transform: translateX(.10em);
+  color: #e5d3b9;
+}
 .hero .hero-bottom { margin-top: clamp(23px, 3.5vh, 48px); }
 .hero .scroll-callout { gap: 16px; }
 .hero .scroll-callout-label {
