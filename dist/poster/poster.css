@@ -1037,3 +1037,17 @@ strong { font-weight: 650; }
   .poster-author { gap: 5px; }
   .poster-author > span { font-size: 12px; }
 }
+
+/* 2026.11.05 — Editorial legibility: Huawei town, chapter 05, larger date and signed colophon. */
+.cover-foot .cover-date { font-size: clamp(16px, 1.38vw, 21px); font-weight: 700; line-height: 1.5; letter-spacing: .095em; white-space: nowrap; color: #f0e2d2; }
+.cover-foot .cover-creator-name { font-weight: 800; color: #fff3df; letter-spacing: .08em; white-space: nowrap; }
+#people .chapter-masthead .chapter-number { font-family: Georgia, 'Times New Roman', serif; font-weight: 500; font-variant-numeric: lining-nums; font-feature-settings: 'lnum' 1; line-height: 1.12; letter-spacing: -.075em; padding-top: .025em; }
+.atlas-pin--05 small { top: 22px; }
+.poster-footer .footer-wordmark { position: relative; display: inline-flex; align-items: baseline; width: max-content; max-width: 100%; padding-bottom: 9px; font-family: var(--serif); font-weight: 750; font-size: clamp(28px, 2.35vw, 36px); line-height: 1.25; letter-spacing: -.055em; white-space: nowrap; }
+.poster-footer .footer-wordmark em { font-style: normal; font-weight: 550; color: #d9b98e; margin-left: .08em; }
+.poster-footer .footer-wordmark::after { content: ''; position: absolute; inset: auto 0 0 0; height: 2px; background: linear-gradient(90deg, rgba(242,232,220,.95), rgba(203,159,103,.94) 65%, rgba(203,159,103,.12)); }
+@media (max-width: 760px) {
+  .cover-foot .cover-date { font-size: clamp(13px, 3.1vw, 17px); letter-spacing: .075em; }
+  .poster-footer .footer-wordmark { font-size: 30px; }
+  #people .chapter-masthead .chapter-number { line-height: 1.08; }
+}
