@@ -1156,10 +1156,23 @@ strong { font-weight: 650; }
   .brand-lockup img:first-child { width: clamp(132px, 37vw, 160px); }
   .brand-lockup .brand-southern { width: 39px; height: 39px; }
   .cover-center { padding-top: 25px; margin-bottom: clamp(66px, 9vh, 94px); }
-  .cover-index { gap: 1px 5px; font-size: clamp(13px, 3.6vw, 16px); line-height: 1.8; letter-spacing: .005em; }
+  .cover-index { gap: 1px 5px; font-size: clamp(13px, 3.6vw, 16px); line-height: 1.8; letter-spacing: .005em; font-weight: 600; }
   .cover-index i { margin-right: 5px; flex: 0 0 7px; }
   .cover-index span { margin-left: 6px; }
-  .cover h1.cover-title { margin: 28px 0 8px; font-size: clamp(83px, 21vw, 102px); line-height: 1.075; }
+  /* Match the live site's Songti headline rather than the heavy substitute
+     used by earlier headless exports. Reserve bearing space for the final 见. */
+  .cover h1.cover-title {
+    max-width: 100%;
+    margin: 28px 0 8px;
+    font-family: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+    font-size: clamp(70px, 19.5vw, 94px);
+    font-weight: 600;
+    font-feature-settings: normal;
+    line-height: 1.035;
+    letter-spacing: -.10em;
+  }
+  .cover h1.cover-title .cover-title-gold { padding-right: .09em; overflow: visible; }
+  .cover h1.cover-title .period { font-size: 1.02em; margin-left: .11em; }
   .cover-title-bottom { margin-left: .09em; }
   .cover-title-signature { gap: 9px; margin: 10px 0 35px 4px; font-size: 10px; letter-spacing: .06em; }
   .cover-title-signature i { width: 26px; }

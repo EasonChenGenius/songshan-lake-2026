@@ -12,7 +12,7 @@ const outputDirectory = path.resolve(process.env.POSTER_OUTPUT_DIR || 'dist/post
 const variants = [
   { name: 'poster-desktop', route: '/poster-desktop/', width: 1680, height: 950, dpr: 1 },
   { name: 'poster-mobile', route: '/poster-mobile/', width: 402, height: 874, dpr: 2 },
-];
+].filter((variant) => !process.env.POSTER_EXPORT_VARIANT || variant.name === process.env.POSTER_EXPORT_VARIANT);
 
 async function exportVariant(browser, variant) {
   const context = await browser.newContext({
