@@ -26,6 +26,7 @@ async function exportVariant(browser, variant) {
   await page.goto(address, { waitUntil: 'load', timeout: 120000 });
   await page.evaluate(async () => {
     document.documentElement.style.overflowX = 'hidden';
+    document.documentElement.style.scrollBehavior = 'auto';
     document.body.style.overflowX = 'hidden';
     for (const img of document.images) {
       img.loading = 'eager';
@@ -45,26 +46,39 @@ async function exportVariant(browser, variant) {
   )));
   const width = variant.width * variant.dpr;
   const pixelsHigh = height * variant.dpr;
-  const maxTiles = 100;
-  const tileHeight = 1200;
+  const maxTiles = 200;
+  const tileHeight = variant.height;
   const tiles = [];
   const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), `${variant.name}-`));
 
   try {
+    console.log(`${variant.name}: rendering ${variant.width} × ${height} CSS pixels`);
     for (let offset = 0; offset < height; offset += tileHeight) {
       const tileIndex = tiles.length;
       if (tileIndex >= maxTiles) throw new Error(`Too many tiles: ${variant.name} height=${height}`);
       const currentTileHeight = Math.min(tileHeight, height - offset);
       const file = path.join(temporaryDirectory, `${tileIndex.toString().padStart(3, '0')}.png`);
-      await page.screenshot({
-        path: file,
+      // Viewport screenshots avoid Chromium's maximum offscreen clipping rectangle.
+      const scrollTop = Math.min(offset, Math.max(0, height - variant.height));
+      await page.evaluate((position) => window.scrollTo(0, position), scrollTop);
+      await page.waitForTimeout(45);
+      const tile = await page.screenshot({
         type: 'png',
-        clip: { x: 0, y: offset, width: variant.width, height: currentTileHeight },
         animations: 'disabled',
         caret: 'hide',
         scale: 'device',
         timeout: 120000,
       });
+      if (currentTileHeight < variant.height || scrollTop !== offset) {
+        await sharp(tile).extract({
+          left: 0,
+          top: (offset - scrollTop) * variant.dpr,
+          width,
+          height: currentTileHeight * variant.dpr,
+        }).png().toFile(file);
+      } else {
+        await fs.writeFile(file, tile);
+      }
       tiles.push({ input: file, top: offset * variant.dpr, left: 0 });
     }
 
