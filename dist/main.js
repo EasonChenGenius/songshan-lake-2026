@@ -306,9 +306,10 @@
   // The same motion and controls keep the photo essays visually consistent.
   const gallerySequences = [
     {id:'neutronGallery', entries:[
-      {title:'站在门前，\n也站在问题的起点。', description:'第一张 · 研究所门前的一张合影，为这次参访留下坐标。'},
-      {title:'有人专注倾听，\n有人举起镜头。', description:'第二张 · 讲解声里，学员用笔记与影像留住稍纵即逝的细节。'},
-      {title:'一方沙盘之上，\n铺开研究的空间。', description:'第三张 · 在展厅沙盘前，原本陌生的科研设施渐渐有了轮廓。'}
+      {title:'在研究所相遇，\n为这一天留下合影。', description:'第一张 · 在中国科学院高能物理研究所东莞研究部，留下属于这次科研参访的合影。'},
+      {title:'抬头看见星河，\n脚下仍是科研现场。', description:'第二张 · 抬头是星河般的光幕，脚下是科研现场；抽象的世界忽然有了可感的形状。'},
+      {title:'把所见写下来，\n给思考留下证据。', description:'第三张 · 在随身的笔记本上写下“中国散裂中子源”，也为这一天留下属于自己的观察。'},
+      {title:'镜头与目光，\n都朝向新的问题。', description:'第四张 · 镜头和目光都朝向讲解处，每一个问题都有被认真追问的可能。'}
     ]},
     {id:'materialsGallery', entries:[
       {title:'从一件展品，\n追问材料的另一面。', description:'第一张 · 非晶材料展区里，讲解与提问从一件件展品展开。'},
@@ -326,7 +327,8 @@
     {id:'kayakingGallery', entries:[
       {title:'挥挥手，\n向湖面出发。', description:'第一张 · 湖边举起的手，留住了出发前轻松的一刻。'},
       {title:'救生衣穿好，\n把期待带上船。', description:'第二张 · 出发前的合影里，每个人都已做好下水准备。'},
-      {title:'夕阳把湖面，\n写成一片金色。', description:'第三张 · 双人皮划艇划过落日余晖，桨叶轻触水面。'}
+      {title:'夕阳把湖面，\n写成一片金色。', description:'第三张 · 双人皮划艇划过落日余晖，桨叶轻触水面。'},
+      {title:'暮色渐深，\n笑容留在镜头里。', description:'第四张 · 暮色里，我和同伴划着皮划艇靠近镜头，留下一张比夕阳更鲜活的合影。'}
     ]},
     {id:'concertGallery', entries:[
       {title:'当我走上舞台，\n把热爱唱给夜晚。', description:'第一张 · 在悠兰里唱起 Beauty and a Beat，成为现场的一部分。'},
