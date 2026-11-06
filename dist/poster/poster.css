@@ -173,12 +173,14 @@ strong { font-weight: 650; }
 .epilogue-finale strong { color: #e8c18e; font-weight: 550; }
 .poster-endline { display: flex; justify-content: space-between; margin-top: 108px; padding-top: 28px; border-top: 1px solid #536071; color: #bfc5cb; font: 600 13px var(--roman); letter-spacing: .16em; }
 .poster-endline span:last-child { font-family: var(--serif); }
-.poster-footer { display: grid; grid-template-columns: 265px 1fr auto; gap: 35px; align-items: start; padding: 46px 91px 62px; color: #d8d0c4; background: #121a23; }
+.poster-footer { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 25px; align-items: start; padding: 46px 91px 62px; color: #d8d0c4; background: #121a23; }
 .poster-footer div { display: flex; flex-direction: column; gap: 6px; }
 .poster-footer div b { color: #f0efeb; font-size: 25px; font-weight: 600; }
 .poster-footer div span, .poster-footer > span { color: #9b9c9f; font: 550 10px/1.8 var(--roman); letter-spacing: .12em; }
-.poster-footer p { max-width: 670px; font-size: 12px; line-height: 2; }
-.poster-footer > span { white-space: nowrap; }
+.poster-footer p { max-width: none; font-size: 12px; line-height: 2; }
+.poster-footer .poster-footer-notes > span { display: block; white-space: nowrap; }
+.poster-footer .poster-footer-notes > span + span { margin-top: 4px; }
+.poster-footer > span { grid-column: 2; justify-self: end; white-space: nowrap; }
 
 /* Rounded glass surfaces: still imagery, no motion, carefully restrained sheen. */
 .poster { border-radius: 30px; }
@@ -1067,10 +1069,12 @@ strong { font-weight: 650; }
 /* 2026.11.06 — Extended eight-location atlas, truthful CSNS-only photo pairing. */
 .atlas-pin--04 small { width: 168px; max-width: 30vw; white-space: normal; text-align: center; line-height: 1.45; transform: translateX(-25%); }
 .atlas-pin--07 small { width: 138px; max-width: 27vw; white-space: normal; text-align: center; line-height: 1.45; top: 20px; }
-.atlas-pin--08 small { width: 176px; max-width: 32vw; white-space: normal; text-align: center; line-height: 1.45; top: 20px; }
-.atlas-map-key { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 22px; row-gap: 12px; }
-.atlas-map-key li { min-width: 0; white-space: normal; overflow-wrap: anywhere; }
-.atlas-map-key li:nth-child(2) { white-space: normal; }
+.atlas-pin--08 { z-index: 8; }
+.atlas-pin--08 small { width: 176px; max-width: 32vw; white-space: normal; text-align: center; line-height: 1.45; top: auto; bottom: 23px; }
+.atlas-map-key { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); column-gap: 12px; row-gap: 12px; }
+.atlas-map-key li,
+.atlas-map-key li:nth-child(2) { min-width: 0; font: 500 12px/1.65 var(--apple); letter-spacing: -.035em; white-space: nowrap; overflow-wrap: normal; }
+.atlas-map-key b { font: 650 12px/1.65 var(--apple); }
 .photos-neutron { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: stretch; gap: 20px; }
 .photos-neutron > .photo-card:nth-child(1) { grid-column: span 7; }
 .photos-neutron > .photo-card:nth-child(2) { grid-column: span 5; }
@@ -1083,4 +1087,5 @@ strong { font-weight: 650; }
 .photos-neutron .photo-card--neutron-dome > img { object-position: 50% 37%; }
 .photos-neutron .photo-card--neutron-notes > img { object-position: 50% 59%; }
 .photos-neutron .photo-card figcaption { flex: 1; align-content: start; }
-@media (max-width: 760px) { .atlas-map-key { grid-template-columns: 1fr; } .atlas-pin--04 small { width: 115px; max-width: 29vw; } .atlas-pin--07 small { width: 110px; max-width: 30vw; } .atlas-pin--08 small { width: 128px; max-width: 32vw; } .photos-neutron { grid-template-columns: 1fr; gap: 14px; } .photos-neutron > .photo-card { grid-column: auto; } .photos-neutron .photo-card > img { aspect-ratio: 16 / 10; } }
+@media (max-width: 1200px) { .poster-footer .poster-footer-notes > span { white-space: normal; } }
+@media (max-width: 760px) { .atlas-map-key { grid-template-columns: 1fr; } .atlas-map-key li, .atlas-map-key li:nth-child(2) { white-space: normal; } .atlas-pin--04 small { width: 115px; max-width: 29vw; } .atlas-pin--07 small { width: 110px; max-width: 30vw; } .atlas-pin--08 small { width: 128px; max-width: 32vw; } .poster-footer { display: block; } .poster-footer > span { display: block; } .photos-neutron { grid-template-columns: 1fr; gap: 14px; } .photos-neutron > .photo-card { grid-column: auto; } .photos-neutron .photo-card > img { aspect-ratio: 16 / 10; } }
