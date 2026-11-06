@@ -21,14 +21,14 @@
   <link rel="stylesheet" href="opening-editorial.css?v=20261106-times-v16" />
   <link rel="stylesheet" href="stage-meta.css?v=20261106-times-v16" />
   <link rel="stylesheet" href="chapter-polish.css?v=20261106-times-v16" />
-  <link rel="stylesheet" href="health-gallery.css?v=20261106-times-v16" />
+  <link rel="stylesheet" href="health-gallery.css?v=20261106-interactive-photos-v17" />
   <link rel="stylesheet" href="robot-field-photo.css?v=20261106-times-v16" />
   <link rel="stylesheet" href="editorial-typography.css?v=20261106-times-v16" />
   <link rel="stylesheet" href="lake-map.css?v=20261106-times-v16" />
   <link rel="stylesheet" href="hero-refinement.css?v=20261106-times-v16" />
   <link rel="stylesheet" href="prologue-enhancements.css" />
   <link rel="stylesheet" href="closing-refinements.css?v=20261106-times-v16" />
-  <script src="main.js?v=20261106-single-line-v15" defer></script>
+  <script src="main.js?v=20261106-interactive-photos-v17" defer></script>
 </head>
 <body>
   <div class="scroll-meter" aria-hidden="true"><span id="scrollProgress"></span></div>
@@ -307,11 +307,40 @@
             <span class="health-gallery-sr-only" id="kayakingGalleryAnnouncement" aria-live="polite"></span>
           </figcaption>
         </figure>
+        <div class="concert-field-note wrap" aria-labelledby="concertFieldTitle">
+          <span class="concert-field-kicker">04.2 / ULAND · 2026.10.24</span>
+          <h3 id="concertFieldTitle">当夜色降临，<br /><em>湖畔有了另一种回响。</em></h3>
+          <p>从湖面回到岸边，悠兰里的音乐会让这一天有了不同的节奏。走上舞台唱起《Beauty and a Beat》，我也从记录现场的人，变成了现场的一部分。</p>
+        </div>
+        <figure class="health-gallery concert-gallery-interactive wrap is-paused" id="concertGallery" aria-label="2026年10月24日悠兰里音乐会现场图集，三张照片可切换">
+          <div class="health-gallery-visual">
+            <img class="health-gallery-slide is-current" src="assets/uland-concert-singing-20261024.jpg" width="2048" height="1367" alt="陈逸琛在悠兰里音乐会舞台上手持话筒演唱 Beauty and a Beat" decoding="async" loading="lazy" />
+            <img class="health-gallery-slide" src="assets/uland-concert-stage-20261024.jpg" width="2048" height="1367" alt="悠兰里户外音乐会舞台与草坪上的观众" aria-hidden="true" decoding="async" loading="lazy" />
+            <img class="health-gallery-slide" src="assets/uland-concert-lights-20261024.jpg" width="2048" height="1367" alt="音乐会现场同伴举起手机灯光回应舞台" aria-hidden="true" decoding="async" loading="lazy" />
+            <span class="health-gallery-image-count" aria-hidden="true"><strong id="concertGalleryCount">01</strong><span>/ 03</span></span>
+          </div>
+          <figcaption class="health-gallery-aside">
+            <div class="health-gallery-label"><span>04 / EVENING MOMENTS</span><span>2026.10.24</span></div>
+            <div class="health-gallery-story"><span class="health-gallery-kicker">在场 / ULAND CONCERT</span><h3 id="concertGalleryTitle">当我走上舞台，\n把热爱唱给夜晚。</h3><p id="concertGalleryDescription">第一张 · 在悠兰里唱起 Beauty and a Beat，成为现场的一部分。</p></div>
+            <div class="health-gallery-bottom">
+              <div class="health-gallery-progress" aria-hidden="true"><span class="is-current"></span><span></span><span></span></div>
+              <div class="health-gallery-actions" aria-label="音乐会图集控制">
+                <button type="button" id="concertGalleryPrev" aria-label="上一张音乐会照片" title="上一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7" /></svg></button>
+                <button type="button" id="concertGalleryNext" aria-label="下一张音乐会照片" title="下一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7" /></svg></button>
+              </div>
+            </div>
+            <span class="health-gallery-sr-only" id="concertGalleryAnnouncement" aria-live="polite"></span>
+          </figcaption>
+        </figure>
       </section>
 
       <section class="chapter" id="chapter-5" data-chapter="5" aria-labelledby="chapterFiveTitle">
         <div class="chapter-stage stage-violet"><div class="stage-image image-future" role="img" aria-label="2026年10月25日，大湾区人才高质量发展大会现场主舞台实拍"></div><div class="stage-overlay"></div><div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 05</span><span>25 OCT · 大湾区大学（松山湖校区）</span></div><div class="stage-title"><span class="stage-giant">05</span><div><span class="eyebrow gold">PEOPLE / 人才</span><h2 id="chapterFiveTitle">最终推动技术向前的<span class="editorial-comma">,</span><br /><i>仍然是人。</i></h2></div></div><span class="image-badge">人才活动现场实拍 · 2026.10.25</span></div></div>
         <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 05</span><p>参访地点<br /><strong>大湾区大学（松山湖校区）</strong></p><p>时间<br /><strong>2026.10.25 上午</strong></p></div><div class="chapter-copy"><p class="lede lede--people"><span>在大湾区大学（松山湖校区）的活动现场<span class="editorial-comma">,</span></span><span class="people-single-line">我看见另一种不同于实验室的忙碌：有人讲述研究<span class="editorial-comma">,</span>有人倾听也有人记录<span class="editorial-comma">,</span></span><span>也有人试着判断一个想法的下一程。</span></p><p>第四届粤港澳大湾区人才高质量发展大会暨第三届粤港澳大湾区博士博士后创新创业大赛的相关活动，让抽象的“人才发展”有了具体的面孔与声音。站上路演台的研究者，不只要讲明白技术本身，还需解释它回应了什么现实需求，为什么值得继续投入。创新离不开专业知识，也离不开与世界沟通的能力。</p><p>我的专业是金融工程，因而格外在意技术之外的另一种时间：<strong>一项尚未成熟的研究，怎样获得继续试错的资金、耐心与机会<span class="editorial-question">?</span></strong>吸引人才是一时的选择；让他们有条件把事情做成，才是一座城市更长久的承诺。</p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>创新的土壤，不只需要人才汇聚，也需要容得下漫长试错的耐心。</strong></div></div></div></div>
+        <figure class="talent-opening-photo wrap">
+          <img src="assets/talent-event-02.jpg" width="2048" height="1151" loading="lazy" decoding="async" alt="第四届粤港澳大湾区人才高质量发展大会暨第三届粤港澳大湾区博士博士后创新创业大赛开幕式现场" />
+          <figcaption><span>05 / EVENT OPENING · 2026.10.25</span><strong>第四届粤港澳大湾区人才高质量发展大会</strong><small>暨第三届粤港澳大湾区博士博士后创新创业大赛 · 开幕式现场实拍</small></figcaption>
+        </figure>
         <figure class="health-gallery talent-gallery wrap is-paused" id="talentGallery" style="--gallery-count:6" aria-label="大湾区大学（松山湖校区）及人才活动现场图集，按第一至第六张的顺序循环展示">
           <div class="health-gallery-visual">
             <img class="health-gallery-slide is-current" src="assets/talent-event-01.jpg" width="2048" height="1151" alt="第一张：校媒学员在粤港澳大湾区人才高质量发展大会的活动标识前合影" decoding="async" />
