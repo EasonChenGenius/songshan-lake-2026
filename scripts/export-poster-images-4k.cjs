@@ -88,14 +88,21 @@ async function exportVariant(browser, variant) {
       limitInputPixels: false,
     }).composite(tiles);
     await composite().png({ compressionLevel: 9, effort: 8 }).toFile(pngPath);
-    await composite().jpeg({ quality: 92, mozjpeg: true }).toFile(jpgPath);
     const pngStats = await fs.stat(pngPath);
-    const jpgStats = await fs.stat(jpgPath);
-    if (pngStats.size > 95 * 1024 * 1024) {
+    // JPEG encodes dimensions as 16-bit values, so exceptionally tall
+    // mobile posters must stay PNG to preserve their full 4K-width length.
+    let jpgStats = null;
+    if (totalHeight <= 65535) {
+      await composite().jpeg({ quality: 92, mozjpeg: true }).toFile(jpgPath);
+      jpgStats = await fs.stat(jpgPath);
+    } else {
+      console.log(`${variant.name}: height ${totalHeight} exceeds JPEG's 65535-pixel limit; preserving full-length PNG`);
+    }
+    if (pngStats.size > 95 * 1024 * 1024 && jpgStats) {
       await fs.unlink(pngPath);
       console.log(`${variant.name}: lossless PNG exceeded GitHub's per-file limit; high-quality JPEG kept`);
     }
-    console.log(`${variant.name}: ${variant.targetWidth} × ${totalHeight}, ${tiles.length} tiles, JPEG ${Math.round(jpgStats.size / 1048576)} MiB`);
+    console.log(`${variant.name}: ${variant.targetWidth} × ${totalHeight}, ${tiles.length} tiles, PNG ${Math.round(pngStats.size / 1048576)} MiB${jpgStats ? `, JPEG ${Math.round(jpgStats.size / 1048576)} MiB` : ''}`);
   } finally {
     await context.close();
     await fs.rm(work, { recursive: true, force: true });
