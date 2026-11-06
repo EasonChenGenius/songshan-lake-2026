@@ -407,7 +407,21 @@
       const galleryCaption = entries[photoIndex].description;
       const separator = galleryCaption.indexOf(' · ');
       descriptionIndex.textContent = separator === -1 ? '' : `${galleryCaption.slice(0, separator)} ·`;
-      descriptionText.textContent = separator === -1 ? galleryCaption : galleryCaption.slice(separator + 3);
+      const captionBody = separator === -1 ? galleryCaption : galleryCaption.slice(separator + 3);
+      const campusSuffix = '（松山湖校区）';
+      const campusOffset = captionBody.indexOf(campusSuffix);
+      if (campusOffset !== -1) {
+        const campusName = document.createElement('span');
+        campusName.className = 'location-nowrap';
+        campusName.textContent = campusSuffix;
+        descriptionText.replaceChildren(
+          document.createTextNode(captionBody.slice(0, campusOffset)),
+          campusName,
+          document.createTextNode(captionBody.slice(campusOffset + campusSuffix.length))
+        );
+      } else {
+        descriptionText.textContent = captionBody;
+      }
       if (manuallySelected) announcement.textContent = `第 ${photoIndex + 1} 张，共 ${frames.length} 张。${entries[photoIndex].description}`;
       syncGalleryPlayback();
     }

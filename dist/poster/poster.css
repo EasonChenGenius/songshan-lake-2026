@@ -1104,6 +1104,7 @@ strong { font-weight: 650; }
 .chapter-lede--life span, .chapter-lede--people span { display: block; text-wrap: pretty; }
 .chapter-columns .life-application-point { display: block; margin-top: .35em; }
 .editorial-question, .editorial-comma { display: inline !important; font-family: "Times New Roman", "Nimbus Roman", serif !important; font-style: inherit; font-size: 1em; font-weight: inherit; letter-spacing: 0; }
+.chapter-lede--people .phrase-nowrap, .photo-card figcaption .location-nowrap { display: inline !important; white-space: nowrap; }
 @media (max-width: 760px) {
   .atlas-pin-label-layer { display: none; }
   .chapter-lede--life { font-size: 25px; }
