@@ -686,11 +686,10 @@ strong { font-weight: 650; }
 .story-index-grid > div { justify-content: flex-start; }
 .story-index-grid b { margin-block: 28px 16px; }
 
-/* Two field photographs retain their full compositions at an editorial size,
-   instead of expanding to the complete two-column story width. */
-#life .photos-two > .photo-card--full {
-  width: min(100%, 790px);
-  justify-self: center;
+/* Four Huawei field images use the same two-column card dimensions. */
+#life .photos-two > .photo-card > img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 }
 #life .lake-interlude {
   width: min(100%, 1160px);
@@ -703,6 +702,12 @@ strong { font-weight: 650; }
   object-position: 50% 72%;
 }
 #life .lake-interlude--concert { margin-top: 70px; }
+/* Keep “歌声仍在湖畔” on a single, balanced title line. */
+#life .lake-interlude--concert .lake-interlude-heading h3 i {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: clamp(30px, 3vw, 42px);
+}
 #life .lake-interlude--concert > img { object-position: 50% 57%; }
 /* Keep all three kayaking photo frames exactly the same height.
    The third image is gently enlarged within a bottom-anchored crop, retaining the kayak. */
