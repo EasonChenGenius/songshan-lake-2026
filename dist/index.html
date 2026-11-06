@@ -29,6 +29,12 @@
   <link rel="stylesheet" href="prologue-enhancements.css" />
   <link rel="stylesheet" href="closing-refinements.css?v=20261106-times-v16" />
   <script src="main.js?v=20261106-interactive-photos-v17" defer></script>
+  <style id="approved-atlas-layout">
+    .prologue-atlas--approved{min-width:0;overflow:visible}
+    .prologue-atlas--approved .approved-atlas-graphic{margin:0;width:100%;background:#123e43;overflow:hidden;line-height:0;border-radius:4px}
+    .prologue-atlas--approved .approved-atlas-graphic img{width:100%;height:auto;display:block;object-fit:contain}
+    .prologue-atlas--approved .atlas-credit{margin-top:15px}
+  </style>
 </head>
 <body>
   <div class="scroll-meter" aria-hidden="true"><span id="scrollProgress"></span></div>
@@ -68,44 +74,11 @@
 
     <section class="prologue section-pad" id="prologue" data-chapter="0" aria-labelledby="prologueTitle">
       <div class="wrap prologue-grid">
-        <div class="prologue-atlas">
-          <div class="atlas-heading"><span class="atlas-eyebrow">00 / PROLOGUE</span><span class="atlas-heading-line"></span><span>八处地点 · 浮雕示意</span></div>
-          <figure class="lake-atlas" aria-label="松山湖湖岸及八处参访地点的相对位置示意，非导航地图">
-            <img src="assets/songshan-lake-relief.svg" alt="依照真实湖岸轮廓绘制的松山湖艺术化地图，湖面采用立体浮雕风格" width="640" height="640" loading="lazy" decoding="async" />
-            <div class="atlas-map-pins" aria-label="八处参访地点的编号与名称">
-              <span class="atlas-pin" style="--pin-x:67.8%;--pin-y:77.8%" aria-label="01 中国散裂中子源"><b>01</b></span>
-              <span class="atlas-pin" style="--pin-x:75%;--pin-y:69.5%" aria-label="02 中国科学院东莞材料科学与技术研究所"><b>02</b></span>
-              <span class="atlas-pin" style="--pin-x:29%;--pin-y:38%" aria-label="03 广东省智能机器人研究院"><b>03</b></span>
-              <span class="atlas-pin" style="--pin-x:26%;--pin-y:48%" aria-label="04 大湾区大学（松山湖校区）"><b>04</b></span>
-              <span class="atlas-pin" style="--pin-x:44%;--pin-y:62.5%" aria-label="05 华为欧洲小镇"><b>05</b></span>
-              <span class="atlas-pin" style="--pin-x:43.7%;--pin-y:17.5%" aria-label="06 悠兰里"><b>06</b></span>
-              <span class="atlas-pin" style="--pin-x:18.5%;--pin-y:23%" aria-label="07 XbotPark机器人基地"><b>07</b></span>
-              <span class="atlas-pin" style="--pin-x:70%;--pin-y:49%" aria-label="08 华为运动健康科学实验室"><b>08</b></span>
-              <div class="atlas-pin-label-layer" aria-hidden="true">
-                <span class="atlas-pin-label" style="--label-x:67.8%;--label-y:84.5%">散裂中子源</span>
-                <span class="atlas-pin-label" style="--label-x:75%;--label-y:62%">中国科学院东莞材料科学与技术研究所</span>
-                <span class="atlas-pin-label" style="--label-x:47.8%;--label-y:38%">广东省智能机器人研究院</span>
-                <span class="atlas-pin-label" style="--label-x:26%;--label-y:55%">大湾区大学（松山湖校区）</span>
-                <span class="atlas-pin-label" style="--label-x:44%;--label-y:71.5%">华为欧洲小镇</span>
-                <span class="atlas-pin-label" style="--label-x:43.7%;--label-y:10.5%">悠兰里</span>
-                <span class="atlas-pin-label" style="--label-x:18.5%;--label-y:30%">XbotPark机器人基地</span>
-                <span class="atlas-pin-label" style="--label-x:83.5%;--label-y:49%">华为运动健康科学实验室</span>
-              </div>
-            </div>
-            <span class="lake-atlas-id">22°54′ N <small>113°53′ E</small></span>
+        <div class="prologue-atlas prologue-atlas--approved">
+          <figure class="approved-atlas-graphic" aria-label="松山湖参访地图，含八处编号地点。华为运动健康科学实验室08已移动到湖泊左侧，地图为艺术示意，不可用作导航">
+            <img src="assets/songshan-lake-atlas-approved.png" alt="松山湖参访地图：编号01至08依次标识八处参访地点，08华为运动健康科学实验室位于湖泊西南侧左方，地图下方附完整地点索引" width="1152" height="1365" loading="lazy" decoding="async" />
           </figure>
-          <ol class="atlas-map-key" aria-label="八处地点名称索引">
-            <li><b>01</b> 中国散裂中子源</li>
-            <li><b>02</b> 中国科学院东莞材料科学与技术研究所</li>
-            <li><b>03</b> 广东省智能机器人研究院</li>
-            <li><b>04</b> 大湾区大学（松山湖校区）</li>
-            <li><b>05</b> 华为欧洲小镇</li>
-            <li><b>06</b> 悠兰里（ULAND）</li>
-            <li><b>07</b> XbotPark机器人基地</li>
-            <li><b>08</b> 华为运动健康科学实验室</li>
-          </ol>
-          <div class="atlas-footer"><span>松山湖 · 东莞</span><span>立体艺术示意 / NOT TO SCALE</span></div>
-          <p class="atlas-credit">湖岸轮廓依据 <a href="https://www.openstreetmap.org/relation/1113501" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> 数据绘制（<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© 贡献者 / ODbL</a>）。地标位置仅作近似示意，非导航用途。</p>
+          <p class="atlas-credit">参访地点分布为视觉示意，并非精确坐标；请勿将本图用于导航。</p>
         </div>
         <div class="prologue-body">
           <p class="eyebrow gold">THE QUESTION</p>
