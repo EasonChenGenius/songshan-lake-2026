@@ -24,10 +24,10 @@
   <link rel="stylesheet" href="health-gallery.css" />
   <link rel="stylesheet" href="robot-field-photo.css" />
   <link rel="stylesheet" href="editorial-typography.css" />
-  <link rel="stylesheet" href="lake-map.css?v=20261105-institution-names-v3" />
+  <link rel="stylesheet" href="lake-map.css?v=20261106-map-parity-v1" />
   <link rel="stylesheet" href="hero-refinement.css" />
   <link rel="stylesheet" href="prologue-enhancements.css" />
-  <link rel="stylesheet" href="closing-refinements.css?v=20261105-huawei-type-refinement-v2" />
+  <link rel="stylesheet" href="closing-refinements.css?v=20261106-type-punctuation-v1" />
   <script src="main.js" defer></script>
 </head>
 <body>
@@ -55,7 +55,7 @@
       <div class="hero-content wrap">
         <div class="hero-eyebrow" aria-label="2026 全国高校校媒精英特训营，东莞松山湖，10月21日至27日">
           <span class="status-dot" aria-hidden="true"></span>
-          <div class="hero-event-lockup"><strong class="hero-event-name">2026 全国高校校媒精英特训营</strong><span class="hero-event-location">东莞 · 松山湖 <span aria-hidden="true">/</span> 2026.10.21—27</span></div>
+          <div class="hero-event-lockup"><div class="hero-event-main"><strong class="hero-event-name">2026 全国高校校媒精英特训营</strong><span class="hero-event-location">东莞 · 松山湖</span></div><span class="hero-event-date">2026.10.21—27</span></div>
         </div>
         <div class="hero-title-wrap"><h1 id="heroTitle">看见<br /><span class="hero-unseen">不</span>可见<span class="title-stop">.</span></h1></div>
         <div class="hero-bottom">
@@ -69,23 +69,49 @@
     <section class="prologue section-pad" id="prologue" data-chapter="0" aria-labelledby="prologueTitle">
       <div class="wrap prologue-grid">
         <div class="prologue-atlas">
-          <div class="atlas-heading"><span class="atlas-eyebrow">00 / PROLOGUE</span><span class="atlas-heading-line"></span><span>湖区地标 · 浮雕示意</span></div>
-          <figure class="lake-atlas" aria-label="松山湖湖岸及周边代表地标示意图，非导航地图">
+          <div class="atlas-heading"><span class="atlas-eyebrow">00 / PROLOGUE</span><span class="atlas-heading-line"></span><span>八处地点 · 浮雕示意</span></div>
+          <figure class="lake-atlas" aria-label="松山湖湖岸及八处参访地点的相对位置示意，非导航地图">
             <img src="assets/songshan-lake-relief.svg" alt="依照真实湖岸轮廓绘制的松山湖艺术化地图，湖面采用立体浮雕风格" width="640" height="640" loading="lazy" decoding="async" />
-            <span class="lake-marker lake-marker--mist"><i aria-hidden="true"></i><b>松湖烟雨</b></span>
-            <span class="lake-marker lake-marker--huawei"><i aria-hidden="true"></i><b>华为欧洲小镇</b></span>
-            <span class="lake-marker lake-marker--materials"><i aria-hidden="true"></i><b>中国科学院东莞材料科学与技术研究所</b></span>
-            <span class="lake-marker lake-marker--neutron"><i aria-hidden="true"></i><b>中国散裂中子源</b></span>
+            <div class="atlas-map-pins" aria-label="八处参访地点的编号与名称">
+              <span class="atlas-pin" style="--pin-x:67.8%;--pin-y:77.8%" aria-label="01 中国散裂中子源"><b>01</b></span>
+              <span class="atlas-pin" style="--pin-x:79%;--pin-y:69.5%" aria-label="02 中国科学院东莞材料科学与技术研究所"><b>02</b></span>
+              <span class="atlas-pin" style="--pin-x:29%;--pin-y:38%" aria-label="03 广东省智能机器人研究院"><b>03</b></span>
+              <span class="atlas-pin" style="--pin-x:26%;--pin-y:48%" aria-label="04 大湾区大学（松山湖校区）"><b>04</b></span>
+              <span class="atlas-pin" style="--pin-x:44%;--pin-y:62.5%" aria-label="05 华为欧洲小镇"><b>05</b></span>
+              <span class="atlas-pin" style="--pin-x:43.7%;--pin-y:17.5%" aria-label="06 悠兰里"><b>06</b></span>
+              <span class="atlas-pin" style="--pin-x:18.5%;--pin-y:23%" aria-label="07 XbotPark机器人基地"><b>07</b></span>
+              <span class="atlas-pin" style="--pin-x:65%;--pin-y:49%" aria-label="08 华为运动健康科学实验室"><b>08</b></span>
+              <div class="atlas-pin-label-layer" aria-hidden="true">
+                <span class="atlas-pin-label" style="--label-x:67.8%;--label-y:84.5%">散裂中子源</span>
+                <span class="atlas-pin-label" style="--label-x:75%;--label-y:62%">中国科学院东莞材料科学与技术研究所</span>
+                <span class="atlas-pin-label" style="--label-x:47.8%;--label-y:38%">广东省智能机器人研究院</span>
+                <span class="atlas-pin-label" style="--label-x:26%;--label-y:55%">大湾区大学（松山湖校区）</span>
+                <span class="atlas-pin-label" style="--label-x:44%;--label-y:71.5%">华为欧洲小镇</span>
+                <span class="atlas-pin-label" style="--label-x:43.7%;--label-y:10.5%">悠兰里</span>
+                <span class="atlas-pin-label" style="--label-x:18.5%;--label-y:30%">XbotPark机器人基地</span>
+                <span class="atlas-pin-label" style="--label-x:83.5%;--label-y:49%">华为运动健康科学实验室</span>
+              </div>
+            </div>
             <span class="lake-atlas-id">22°54′ N <small>113°53′ E</small></span>
           </figure>
+          <ol class="atlas-map-key" aria-label="八处地点名称索引">
+            <li><b>01</b> 中国散裂中子源</li>
+            <li><b>02</b> 中国科学院东莞材料科学与技术研究所</li>
+            <li><b>03</b> 广东省智能机器人研究院</li>
+            <li><b>04</b> 大湾区大学（松山湖校区）</li>
+            <li><b>05</b> 华为欧洲小镇</li>
+            <li><b>06</b> 悠兰里（ULAND）</li>
+            <li><b>07</b> XbotPark机器人基地</li>
+            <li><b>08</b> 华为运动健康科学实验室</li>
+          </ol>
           <div class="atlas-footer"><span>松山湖 · 东莞</span><span>立体艺术示意 / NOT TO SCALE</span></div>
           <p class="atlas-credit">湖岸轮廓依据 <a href="https://www.openstreetmap.org/relation/1113501" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> 数据绘制（<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© 贡献者 / ODbL</a>）。地标位置仅作近似示意，非导航用途。</p>
         </div>
         <div class="prologue-body">
           <p class="eyebrow gold">THE QUESTION</p>
-          <h2 id="prologueTitle" class="prologue-reveal" style="--reveal-delay:0ms">一项技术，要走多远，<br />才能<span class="accent-italic">抵达日常？</span></h2>
+          <h2 id="prologueTitle" class="prologue-reveal" style="--reveal-delay:0ms">一项技术，要走多远，<br />才能<span class="accent-italic">抵达日常<span class="editorial-question">?</span></span></h2>
           <p class="prologue-reveal" style="--reveal-delay:130ms">十月的松山湖，我从中国散裂中子源启程，走近肉眼难及的物质世界；随后走进中国科学院东莞材料科学与技术研究所、广东省智能机器人研究院，并探访 XbotPark 与松灵机器人，看见创意如何从图纸走向现实。在华为运动健康科学实验室，我感受到技术与日常的距离；松山湖上的皮划艇和湖上晚风，则为密集的行程留下片刻从容。</p>
-          <p class="prologue-reveal" style="--reveal-delay:230ms">直到走进大湾区大学（松山湖校区）的人才交流现场，我才愈发意识到：<strong>科技的故事，终究也是人的故事。</strong>散落在湖畔的地点，渐渐汇成同一个追问——从最初的疑问到真正有用的成果，我们究竟还需要走过多少路？</p>
+          <p class="prologue-reveal" style="--reveal-delay:230ms">直到走进大湾区大学（松山湖校区）的人才交流现场，我才愈发意识到：<strong>科技的故事，终究也是人的故事。</strong>散落在湖畔的地点，渐渐汇成同一个追问——从最初的疑问到真正有用的成果，我们究竟还需要走过多少路<span class="editorial-question">?</span></p>
           <div class="author-strip"><img class="author-portrait" src="assets/eason-portrait.jpg" alt="作者陈逸琛的个人肖像" width="78" height="84" loading="lazy" decoding="async" /><div class="author-info"><span class="author-kicker">独立创作 · 全流程制作</span><strong>陈逸琛</strong><small class="creator-roles">策划 · 摄影 · 撰文 · 视觉设计 · 网页开发</small><small>四川师范大学 · 金融工程</small></div><span class="edition">21—27 OCT. 2026</span></div>
         </div>
       </div>
@@ -94,7 +120,7 @@
     <section class="route-section section-pad" aria-labelledby="routeTitle">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">A FIELD MAP / 五个现场</p><span class="hairline"></span><span class="count">05 STOPS</span></div>
-        <div class="route-header"><h2 id="routeTitle">沿着一条线索<br /><em>进入松山湖。</em></h2><p>这几天走下来，我总忍不住想：实验室里的一个想法，怎样才能真正改变我们的生活？我把最触动自己的五个现场串在一起。它们并不是一条现成的产业链，而是我一路看、一路问之后，留下的五个观察角度。</p></div>
+        <div class="route-header"><h2 id="routeTitle">沿着一条线索<br /><em>进入松山湖。</em></h2><p>这几天走下来，我总忍不住想：实验室里的一个想法，怎样才能真正改变我们的生活<span class="editorial-question">?</span>我把最触动自己的五个现场串在一起。它们并不是一条现成的产业链，而是我一路看、一路问之后，留下的五个观察角度。</p></div>
         <div class="route-grid" role="list" aria-label="故事章节列表">
           <a href="#chapter-1" class="route-card" role="listitem"><span class="route-index">01 / 发现</span><span class="route-sign" aria-hidden="true">◉</span><strong>让微观可见</strong><small>中国散裂中子源</small><span class="card-arrow" aria-hidden="true">↗</span></a>
           <a href="#chapter-2" class="route-card" role="listitem"><span class="route-index">02 / 研究</span><span class="route-sign" aria-hidden="true">◇</span><strong>让材料可知</strong><small>中国科学院东莞材料科学与技术研究所</small><span class="card-arrow" aria-hidden="true">↗</span></a>
@@ -107,8 +133,8 @@
 
     <article>
       <section class="chapter" id="chapter-1" data-chapter="1" aria-labelledby="chapterOneTitle">
-        <div class="chapter-stage stage-blue"><div class="stage-image image-neutron" role="img" aria-label="2026年10月22日，学员认真聆听与拍摄讲解的真实现场照片"></div><div class="stage-overlay"></div><div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 01</span><span>22 OCT · 中国散裂中子源</span></div><div class="stage-title"><span class="stage-giant">01</span><div><span class="eyebrow gold">DISCOVERY / 探测</span><h2 id="chapterOneTitle">看不见的世界，<br /><i>怎样被看见？</i></h2></div></div><span class="image-badge">科研参访现场实拍 · 2026.10.22</span></div></div>
-        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 01</span><p>参访地点<br /><strong>中国散裂中子源</strong></p><p>时间<br /><strong>2026.10.22 上午</strong></p></div><div class="chapter-copy"><p class="lede">真正让我停下来思考的，并非装置的体量，而是它所指向的、肉眼无法抵达的世界。</p><p>物质内部的结构、运动与变化，常常沉默在表象之下。中国散裂中子源为研究者提供中子散射实验条件，让他们从测量所得的数据中寻找线索，研究材料、能源与生命科学等领域的问题。在这里，“看见”不再只是凝视，更是测量、求证与不断修正。</p><p>我想到的还有另一层问题：如此深入的探索，为什么离不开大型共享设施、不同团队的协作和长久的投入？<strong>有些未知，单凭一间实验室难以照亮；许多人把知识、时间与资源汇聚起来，世界的边界才可能被一点点推开。</strong></p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>科学不总是从一件新产品开始；更多时候，它始于承认未知，并耐心地把问题看清。</strong></div></div><div class="source-line">事实核对：<a href="https://csns.ihep.cas.cn/gk/" target="_blank" rel="noopener noreferrer">散裂中子源科学中心官方介绍 ↗</a></div></div></div>
+        <div class="chapter-stage stage-blue"><div class="stage-image image-neutron" role="img" aria-label="2026年10月22日，学员认真聆听与拍摄讲解的真实现场照片"></div><div class="stage-overlay"></div><div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 01</span><span>22 OCT · 中国散裂中子源</span></div><div class="stage-title"><span class="stage-giant">01</span><div><span class="eyebrow gold">DISCOVERY / 探测</span><h2 id="chapterOneTitle">看不见的世界，<br /><i>怎样被看见<span class="editorial-question">?</span></i></h2></div></div><span class="image-badge">科研参访现场实拍 · 2026.10.22</span></div></div>
+        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 01</span><p>参访地点<br /><strong>中国散裂中子源</strong></p><p>时间<br /><strong>2026.10.22 上午</strong></p></div><div class="chapter-copy"><p class="lede">真正让我停下来思考的，并非装置的体量，而是它所指向的、肉眼无法抵达的世界。</p><p>物质内部的结构、运动与变化，常常沉默在表象之下。中国散裂中子源为研究者提供中子散射实验条件，让他们从测量所得的数据中寻找线索，研究材料、能源与生命科学等领域的问题。在这里，“看见”不再只是凝视，更是测量、求证与不断修正。</p><p>我想到的还有另一层问题：如此深入的探索，为什么离不开大型共享设施、不同团队的协作和长久的投入<span class="editorial-question">?</span><strong>有些未知，单凭一间实验室难以照亮；许多人把知识、时间与资源汇聚起来，世界的边界才可能被一点点推开。</strong></p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>科学不总是从一件新产品开始；更多时候，它始于承认未知，并耐心地把问题看清。</strong></div></div><div class="source-line">事实核对：<a href="https://csns.ihep.cas.cn/gk/" target="_blank" rel="noopener noreferrer">散裂中子源科学中心官方介绍 ↗</a></div></div></div>
         <figure class="health-gallery neutron-gallery wrap is-paused" id="neutronGallery" aria-label="2026年10月22日科研参访现场图集，按第一至第三张顺序循环展示">
           <div class="health-gallery-visual">
             <img class="health-gallery-slide is-current" src="assets/day1-science-01.jpg" width="2048" height="1365" alt="第一张：特训营学员在材料科学与技术研究所的标识前集体合影" decoding="async" />
@@ -173,7 +199,7 @@
           <div class="stage-overlay"></div>
           <div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 03</span><span>22—23 OCT · 机器人创新现场</span></div><div class="stage-title"><span class="stage-giant">03</span><div><span class="eyebrow gold">TRANSLATION / 转化</span><h2 id="chapterThreeTitle">让技术，<br /><i>开始行动。</i></h2></div></div><span class="image-badge">AI 概念视觉 · 非企业产品图</span></div>
         </div>
-        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 03</span><p>参访地点<br /><strong>广东省智能机器人研究院<br />XbotPark / 松灵机器人</strong></p><p>时间<br /><strong>2026.10.22—23</strong></p></div><div class="chapter-copy"><p class="lede">站在机器人展示区前，惊叹几乎是本能；可离开现场，我更想知道：它究竟会在哪个人的生活里，真正派上用场？</p><p>两天里，从广东省智能机器人研究院到 XbotPark，再到松灵机器人，我先后接触研究、创业培育与产品应用的不同侧面。它们并非一条现成的产业链，却共同提醒我：技术一旦离开实验室，面对的就不再只是技术问题。</p><p>一台机器即使能在演示中流畅地完成动作，也还要在真实环境中回答更多追问：<strong>谁愿意使用？能否长久稳定地工作？出了故障怎么办？成本与维护由谁承担？</strong>展示让人看见可能，日复一日的使用，才真正检验价值。</p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>真正的进步，不止于机器迈出一步，而在于它能否为人长久地做些什么。</strong></div></div></div></div>
+        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 03</span><p>参访地点<br /><strong>广东省智能机器人研究院<br />XbotPark / 松灵机器人</strong></p><p>时间<br /><strong>2026.10.22—23</strong></p></div><div class="chapter-copy"><p class="lede">站在机器人展示区前，惊叹几乎是本能；可离开现场，我更想知道：它究竟会在哪个人的生活里，真正派上用场<span class="editorial-question">?</span></p><p>两天里，从广东省智能机器人研究院到 XbotPark，再到松灵机器人，我先后接触研究、创业培育与产品应用的不同侧面。它们并非一条现成的产业链，却共同提醒我：技术一旦离开实验室，面对的就不再只是技术问题。</p><p>一台机器即使能在演示中流畅地完成动作，也还要在真实环境中回答更多追问：<strong>谁愿意使用<span class="editorial-question">?</span>能否长久稳定地工作<span class="editorial-question">?</span>出了故障怎么办<span class="editorial-question">?</span>成本与维护由谁承担<span class="editorial-question">?</span></strong>展示让人看见可能，日复一日的使用，才真正检验价值。</p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>真正的进步，不止于机器迈出一步，而在于它能否为人长久地做些什么。</strong></div></div></div></div>
         <section class="question-module wrap" aria-labelledby="questionsTitle">
           <div class="question-intro editorial-reveal">
             <span class="eyebrow">采访手记 <span aria-hidden="true">/</span> 03</span>
@@ -181,15 +207,15 @@
           </div>
           <div class="question-list">
             <details class="editorial-reveal" style="--editorial-delay:80ms">
-              <summary><span class="question-number">01</span><span class="question-text">机器人如何走出展示台，找到第一个愿意使用它的人？</span><b aria-hidden="true">＋</b></summary>
-              <p>我站在展台前时，也会先被机器人的动作吸引。但如果换成真实使用者的身份，我想知道的会是：它替我省下了什么、解决了什么？一场精彩演示能赢得掌声，却未必能换来第一次真正的使用。</p>
+              <summary><span class="question-number">01</span><span class="question-text">机器人如何走出展示台，找到第一个愿意使用它的人<span class="editorial-question">?</span></span><b aria-hidden="true">＋</b></summary>
+              <p>我站在展台前时，也会先被机器人的动作吸引。但如果换成真实使用者的身份，我想知道的会是：它替我省下了什么、解决了什么<span class="editorial-question">?</span>一场精彩演示能赢得掌声，却未必能换来第一次真正的使用。</p>
             </details>
             <details class="editorial-reveal" style="--editorial-delay:160ms">
-              <summary><span class="question-number">02</span><span class="question-text">从一次成功演示，到千百次可靠运行，要跨过什么？</span><b aria-hidden="true">＋</b></summary>
-              <p>对我而言，技术真正困难的地方，也许藏在演示结束之后。连续工作时会不会出错？维修需要多长时间？这些不太适合放进宣传片的细节，才决定一台机器能否被放心交给别人。</p>
+              <summary><span class="question-number">02</span><span class="question-text">从一次成功演示，到千百次可靠运行，要跨过什么<span class="editorial-question">?</span></span><b aria-hidden="true">＋</b></summary>
+              <p>对我而言，技术真正困难的地方，也许藏在演示结束之后。连续工作时会不会出错<span class="editorial-question">?</span>维修需要多长时间<span class="editorial-question">?</span>这些不太适合放进宣传片的细节，才决定一台机器能否被放心交给别人。</p>
             </details>
             <details class="editorial-reveal" style="--editorial-delay:240ms">
-              <summary><span class="question-number">03</span><span class="question-text">选择扎根松山湖，团队最需要怎样的支持？</span><b aria-hidden="true">＋</b></summary>
+              <summary><span class="question-number">03</span><span class="question-text">选择扎根松山湖，团队最需要怎样的支持<span class="editorial-question">?</span></span><b aria-hidden="true">＋</b></summary>
               <p>我学金融工程，因此也会想一笔更现实的账：研发、试错与等待客户认可，都需要时间和资金。比起一句“欢迎创业”，我更想了解一个年轻团队遇到困难时，能否在这里找到测试场景、合作伙伴，以及继续做下去的底气。</p>
             </details>
           </div>
@@ -234,7 +260,7 @@
 
       <section class="chapter" id="chapter-4" data-chapter="4" aria-labelledby="chapterFourTitle">
         <div class="chapter-stage stage-pearl"><div class="stage-image image-life" role="img" aria-label="2026年10月24日松山湖夕阳下的双人皮划艇现场照片，作为动态背景的静态备用画面"></div><video class="stage-video stage-video-kayaking" id="chapterLifeBackgroundVideo" autoplay muted loop playsinline preload="metadata" poster="assets/kayaking-hero-poster.jpg" aria-hidden="true" tabindex="-1"><source src="assets/kayaking-hero-loop.mp4" type="video/mp4" /></video><div class="stage-overlay"></div><div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 04</span><span>23—24 OCT · 华为实验室 / 悠兰里</span></div><div class="stage-title"><span class="stage-giant">04</span><div><span class="eyebrow gold">APPLICATION / 应用</span><h2 id="chapterFourTitle">当科技不再遥远，<br /><i>而是关乎每一天。</i></h2></div></div><span class="image-badge">松山湖皮划艇现场影像 · 2026.10.24</span></div></div>
-        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 04</span><p>参访地点<br /><strong>华为运动健康科学实验室</strong></p><p>生活体验<br /><strong>松山湖·皮划艇</strong></p><p>时间<br /><strong>2026.10.23—24</strong></p></div><div class="chapter-copy"><p class="lede">前一天我还在华为运动健康科学实验室里思考数据与设备，第二天便坐上松山湖的皮划艇。原来“应用”二字，一头连着精密研究，一头连着最寻常的身体感受。</p><p>在华为运动健康科学实验室，运动不再只是一个动作，也可以被观察、测量与记录。听着现场讲解，我开始留心那些看似细小的问题：数据怎样被采集和理解？研究怎样进入产品设计？一项功能能否让普通人在日复一日的使用中感到安心与便利？</p><p>我渐渐明白，科技与生活之间的距离，并不靠宏大的概念来缩短。<strong>好的应用既需要精密的能力，也需要体察日常的耐心；它最终面对的，不是展台，而是一个个具体的人。</strong></p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>科技的价值，最终要在真实生活的细节里得到回答。</strong></div></div></div></div>
+        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 04</span><p>参访地点<br /><strong>华为运动健康科学实验室</strong></p><p>生活体验<br /><strong>松山湖·皮划艇</strong></p><p>时间<br /><strong>2026.10.23—24</strong></p></div><div class="chapter-copy"><p class="lede lede--life"><span>前一天我还在华为运动健康科学实验室里思考数据与设备，</span><span>第二天便坐上松山湖的皮划艇，又在悠兰里的音乐会中听见同伴的歌声。</span><span>原来“应用”二字，一头连着精密研究，一头连着最寻常的身体感受。</span></p><p>在华为运动健康科学实验室，运动不再只是一个动作，也可以被观察、测量与记录。听着现场讲解，我开始留心那些看似细小的问题：数据怎样被采集和理解<span class="editorial-question">?</span>研究怎样进入产品设计<span class="editorial-question">?</span>一项功能能否让普通人在日复一日的使用中感到安心与便利<span class="editorial-question">?</span></p><p>我渐渐明白，科技与生活之间的距离，并不靠宏大的概念来缩短。<strong class="life-application-point">好的应用既需要精密的能力，也需要体察日常的耐心；它最终面对的，不是展台，而是一个个具体的人。</strong></p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>科技的价值，最终要在真实生活的细节里得到回答。</strong></div></div></div></div>
         <figure class="health-gallery wrap is-paused" id="huaweiGallery" aria-label="华为运动健康科学实验室参访现场图集，按照1至5的顺序循环展示">
           <div class="health-gallery-visual">
             <img class="health-gallery-slide is-current" src="assets/huawei-health-01.jpg" width="2048" height="1365" alt="第一张：特训营学员在华为运动健康科学实验室入口合影，手持蓝色活动横幅" decoding="async" />
@@ -284,8 +310,8 @@
       </section>
 
       <section class="chapter" id="chapter-5" data-chapter="5" aria-labelledby="chapterFiveTitle">
-        <div class="chapter-stage stage-violet"><div class="stage-image image-future" role="img" aria-label="2026年10月25日，大湾区人才高质量发展大会现场主舞台实拍"></div><div class="stage-overlay"></div><div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 05</span><span>25 OCT · 大湾区大学（松山湖校区）</span></div><div class="stage-title"><span class="stage-giant">05</span><div><span class="eyebrow gold">PEOPLE / 人才</span><h2 id="chapterFiveTitle">最终推动技术向前的，<br /><i>仍然是人。</i></h2></div></div><span class="image-badge">人才活动现场实拍 · 2026.10.25</span></div></div>
-        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 05</span><p>参访地点<br /><strong>大湾区大学（松山湖校区）</strong></p><p>时间<br /><strong>2026.10.25 上午</strong></p></div><div class="chapter-copy"><p class="lede">在大湾区大学（松山湖校区）的活动现场，我看见另一种不同于实验室的忙碌：有人讲述研究，有人倾听、记录，也有人试着判断一个想法的下一程。</p><p>第四届粤港澳大湾区人才高质量发展大会暨第三届粤港澳大湾区博士博士后创新创业大赛的相关活动，让抽象的“人才发展”有了具体的面孔与声音。站上路演台的研究者，不只要讲明白技术本身，还需解释它回应了什么现实需求，为什么值得继续投入。创新离不开专业知识，也离不开与世界沟通的能力。</p><p>我学金融工程，因而格外在意技术之外的另一种时间：<strong>一项尚未成熟的研究，怎样获得继续试错的资金、耐心与机会？</strong>吸引人才是一时的选择；让他们有条件把事情做成，才是一座城市更长久的承诺。</p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>创新的土壤，不只需要人才汇聚，也需要容得下漫长试错的耐心。</strong></div></div></div></div>
+        <div class="chapter-stage stage-violet"><div class="stage-image image-future" role="img" aria-label="2026年10月25日，大湾区人才高质量发展大会现场主舞台实拍"></div><div class="stage-overlay"></div><div class="stage-main wrap"><div class="stage-eyebrow"><span>CHAPTER 05</span><span>25 OCT · 大湾区大学（松山湖校区）</span></div><div class="stage-title"><span class="stage-giant">05</span><div><span class="eyebrow gold">PEOPLE / 人才</span><h2 id="chapterFiveTitle">最终推动技术向前的<span class="editorial-comma">,</span><br /><i>仍然是人。</i></h2></div></div><span class="image-badge">人才活动现场实拍 · 2026.10.25</span></div></div>
+        <div class="chapter-paper wrap"><div class="chapter-meta"><span>FIELD REPORT / 05</span><p>参访地点<br /><strong>大湾区大学（松山湖校区）</strong></p><p>时间<br /><strong>2026.10.25 上午</strong></p></div><div class="chapter-copy"><p class="lede">在大湾区大学（松山湖校区）的活动现场<span class="editorial-comma">,</span>我看见另一种不同于实验室的忙碌：有人讲述研究<span class="editorial-comma">,</span>有人倾听<span class="editorial-comma">,</span>记录<span class="editorial-comma">,</span>也有人试着判断一个想法的下一程。</p><p>第四届粤港澳大湾区人才高质量发展大会暨第三届粤港澳大湾区博士博士后创新创业大赛的相关活动，让抽象的“人才发展”有了具体的面孔与声音。站上路演台的研究者，不只要讲明白技术本身，还需解释它回应了什么现实需求，为什么值得继续投入。创新离不开专业知识，也离不开与世界沟通的能力。</p><p>我的专业是金融工程，因而格外在意技术之外的另一种时间：<strong>一项尚未成熟的研究，怎样获得继续试错的资金、耐心与机会<span class="editorial-question">?</span></strong>吸引人才是一时的选择；让他们有条件把事情做成，才是一座城市更长久的承诺。</p><div class="insight"><span class="insight-icon">↳</span><div><small>我的观察角度 / THE TAKEAWAY</small><strong>创新的土壤，不只需要人才汇聚，也需要容得下漫长试错的耐心。</strong></div></div></div></div>
         <figure class="health-gallery talent-gallery wrap is-paused" id="talentGallery" style="--gallery-count:6" aria-label="大湾区大学（松山湖校区）及人才活动现场图集，按第一至第六张的顺序循环展示">
           <div class="health-gallery-visual">
             <img class="health-gallery-slide is-current" src="assets/talent-event-01.jpg" width="2048" height="1151" alt="第一张：校媒学员在粤港澳大湾区人才高质量发展大会的活动标识前合影" decoding="async" />
@@ -321,7 +347,7 @@
         <div class="epilogue-reflections">
           <div class="epilogue-reflection editorial-reveal">
             <span class="epilogue-number">01 <i></i> 关于技术</span>
-            <p>出发前，我更容易被“新”吸引。走过几个现场之后，我开始问一些没那么炫目的问题：<strong>它能不能被反复验证？有没有人真正需要？失败之后，还能不能继续试？</strong></p>
+            <p>出发前，我更容易被“新”吸引。走过几个现场之后，我开始问一些没那么炫目的问题：<strong>它能不能被反复验证<span class="editorial-question">?</span>有没有人真正需要<span class="editorial-question">?</span>失败之后，还能不能继续试<span class="editorial-question">?</span></strong></p>
           </div>
           <div class="epilogue-reflection editorial-reveal" style="--editorial-delay:130ms">
             <span class="epilogue-number">02 <i></i> 关于选择</span>

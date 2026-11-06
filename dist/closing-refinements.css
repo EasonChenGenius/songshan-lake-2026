@@ -270,3 +270,7 @@
 .footer-grid .footer-wordmark-title em { font-style: normal; font-weight: 550; color: #d9b98e; margin-left: .08em; }
 .footer-grid .footer-wordmark-title::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, #efe3d2, #c99e64 65%, transparent); }
 .footer-grid .footer-wordmark small { display: block; color: #96a0af; }
+/* Keep the narrative emphasis on a fresh line in both published formats. */
+#chapter-4 .chapter-copy .life-application-point { display: block; margin-top: .35em; }
+#chapter-4 .chapter-copy .lede--life > span { display: block; text-wrap: pretty; }
+.editorial-question, .editorial-comma { display: inline !important; font-family: "Times New Roman", "Nimbus Roman", serif !important; font-style: inherit; font-size: 1em; font-weight: inherit; letter-spacing: 0; }

@@ -45,9 +45,9 @@ strong { font-weight: 650; }
 .cover-edition { margin-top: 18px; color: rgba(255, 255, 255, .68); font: 600 12px/1.4 var(--roman); letter-spacing: .19em; white-space: nowrap; }
 .cover-edition em { color: #d5b68a; font-style: normal; }
 .cover-center { margin-top: auto; margin-bottom: 103px; }
-.cover-index { display: flex; align-items: center; gap: 18px; color: #f1e9dd; font-family: var(--serif); font-size: clamp(21px, 2vw, 29px); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
-.cover-index i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #dfbc8b; box-shadow: 0 0 20px #d7ab78; }
-.cover-index span { margin-left: 24px; font-size: clamp(15px, 1.25vw, 18px); color: rgba(230, 234, 242, .78); }
+.cover-index { display: flex; align-items: center; gap: 0; color: #f1e9dd; font-family: var(--serif); font-size: clamp(21px, 2vw, 29px); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
+.cover-index i { display: inline-block; width: 8px; height: 8px; margin-right: 18px; border-radius: 50%; background: #dfbc8b; box-shadow: 0 0 20px #d7ab78; }
+.cover-index span { margin-left: 1em; font-size: inherit; color: inherit; }
 .cover h1 { margin: 56px 0 48px; font-size: clamp(144px, 17.8vw, 266px); font-weight: 600; line-height: 1.05; letter-spacing: -.11em; text-shadow: 0 15px 80px rgba(0, 0, 0, .20); }
 .cover h1 span:not(.period) { color: #f1ece4; }
 .cover h1 .period { color: #d6ae77; }
@@ -825,9 +825,9 @@ strong { font-weight: 650; }
   .brand-divider { height: 26px; }
   .cover-edition { display: none; }
   .cover-center { padding-top: 36px; margin-bottom: 65px; }
-  .cover-index { display: block; font-size: 16px; }
+  .cover-index { display: flex; flex-wrap: wrap; font-size: clamp(12px, 3.2vw, 16px); }
   .cover-index i { margin-right: 8px; }
-  .cover-index span { display: block; margin: 8px 0 0 19px; font-size: 11px; }
+  .cover-index span { display: inline; margin: 0 0 0 1em; font-size: inherit; }
   .cover h1 { margin: 55px 0 45px; font-size: clamp(86px, 17.5vw, 145px); }
   .cover h1.cover-title { margin: 39px 0 6px; font-size: clamp(84px, 17.7vw, 133px); }
   .cover-title-signature { gap: 10px; margin: 11px 0 33px 6px; font-size: 10px; letter-spacing: .11em; }
@@ -1054,7 +1054,7 @@ strong { font-weight: 650; }
 .atlas-pin--07 small { width: 138px; max-width: 27vw; white-space: normal; text-align: center; line-height: 1.45; top: 20px; }
 .atlas-pin--08 { z-index: 8; }
 .atlas-pin--08 small { width: 176px; max-width: 32vw; white-space: normal; text-align: center; line-height: 1.45; top: auto; bottom: 23px; }
-.atlas-map-key { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); column-gap: 12px; row-gap: 12px; }
+.atlas-map-key { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); column-gap: 12px; row-gap: 12px; transform: translateX(12px); }
 .atlas-map-key li,
 .atlas-map-key li:nth-child(2) { min-width: 0; font: 500 12px/1.65 var(--apple); letter-spacing: -.035em; white-space: nowrap; overflow-wrap: normal; }
 .atlas-map-key b { font: 650 12px/1.65 var(--apple); }
@@ -1071,7 +1071,7 @@ strong { font-weight: 650; }
 .photos-neutron .photo-card--neutron-notes > img { object-position: 50% 59%; }
 .photos-neutron .photo-card figcaption { flex: 1; align-content: start; }
 @media (max-width: 1200px) { .poster-footer .poster-footer-notes > span { white-space: normal; } }
-@media (max-width: 760px) { .atlas-map-key { grid-template-columns: 1fr; } .atlas-map-key li, .atlas-map-key li:nth-child(2) { white-space: normal; } .atlas-pin--04 small { width: 115px; max-width: 29vw; } .atlas-pin--07 small { width: 110px; max-width: 30vw; } .atlas-pin--08 small { width: 128px; max-width: 32vw; } .poster-footer { display: block; } .poster-footer > span { display: block; } .photos-neutron { grid-template-columns: 1fr; gap: 14px; } .photos-neutron > .photo-card { grid-column: auto; } .photos-neutron .photo-card > img { aspect-ratio: 16 / 10; } }
+@media (max-width: 760px) { .atlas-map-key { grid-template-columns: 1fr; transform: none; } .atlas-map-key li, .atlas-map-key li:nth-child(2) { white-space: normal; } .atlas-pin--04 small { width: 115px; max-width: 29vw; } .atlas-pin--07 small { width: 110px; max-width: 30vw; } .atlas-pin--08 small { width: 128px; max-width: 32vw; } .poster-footer { display: block; } .poster-footer > span { display: block; } .photos-neutron { grid-template-columns: 1fr; gap: 14px; } .photos-neutron > .photo-card { grid-column: auto; } .photos-neutron .photo-card > img { aspect-ratio: 16 / 10; } }
 
 /* 2026.11.06 — Pin numerals and their full names have independent positions.
    This keeps every place visible without labels hiding neighbouring markers. */
@@ -1102,6 +1102,8 @@ strong { font-weight: 650; }
 }
 .chapter-lede--life { max-width: none; font-size: clamp(27px, 2.25vw, 36px); }
 .chapter-lede--life span, .chapter-lede--people span { display: block; text-wrap: pretty; }
+.chapter-columns .life-application-point { display: block; margin-top: .35em; }
+.editorial-question, .editorial-comma { display: inline !important; font-family: "Times New Roman", "Nimbus Roman", serif !important; font-style: inherit; font-size: 1em; font-weight: inherit; letter-spacing: 0; }
 @media (max-width: 760px) {
   .atlas-pin-label-layer { display: none; }
   .chapter-lede--life { font-size: 25px; }
