@@ -1089,3 +1089,37 @@ strong { font-weight: 650; }
 .photos-neutron .photo-card figcaption { flex: 1; align-content: start; }
 @media (max-width: 1200px) { .poster-footer .poster-footer-notes > span { white-space: normal; } }
 @media (max-width: 760px) { .atlas-map-key { grid-template-columns: 1fr; } .atlas-map-key li, .atlas-map-key li:nth-child(2) { white-space: normal; } .atlas-pin--04 small { width: 115px; max-width: 29vw; } .atlas-pin--07 small { width: 110px; max-width: 30vw; } .atlas-pin--08 small { width: 128px; max-width: 32vw; } .poster-footer { display: block; } .poster-footer > span { display: block; } .photos-neutron { grid-template-columns: 1fr; gap: 14px; } .photos-neutron > .photo-card { grid-column: auto; } .photos-neutron .photo-card > img { aspect-ratio: 16 / 10; } }
+
+/* 2026.11.06 — Pin numerals and their full names have independent positions.
+   This keeps every place visible without labels hiding neighbouring markers. */
+.atlas-map-labels { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.atlas-map-label {
+  position: absolute;
+  left: var(--label-x);
+  top: var(--label-y);
+  transform: translate(-50%, -50%);
+  width: max-content;
+  padding: 4px 8px;
+  border: 1px solid rgba(220, 237, 232, .34);
+  border-radius: 9px;
+  color: #f4f3e9;
+  background: rgba(13, 44, 52, .89);
+  font: 600 10px/1.35 var(--apple);
+  letter-spacing: -.018em;
+  white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .28);
+}
+#people .chapter-masthead .chapter-number {
+  font-family: "Times New Roman", "Nimbus Roman", Georgia, serif;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+  line-height: 1;
+  letter-spacing: -.035em;
+  padding-top: 0;
+}
+.chapter-lede--life { max-width: none; font-size: clamp(27px, 2.25vw, 36px); }
+.chapter-lede--life span, .chapter-lede--people span { display: block; text-wrap: pretty; }
+@media (max-width: 760px) {
+  .atlas-map-labels { display: none; }
+  .chapter-lede--life { font-size: 25px; }
+}
