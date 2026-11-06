@@ -328,6 +328,11 @@
       {title:'救生衣穿好，\n把期待带上船。', description:'第二张 · 出发前的合影里，每个人都已做好下水准备。'},
       {title:'夕阳把湖面，\n写成一片金色。', description:'第三张 · 双人皮划艇划过落日余晖，桨叶轻触水面。'}
     ]},
+    {id:'concertGallery', entries:[
+      {title:'当我走上舞台，\n把热爱唱给夜晚。', description:'第一张 · 在悠兰里唱起 Beauty and a Beat，成为现场的一部分。'},
+      {title:'灯光落在草坪，\n音乐点亮湖畔。', description:'第二张 · 从舞台到观众席，晚风里每个人都参与着这场音乐会。'},
+      {title:'手机灯光亮起，\n回应落在歌声里。', description:'第三张 · 同伴举起手机，留下一片属于这个夜晚的星光。'}
+    ]},
     {id:'talentGallery', entries:[
       {title:'人群汇聚之处，\n故事有了新的主角。', description:'第一张 · 大湾区人才活动标识前，校媒学员留下合影。'},
       {title:'年轻的面孔，\n与一座新校园相遇。', description:'第二张 · 学员在大湾区大学（松山湖校区）的活动布景前记录当天。'},
