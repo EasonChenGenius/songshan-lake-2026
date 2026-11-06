@@ -1,0 +1,34 @@
+name: Import approved Songshan Lake atlas image
+on:
+  push:
+    paths:
+      - '.github/workflows/import-approved-map.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-map:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download approved map asset
+        run: |
+          set -euo pipefail
+          curl -fSL --retry 3 --max-time 120 'https://at.adobe.com/FAH8uLNXQ24jPYwZ' -o /tmp/songshan-approved-map.png
+          file /tmp/songshan-approved-map.png
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('/tmp/songshan-approved-map.png')
+          if p.read_bytes()[:8] != b'\x89PNG\r\n\x1a\n':
+              raise SystemExit('Not a PNG image: approved-map download failed')
+          print('Verified PNG bytes:', p.stat().st_size)
+          PY
+          mkdir -p dist/assets
+          cp /tmp/songshan-approved-map.png dist/assets/songshan-lake-atlas-approved.png
+      - name: Commit approved map to the published site
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add dist/assets/songshan-lake-atlas-approved.png
+          git diff --cached --quiet || git commit -m "Add approved rebalanced Songshan Lake map image"
+          git push origin HEAD:main
