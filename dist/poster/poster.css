@@ -1113,6 +1113,17 @@ strong { font-weight: 650; }
 .chapter-columns .life-application-point { display: block; margin-top: .35em; }
 .editorial-question, .editorial-comma { display: inline !important; font-family: "Times New Roman", "Nimbus Roman", serif !important; font-style: inherit; font-size: 1em; font-weight: inherit; letter-spacing: 0; }
 .chapter-lede--people .phrase-nowrap, .photo-card figcaption .location-nowrap { display: inline !important; white-space: nowrap; }
+/* The complete editorial observation, not merely its last phrase, is one line. */
+#people .chapter-lede--people { max-width: none; }
+#people .chapter-lede--people > .people-single-line { display: block; white-space: nowrap; text-wrap: nowrap; font-size: clamp(25px, 2.35vw, 36px); letter-spacing: -.036em; }
+/* Photo 03 keeps the campus name and its closing parenthesis on one baseline. */
+#people .photo-card figcaption.campus-run-caption { font-size: clamp(15px, 1.25vw, 18px); }
+#people .campus-run-caption .campus-run-nowrap { display: block; white-space: nowrap; text-wrap: nowrap; }
+#people .campus-run-caption .campus-run-follow { display: block; }
+@media (max-width: 720px) {
+  #people .chapter-lede--people > .people-single-line { font-size: clamp(9px, 2.35vw, 17px); }
+  #people .photo-card figcaption.campus-run-caption { font-size: clamp(11px, 2.8vw, 15px); }
+}
 @media (max-width: 760px) {
   .atlas-pin-label-layer { display: none; }
   .chapter-lede--life { font-size: 25px; }

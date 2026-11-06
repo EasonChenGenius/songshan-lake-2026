@@ -276,3 +276,25 @@
 #chapter-5 .chapter-copy .lede--people > span { display: block; text-wrap: pretty; }
 .editorial-question, .editorial-comma { display: inline !important; font-family: "Times New Roman", "Nimbus Roman", serif !important; font-style: inherit; font-size: 1em; font-weight: inherit; letter-spacing: 0; }
 #chapter-5 .lede--people .phrase-nowrap, .health-gallery-description-text .location-nowrap { display: inline !important; white-space: nowrap; }
+/* Give the people chapter a full-width editorial line, while keeping the body readable. */
+#chapter-5 .chapter-paper { display: block; }
+#chapter-5 .chapter-meta { display: flex; flex-wrap: wrap; gap: 20px 56px; margin-bottom: 35px; }
+#chapter-5 .chapter-meta > span { flex-basis: 100%; margin-bottom: 0; }
+#chapter-5 .chapter-meta p { margin: 0; }
+#chapter-5 .chapter-copy { max-width: none; }
+#chapter-5 .chapter-copy .lede--people { font-size: clamp(18px, 2.45vw, 38px); }
+#chapter-5 .chapter-copy .lede--people > .people-single-line { display: block; white-space: nowrap; text-wrap: nowrap; font-size: clamp(11px, 2.35vw, 36px); letter-spacing: -.036em; }
+#chapter-5 .chapter-copy > p:not(.lede), #chapter-5 .chapter-copy .insight { max-width: 980px; }
+@media (max-width: 720px) {
+  #chapter-5 .chapter-copy .lede--people > .people-single-line { font-size: clamp(9px, 2.35vw, 17px); }
+}
+/* Gallery photo 03: campus name on one baseline, next thought on a new line. */
+#talentGallery .health-gallery-story p.is-campus-run-description { display: block; }
+#talentGallery .is-campus-run-description .health-gallery-description-index,
+#talentGallery .is-campus-run-description .health-gallery-description-text,
+#talentGallery .is-campus-run-description .campus-run-nowrap,
+#talentGallery .is-campus-run-description .campus-run-follow { display: block; }
+#talentGallery .is-campus-run-description .campus-run-nowrap { white-space: nowrap; }
+@media (max-width: 720px) {
+  #talentGallery .health-gallery-story p.is-campus-run-description { font-size: clamp(10px, 2.7vw, 13px); }
+}

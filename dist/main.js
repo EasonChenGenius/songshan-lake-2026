@@ -410,7 +410,17 @@
       const captionBody = separator === -1 ? galleryCaption : galleryCaption.slice(separator + 3);
       const campusSuffix = '（松山湖校区）';
       const campusOffset = captionBody.indexOf(campusSuffix);
-      if (campusOffset !== -1) {
+      const isCampusRun = id === 'talentGallery' && photoIndex === 2;
+      description.classList.toggle('is-campus-run-description', isCampusRun);
+      if (isCampusRun) {
+        const firstLine = document.createElement('span');
+        firstLine.className = 'campus-run-nowrap';
+        firstLine.textContent = '奔跑着经过大湾区大学（松山湖校区），';
+        const nextLine = document.createElement('span');
+        nextLine.className = 'campus-run-follow';
+        nextLine.textContent = '也把这座年轻校园的模样留在镜头里。';
+        descriptionText.replaceChildren(firstLine, nextLine);
+      } else if (campusOffset !== -1) {
         const campusName = document.createElement('span');
         campusName.className = 'location-nowrap';
         campusName.textContent = campusSuffix;
