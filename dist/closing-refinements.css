@@ -35,7 +35,7 @@
   display: block;
   max-width: 790px;
   color: #27313d;
-  font-family: var(--editorial-serif), 'Songti SC', serif;
+  font-family: "Times New Roman", var(--editorial-serif), 'Songti SC', serif;
   font-size: clamp(25px,2.15vw,34px);
   font-weight: 600;
   letter-spacing: -.025em;
@@ -57,7 +57,7 @@
 /* The three questions have an answer in the narrator's voice, not another list of prompts. */
 .question-list details p {
   color: #4a5361;
-  font-family: var(--editorial-serif), 'Songti SC', serif;
+  font-family: "Times New Roman", var(--editorial-serif), 'Songti SC', serif;
   font-size: clamp(17px,1.35vw,20px);
   line-height: 2.05;
   letter-spacing: .005em;
@@ -78,7 +78,7 @@
   max-width: 1000px;
   margin-top: 26px;
   color: #56606b;
-  font-family: var(--editorial-serif), 'Songti SC', serif;
+  font-family: "Times New Roman", var(--editorial-serif), 'Songti SC', serif;
   font-size: clamp(22px,2.1vw,32px);
   line-height: 1.85;
 }
@@ -110,7 +110,7 @@
   align-items: center;
   gap: 17px;
   color: #d5b98e;
-  font-family: Georgia,'Songti SC',serif;
+  font-family: "Times New Roman", Georgia,'Songti SC',serif;
   font-size: clamp(15px,1.13vw,18px);
   font-weight: 500;
   letter-spacing: .12em;
@@ -119,7 +119,7 @@
 .epilogue-reflection p {
   margin: clamp(27px,3vw,43px) 0 0;
   color: #bac8d7;
-  font-family: var(--editorial-serif), 'Songti SC', serif;
+  font-family: "Times New Roman", var(--editorial-serif), 'Songti SC', serif;
   font-size: clamp(19px,1.48vw,24px);
   line-height: 2.05;
 }
@@ -186,14 +186,14 @@
   padding-left: clamp(16px, 1.8vw, 27px);
   border-left: 2px solid #bc9569;
   color: #374351;
-  font-family: var(--editorial-serif), 'Songti SC', serif;
+  font-family: "Times New Roman", var(--editorial-serif), 'Songti SC', serif;
   font-size: clamp(18px, 1.5vw, 23px);
   line-height: 1.85;
   letter-spacing: .025em;
 }
 .kayak-note .kayak-note-index {
   color: #956d44;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: "Times New Roman", Georgia, 'Times New Roman', serif;
   font-size: clamp(18px, 1.6vw, 24px);
   font-weight: 700;
   line-height: 1.5;
@@ -235,7 +235,7 @@
 }
 #epilogue .closing-signature strong {
   color: #efe4d5;
-  font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+  font-family: "Times New Roman", "Songti SC", "STSong", "Noto Serif SC", serif;
   font-size: clamp(13px, 1.02vw, 17px);
   font-weight: 600;
 }
@@ -266,7 +266,7 @@
 
 /* Matching editorial masthead mark in the interactive footer. */
 .footer-grid > div:first-child .footer-wordmark { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 14px; }
-.footer-grid .footer-wordmark-title { position: relative; display: inline-block; padding-bottom: 9px; color: #f0efeb; font: 750 clamp(28px, 2.2vw, 34px)/1.3 'Songti SC','STSong',serif; letter-spacing: -.055em; white-space: nowrap; }
+.footer-grid .footer-wordmark-title { position: relative; display: inline-block; padding-bottom: 9px; color: #f0efeb; font: 750 clamp(28px, 2.2vw, 34px)/1.3 "Times New Roman", 'Songti SC','STSong',serif; letter-spacing: -.055em; white-space: nowrap; }
 .footer-grid .footer-wordmark-title em { font-style: normal; font-weight: 550; color: #d9b98e; margin-left: .08em; }
 .footer-grid .footer-wordmark-title::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, #efe3d2, #c99e64 65%, transparent); }
 .footer-grid .footer-wordmark small { display: block; color: #96a0af; }

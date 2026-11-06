@@ -28,7 +28,7 @@
 .question-intro h3 {
   margin-top: 32px;
   color: #1e2632;
-  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-family: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
   font-size: clamp(31px, 3vw, 49px);
   font-weight: 600;
   line-height: 1.52;
@@ -66,7 +66,7 @@
   align-self: start;
   padding-top: 8px;
   color: #977e63;
-  font-family: Georgia, serif;
+  font-family: "Times New Roman", Georgia, serif;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: .03em;
@@ -76,7 +76,7 @@
   color: inherit;
   font-size: inherit;
   font-weight: inherit;
-  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-family: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
   letter-spacing: -.035em;
 }
 
@@ -99,7 +99,7 @@
   max-width: 590px;
   margin: -3px 27px 35px calc(31px + clamp(16px, 1.7vw, 30px));
   color: #72777b;
-  font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif;
+  font-family: "Times New Roman", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif;
   font-size: clamp(13px, 1vw, 15px);
   font-weight: 400;
   letter-spacing: .012em;

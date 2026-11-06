@@ -102,7 +102,7 @@
   align-items: baseline;
   gap: 7px;
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-family: "Times New Roman", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   text-shadow: 0 1px 16px rgba(0,0,0,.28);
 }
 
@@ -147,7 +147,7 @@
   padding-top: 18px;
   border-top: 1px solid #aea9a1;
   color: #8a7867;
-  font: 600 11px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font: 600 11px/1.5 "Times New Roman", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   letter-spacing: .105em;
 }
 
@@ -168,7 +168,7 @@
 .health-gallery-story h3 {
   min-height: 2.75em;
   white-space: pre-line;
-  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+  font-family: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", serif;
   font-size: clamp(29px, 2.65vw, 45px);
   font-weight: 600;
   letter-spacing: -.045em;
@@ -315,7 +315,7 @@
 .kayak-note-copy h3 {
   margin: 19px 0 32px;
   color: #202c36;
-  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-family: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
   font-size: clamp(39px, 5vw, 72px);
   font-weight: 600;
   letter-spacing: -.065em;

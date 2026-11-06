@@ -1,7 +1,7 @@
 /* The opening field-note lede sets the typographic voice for the entire story.
    Songti carries Chinese prose and headings; small Roman indexing remains quiet. */
 :root {
-  --editorial-serif: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", serif;
+  --editorial-serif: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", serif;
 }
 
 body,
@@ -9,7 +9,7 @@ button,
 input,
 select,
 textarea {
-  font-family: var(--editorial-serif);
+  font-family: "Times New Roman", var(--editorial-serif);
 }
 
 /* Let the first image's generous Songti texture continue through every chapter. */
@@ -29,7 +29,7 @@ textarea {
 .field-video-caption p,
 .kayak-note .kayak-note-copy h3,
 .kayak-note .kayak-note-copy p {
-  font-family: var(--editorial-serif);
+  font-family: "Times New Roman", var(--editorial-serif);
 }
 
 /* Visit / place / date: the formerly bold sans-serif block in screenshot two. */
@@ -68,7 +68,7 @@ textarea {
 .prologue .prologue-body > p:not(.eyebrow),
 .epilogue .epilogue-inner > p,
 .kayak-note .kayak-note-copy p {
-  font-family: var(--editorial-serif);
+  font-family: "Times New Roman", var(--editorial-serif);
   font-size: clamp(17px, 1.27vw, 19px);
   line-height: 2.15;
   letter-spacing: .012em;
@@ -79,7 +79,7 @@ textarea {
 .field-video-caption p,
 .photo-caption p,
 .footer .footer-information p {
-  font-family: var(--editorial-serif);
+  font-family: "Times New Roman", var(--editorial-serif);
   font-size: clamp(14px, 1.02vw, 16px);
   line-height: 1.9;
   letter-spacing: .01em;
@@ -103,7 +103,7 @@ textarea {
 .route-section .route-card small,
 .mobile-chapter-nav,
 .back-top {
-  font-family: var(--editorial-serif);
+  font-family: "Times New Roman", var(--editorial-serif);
 }
 
 .chapter .chapter-meta > span,
@@ -111,7 +111,7 @@ textarea {
 .health-gallery .health-gallery-image-count,
 .chapter .stage-giant,
 .route-section .route-index {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Times New Roman", Georgia, "Times New Roman", serif;
 }
 
 @media (max-width: 720px) {

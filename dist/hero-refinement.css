@@ -17,7 +17,7 @@
 .hero-event-lockup { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .hero-event-main { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 clamp(20px, 3.4vw, 44px); }
 .hero-event-name {
-  font-family: 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'SimSun', serif;
+  font-family: "Times New Roman", 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'SimSun', serif;
   font-size: clamp(27px, 3.4vw, 44px);
   font-weight: 600;
   letter-spacing: .095em;
@@ -26,13 +26,13 @@
 }
 .hero-event-location {
   color: #fff8ed;
-  font-family: 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'SimSun', serif;
+  font-family: "Times New Roman", 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'SimSun', serif;
   font-size: clamp(27px, 3.4vw, 44px);
   font-weight: 600;
   letter-spacing: .095em;
   line-height: 1.5;
 }
-.hero-event-date { color: rgba(232, 235, 244, .83); font: 400 clamp(13px, 1.45vw, 17px)/1.65 Georgia, 'PingFang SC', sans-serif; letter-spacing: .16em; }
+.hero-event-date { color: rgba(232, 235, 244, .83); font: 400 clamp(13px, 1.45vw, 17px)/1.65 "Times New Roman", Georgia, 'PingFang SC', sans-serif; letter-spacing: .16em; }
 .hero .hero-eyebrow { transform: translateY(-13px); }
 .hero .hero-title-wrap { margin-top: clamp(16px, 2.6vh, 28px); }
 .hero h1 { line-height: 1.025; color: #f4ead9; }

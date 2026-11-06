@@ -19,7 +19,7 @@
 .scroll-arrow {
   display: inline-block;
   color: var(--gold);
-  font-family: Georgia, serif;
+  font-family: "Times New Roman", Georgia, serif;
   font-size: 28px;
   font-weight: 400;
   line-height: 1;
@@ -63,7 +63,7 @@
 
 .prologue-label {
   color: #d9c29e;
-  font-family: Georgia, serif;
+  font-family: "Times New Roman", Georgia, serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: .17em;
@@ -71,7 +71,7 @@
 
 .prologue-chinese {
   margin: 19px 0 8px -0.06em;
-  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-family: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
   font-size: clamp(75px, 7.9vw, 118px);
   font-weight: 500;
   letter-spacing: -.09em;
@@ -80,7 +80,7 @@
 }
 
 .prologue-topic {
-  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-family: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
   font-size: clamp(20px, 1.85vw, 26px);
   font-weight: 500;
   letter-spacing: .08em;
@@ -120,7 +120,7 @@
 
 .author-strip .author-info strong {
   display: block;
-  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-family: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
   font-size: 25px;
   font-weight: 600;
   letter-spacing: .09em;

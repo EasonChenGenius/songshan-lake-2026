@@ -32,7 +32,7 @@
 
 .robot-field-photo-index {
   display: block;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Times New Roman", Georgia, "Times New Roman", serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: .13em;
@@ -48,7 +48,7 @@
 }
 
 .robot-field-photo-caption h3 {
-  font-family: var(--editorial-serif, "Songti SC", "STSong", serif);
+  font-family: "Times New Roman", var(--editorial-serif, "Songti SC", "STSong", serif);
   font-size: clamp(30px, 3.15vw, 48px);
   font-weight: 500;
   line-height: 1.5;
@@ -59,7 +59,7 @@
 .robot-field-photo-caption p {
   max-width: 410px;
   margin-top: 24px;
-  font-family: var(--editorial-serif, "Songti SC", "STSong", serif);
+  font-family: "Times New Roman", var(--editorial-serif, "Songti SC", "STSong", serif);
   font-size: clamp(15px, 1.14vw, 17px);
   line-height: 2;
   letter-spacing: .012em;

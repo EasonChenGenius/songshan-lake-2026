@@ -104,7 +104,7 @@
 .field-video-caption h3 {
   margin: 23px 0 20px;
   color: #202733;
-  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-family: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
   font-size: clamp(29px, 2.7vw, 42px);
   font-weight: 600;
   line-height: 1.47;
