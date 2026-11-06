@@ -8,6 +8,12 @@
   <title>Poster Desktop 原图实拍｜看见不可见 · 松山湖科技现场笔记</title>
   <link rel="stylesheet" href="poster.css?v=20261106-desktop-realphoto-xbotpark-v5" />
   <script>if (new URLSearchParams(location.search).has('export')) document.documentElement.classList.add('poster-export');</script>
+  <style id="approved-atlas-layout">
+    .atlas-card--approved{padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;color:inherit!important;min-width:0}
+    .atlas-card--approved .approved-atlas-graphic{margin:0!important;width:100%;background:#15434b;line-height:0}
+    .atlas-card--approved .approved-atlas-graphic img{display:block!important;width:100%!important;max-width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;margin:0!important}
+    .atlas-card--approved .atlas-map-note{color:#66717b!important;margin:12px 0 0!important;font-size:11px!important;line-height:1.7!important}
+  </style>
 </head>
 <body>
   <main class="poster" id="poster">
@@ -38,42 +44,11 @@
     <section class="prologue surface-paper">
       <div class="section-identifier"><span>00 / PROLOGUE</span><span class="identifier-rule"></span><span>追问从这里开始</span></div>
       <div class="prologue-grid">
-        <div class="atlas-card">
-          <div class="atlas-title"><div><span class="atlas-kicker">SONGSHAN LAKE / FIELD ATLAS</span><strong>松山湖参访地图</strong></div></div>
-          <div class="atlas-image-frame atlas-image-frame--relief">
-            <img src="../assets/songshan-lake-relief.svg" width="640" height="640" alt="原版松山湖湖岸轮廓艺术化浮雕，叠加八个参访地点的相对位置标注" />
-            <div class="atlas-map-pins" aria-label="八处参访地标相对位置示意">
-              <span class="atlas-pin atlas-pin--01" style="--pin-x:67.8%;--pin-y:77.8%" aria-label="01 中国散裂中子源"><b>01</b></span>
-              <span class="atlas-pin atlas-pin--02" style="--pin-x:75%;--pin-y:69.5%" aria-label="02 中国科学院东莞材料科学与技术研究所"><b>02</b></span>
-              <span class="atlas-pin atlas-pin--03" style="--pin-x:29%;--pin-y:38%" aria-label="03 广东省智能机器人研究院"><b>03</b></span>
-              <span class="atlas-pin atlas-pin--04" style="--pin-x:26%;--pin-y:48%" aria-label="04 大湾区大学（松山湖校区）"><b>04</b></span>
-              <span class="atlas-pin atlas-pin--05" style="--pin-x:44%;--pin-y:62.5%" aria-label="05 华为欧洲小镇"><b>05</b></span>
-              <span class="atlas-pin atlas-pin--06" style="--pin-x:43.7%;--pin-y:17.5%" aria-label="06 悠兰里"><b>06</b></span>
-              <span class="atlas-pin atlas-pin--07" style="--pin-x:18.5%;--pin-y:23%" aria-label="07 XbotPark机器人基地，松山湖园区大学路11号"><b>07</b></span>
-              <span class="atlas-pin atlas-pin--08" style="--pin-x:70%;--pin-y:49%" aria-label="08 华为运动健康科学实验室，松山湖万汇云谷科技产业园"><b>08</b></span>
-              <div class="atlas-pin-label-layer" aria-hidden="true">
-                <span class="atlas-pin-label" style="--label-x:67.8%;--label-y:84.5%">散裂中子源</span>
-                <span class="atlas-pin-label atlas-pin-label--02" style="--label-x:75%;--label-y:62%">中国科学院东莞材料科学与技术研究所</span>
-                <span class="atlas-pin-label" style="--label-x:47.8%;--label-y:38%">广东省智能机器人研究院</span>
-                <span class="atlas-pin-label" style="--label-x:26%;--label-y:55%">大湾区大学（松山湖校区）</span>
-                <span class="atlas-pin-label" style="--label-x:44%;--label-y:71.5%">华为欧洲小镇</span>
-                <span class="atlas-pin-label" style="--label-x:43.7%;--label-y:10.5%">悠兰里</span>
-                <span class="atlas-pin-label" style="--label-x:18.5%;--label-y:30%">XbotPark机器人基地</span>
-                <span class="atlas-pin-label atlas-pin-label--08" style="--label-x:83.5%;--label-y:49%">华为运动健康科学实验室</span>
-              </div>
-            </div>
-          </div>
-          <ol class="atlas-map-key" aria-label="地图点位名称索引">
-            <li><b>01</b> 中国散裂中子源</li>
-            <li><b>02</b> 中国科学院东莞材料科学与技术研究所</li>
-            <li><b>03</b> 广东省智能机器人研究院</li>
-            <li><b>04</b> 大湾区大学（松山湖校区）</li>
-            <li><b>05</b> 华为欧洲小镇</li>
-            <li><b>06</b> 悠兰里（ULAND）</li>
-            <li><b>07</b> XbotPark机器人基地</li>
-            <li><b>08</b> 华为运动健康科学实验室</li>
-          </ol>
-          <p class="atlas-map-note">保留原版湖岸浮雕。八处参访地点按公开地点资料标注相对位置（XbotPark：大学路11号；华为运动健康科学实验室：万汇云谷科技产业园），参考 <a href="https://www.xbotpark.com/" target="_blank" rel="noopener">XbotPark官网</a>、<a href="https://ssl.dg.gov.cn/kcj/cxsd/content/post_3321481.html" target="_blank" rel="noopener">松山湖管委会</a>、 <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> 与高德地图。湖岸轮廓为艺术化示意，不用于导航。</p>
+        <div class="atlas-card atlas-card--approved">
+          <figure class="approved-atlas-graphic" aria-label="松山湖参访地图，华为运动健康科学实验室08已调整到湖泊左侧">
+            <img src="../assets/songshan-lake-atlas-approved.png" width="1152" height="1365" alt="新版松山湖参访地图，八个参访地标按编号呈现，08华为运动健康科学实验室位于地图左侧；下方附地点名称索引" />
+          </figure>
+          <p class="atlas-map-note">本地图为艺术化位置示意，不代表精确坐标，不用于导航。</p>
         </div>
         <div class="prologue-copy">
           <p class="eyebrow muted">THE QUESTION / 从一个问题出发</p>
