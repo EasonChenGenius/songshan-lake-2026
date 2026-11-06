@@ -12,6 +12,7 @@
   --reading: "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
   --roman: "Baskerville", "Iowan Old Style", Georgia, "Times New Roman", serif;
   --apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  --editorial-body-size: clamp(19px, 1.55vw, 21px);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -1104,4 +1105,14 @@ strong { font-weight: 650; }
 @media (max-width: 760px) {
   .atlas-pin-label-layer { display: none; }
   .chapter-lede--life { font-size: 25px; }
+}
+
+/* A single size token for all prologue/chapter narrative paragraphs. */
+.prologue-copy > p:not(.eyebrow),
+.chapter-columns p {
+  font-size: var(--editorial-body-size);
+  line-height: 1.95;
+}
+@media (max-width: 760px) {
+  :root { --editorial-body-size: 18px; }
 }
