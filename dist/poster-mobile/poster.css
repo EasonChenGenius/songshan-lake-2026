@@ -33,8 +33,8 @@ strong { font-weight: 650; }
 
 /* A cinematic, completely static cover. */
 .cover { position: relative; min-height: 960px; display: flex; flex-direction: column; justify-content: space-between; isolation: isolate; background: #0a1020; color: #fff; }
-.cover-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; z-index: -3; filter: saturate(1.06) contrast(1.05) brightness(.93); }
-.cover-shading { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(5, 12, 26, .84), rgba(7, 13, 27, .64) 48%, rgba(5, 9, 22, .20)), linear-gradient(0deg, rgba(7, 14, 28, .96) 0%, transparent 48%, rgba(5, 10, 24, .36) 100%); }
+.cover-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -3; filter: saturate(.85) contrast(1.06); }
+.cover-shading { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(5, 12, 26, .94), rgba(7, 13, 27, .72) 48%, rgba(5, 9, 22, .26)), linear-gradient(0deg, #070e1c 0%, transparent 40%, rgba(5, 10, 24, .52) 100%); }
 .cover::after { position: absolute; content: ""; inset: 32px; border: 1px solid rgba(230, 213, 187, .18); pointer-events: none; }
 .rail { padding-inline: clamp(45px, 6.4vw, 92px); }
 .cover-top { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 66px; }
@@ -308,14 +308,14 @@ strong { font-weight: 650; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(.91) saturate(1.04) contrast(1.05);
+  filter: brightness(.76) saturate(.87) contrast(1.05);
 }
 .chapter-masthead::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(90deg, rgba(7, 17, 31, .87), rgba(8, 19, 33, .63) 47%, rgba(7, 16, 29, .16) 100%), linear-gradient(0deg, rgba(4, 11, 23, .58), transparent 65%);
+  background: linear-gradient(90deg, rgba(7, 17, 31, .89), rgba(8, 19, 33, .66) 47%, rgba(7, 16, 29, .07) 100%), linear-gradient(0deg, rgba(4, 11, 23, .64), transparent 60%);
 }
 .chapter-masthead::after {
   content: "";
@@ -735,13 +735,8 @@ strong { font-weight: 650; }
 /* Chapter 04: compose the copy as a left editorial column. The hand and
    wearable-device visual can breathe independently on the right. */
 #life .chapter-masthead::before {
-  background: linear-gradient(90deg, rgba(5, 13, 26, .91) 0%, rgba(6, 15, 28, .76) 43%, rgba(6, 16, 31, .29) 77%, rgba(6, 16, 31, .06) 100%);
+  background: linear-gradient(90deg, rgba(5, 13, 26, .95) 0%, rgba(6, 15, 28, .85) 43%, rgba(6, 16, 31, .30) 77%, rgba(6, 16, 31, .04) 100%);
 }
-/* Keep the physical places recognizable behind the mobile editorial headings. */
-#discovery .chapter-masthead > img { object-position: 50% 57%; }
-#materials .chapter-masthead > img { object-position: 52% 50%; }
-#robotics .chapter-masthead > img { object-position: 49% 51%; }
-#life .chapter-masthead > img { object-position: 58% 51%; }
 #life .chapter-masthead .chapter-heading,
 #people .chapter-masthead .chapter-heading { display: block; padding: 0; }
 #life .chapter-masthead .chapter-number,

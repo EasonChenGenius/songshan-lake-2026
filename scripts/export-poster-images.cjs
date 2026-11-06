@@ -1,4 +1,4 @@
-/* Export the two immutable poster routes to separately downloadable long images.
+/* Export independent editorial and real-photo poster routes to downloadable long images.
  * Intended for the GitHub Actions Chromium runner; no changes to poster markup.
  */
 const fs = require('node:fs/promises');
@@ -12,7 +12,13 @@ const outputDirectory = path.resolve(process.env.POSTER_OUTPUT_DIR || 'dist/post
 const variants = [
   { name: 'poster-desktop', route: '/poster-desktop/', width: 1680, height: 950, dpr: 1 },
   { name: 'poster-mobile', route: '/poster-mobile/', width: 402, height: 874, dpr: 2 },
-].filter((variant) => !process.env.POSTER_EXPORT_VARIANT || variant.name === process.env.POSTER_EXPORT_VARIANT);
+  { name: 'poster-desktop-real-photo', route: '/poster-desktop-real-photo/', width: 1680, height: 950, dpr: 1 },
+  { name: 'poster-mobile-real-photo', route: '/poster-mobile-real-photo/', width: 402, height: 874, dpr: 2 },
+].filter((variant) => {
+  const selection = (process.env.POSTER_EXPORT_VARIANTS || process.env.POSTER_EXPORT_VARIANT || '')
+    .split(',').map((name) => name.trim()).filter(Boolean);
+  return selection.length === 0 || selection.includes(variant.name);
+});
 
 async function exportVariant(browser, variant) {
   const context = await browser.newContext({
