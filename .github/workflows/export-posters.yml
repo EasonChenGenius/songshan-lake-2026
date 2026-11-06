@@ -6,6 +6,8 @@ on:
     paths:
       - .github/workflows/export-posters.yml
       - scripts/export-poster-images.cjs
+      - 'dist/poster-mobile/**'
+      - 'dist/assets/poster-mobile-*'
   workflow_dispatch:
 
 permissions:
