@@ -186,3 +186,320 @@
   .epilogue--poster-reference h2 { font-size: clamp(45px, 9.5vw, 76px); }
   .footer--poster-reference .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* FINAL INTERACTIVE REVISION 2026-11-06 — typography and photo layout.
+   Applied to the live editorial site, never to Poster or 4K exports. */
+
+/* 01: the region label sits two typographic steps below the principal event name. */
+.hero .hero-event-location {
+  font-size: clamp(20px, 2.6vw, 34px);
+  font-weight: 550;
+  letter-spacing: .085em;
+  line-height: 1.5;
+}
+
+/* 02: image-based atlas. Clip the white baked-in edge of the original raster
+   and give the artwork a rounded, softly reflective glass outer frame. */
+.prologue-atlas--glass {
+  position: relative;
+  border: 1px solid rgba(227,244,245,.38);
+  border-radius: clamp(18px,2.7vw,32px);
+  padding: clamp(4px,.6vw,8px);
+  background: linear-gradient(148deg, rgba(229,252,254,.24),rgba(180,223,226,.08) 33%, rgba(220,248,251,.12));
+  backdrop-filter: blur(16px) saturate(125%);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+  box-shadow: 0 25px 65px rgba(0,3,16,.38), 0 0 0 1px rgba(250,255,255,.10), inset 0 1px 0 rgba(255,255,255,.43);
+}
+.prologue-atlas--glass .approved-atlas-graphic {
+  position: relative;
+  overflow: hidden !important;
+  border-radius: clamp(15px,2.3vw,26px) !important;
+  aspect-ratio: 1152/1365;
+  background: #113b41;
+  isolation: isolate;
+  box-shadow: inset 0 0 0 1px rgba(224,251,254,.26);
+}
+.prologue-atlas--glass .approved-atlas-graphic img {
+  position: absolute;
+  inset: 0;
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transform: scale(1.095);
+  transform-origin: center;
+}
+.prologue-atlas--glass .approved-atlas-graphic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(123deg,rgba(253,255,255,.22) 0%,rgba(253,255,255,.07) 14%,transparent 36%),
+    linear-gradient(3deg, transparent 80%,rgba(255,255,255,.11));
+  box-shadow: inset 0 0 0 1px rgba(237,255,255,.27), inset 0 1px 7px rgba(255,255,255,.20);
+}
+.prologue-atlas--glass .atlas-credit {
+  margin: 17px 4px 5px !important;
+  color: #d2dee4;
+  font-size: clamp(12px,1vw,15px);
+  line-height: 1.8;
+}
+
+/* 04 and all editorial sections: a consistent body reading size.
+   No individually forced multi-line spans for the two large prose lead-ins. */
+.chapter .chapter-copy > p:not(.lede),
+.chapter .chapter-copy > p:not(.lede) strong,
+.prologue .prologue-body > p:not(.eyebrow),
+.kayak-note .kayak-note-copy p,
+.concert-feature-story p {
+  font-size: clamp(18px, 1.46vw, 22px);
+  line-height: 2.0;
+  letter-spacing: .012em;
+}
+#chapter-4 .chapter-copy .lede--life {
+  max-width: 1100px;
+  font-size: clamp(29px, 2.75vw, 45px);
+  line-height: 1.63;
+  letter-spacing: -.035em;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+#chapter-5 .chapter-copy .lede--people {
+  max-width: 1150px;
+  font-size: clamp(29px, 2.65vw, 43px);
+  line-height: 1.67;
+  letter-spacing: -.035em;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+#chapter-5 .chapter-copy > p:not(.lede) {
+  max-width: 1250px;
+  font-size: clamp(20px,1.58vw,24px);
+  line-height: 2.07;
+  color: #4e5966;
+}
+#chapter-5 .chapter-paper {
+  padding-bottom: clamp(12px, 2vw, 28px);
+}
+#chapter-5 .chapter-copy > p:not(.lede) + p {
+  margin-top: clamp(22px, 3.4vw, 45px);
+}
+
+/* 05 concerts: a genuine static three-up series with text beneath each photo. */
+.field-static-gallery {
+  margin-top: clamp(25px,4.5vw,66px);
+  margin-bottom: clamp(55px,7vw,105px);
+  color: #26313d;
+}
+.field-static-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px 28px;
+  border-top: 1px solid #bdad9c;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.field-static-header h3,
+.field-static-header > span {
+  color: #8e7155;
+  font: 650 clamp(11px, .85vw, 15px)/1.6 "Times New Roman", "Songti SC", Georgia, serif;
+  letter-spacing: .13em;
+}
+.field-static-intro {
+  margin: -4px 0 23px;
+  font-size: clamp(15px,1.1vw,17px);
+  line-height: 1.8;
+  color: #7d7c7a;
+}
+.field-static-grid {
+  display: grid;
+  gap: clamp(13px,1.8vw,28px);
+  align-items: stretch;
+}
+.field-static-grid--concert {
+  grid-template-columns: repeat(3,minmax(0,1fr));
+}
+.field-static-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(210,200,186,.65);
+  border-radius: clamp(15px,1.6vw,24px);
+  background: #f8f5ef;
+  box-shadow: 0 14px 32px rgba(41,48,57,.07);
+  transition: transform .28s ease,box-shadow .28s ease;
+}
+.field-static-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 42px rgba(41,48,57,.12);
+}
+.field-static-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/2;
+  height: auto;
+  object-fit: cover;
+}
+.field-static-card figcaption {
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr);
+  gap: 13px;
+  padding: clamp(16px,1.6vw,24px);
+  min-height: 115px;
+  align-content: start;
+  color: #65717a;
+}
+.field-static-number {
+  color: #ac8050;
+  font: 700 clamp(12px,.95vw,16px)/1.7 "Times New Roman",Georgia,serif;
+}
+.field-static-card figcaption p {
+  font: 400 clamp(14px,1.13vw,18px)/1.83 "Times New Roman","Songti SC","STSong",serif;
+  overflow-wrap: anywhere;
+}
+.field-static-card figcaption strong {
+  display: block;
+  font-weight: 650;
+  color: #27313c;
+}
+
+/* 07: reduce the dead vertical gap; translucent rounded aerial takeaway. */
+#chapter-5 .people-takeaway-feature {
+  margin-top: clamp(10px,2vw,30px);
+  margin-bottom: clamp(20px,3vw,44px);
+  border-radius: clamp(19px,2.2vw,32px);
+  border: 1px solid rgba(253,252,249,.52);
+  border-left: 5px solid #b88a55;
+  padding: clamp(32px,4.2vw,73px);
+  overflow: hidden;
+  box-shadow: 0 18px 54px rgba(33,53,70,.16),
+    inset 0 1px rgba(255,255,255,.34);
+  backdrop-filter: blur(14px) saturate(115%);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+}
+#chapter-5 .people-takeaway-feature::before {
+  background-position: center 52%;
+}
+#chapter-5 .people-takeaway-feature::after {
+  background: linear-gradient(103deg,rgba(248,246,242,.72) 0%, rgba(248,246,242,.59) 61%,rgba(248,246,242,.48));
+}
+#chapter-5 .people-takeaway-eyebrow {
+  font-size: clamp(19px,1.76vw,28px);
+}
+#chapter-5 .people-takeaway-inner p {
+  font-size: clamp(31px,3.14vw,55px);
+  line-height: 1.62;
+}
+#chapter-5 .talent-opening-photo--panorama {
+  margin-top: clamp(22px,3vw,49px);
+  margin-bottom: clamp(24px,4vw,54px);
+  overflow: hidden;
+  border-radius: clamp(17px,1.7vw,25px);
+  background: #f8f5f0;
+  border: 1px solid #d5c8b7;
+  box-shadow: 0 16px 32px rgba(31,44,56,.08);
+}
+#chapter-5 .talent-opening-photo--panorama img {
+  border-radius: 0;
+  aspect-ratio: 2048/1000;
+  object-fit: cover;
+}
+#chapter-5 .talent-opening-photo--panorama figcaption {
+  padding: clamp(15px,2vw,26px);
+  background: #f7f3ec;
+}
+
+/* 08: panoramic opening as lead image; six numbered images always visible. */
+#chapter-5 .talent-static-gallery {
+  margin-top: clamp(30px,4vw,60px);
+}
+.field-static-grid--talent {
+  grid-template-columns: repeat(3,minmax(0,1fr));
+}
+.field-static-grid--talent .field-static-card img {
+  aspect-ratio: 4/3;
+  object-position: center 43%;
+}
+.field-static-grid--talent .field-static-card:nth-child(3) img {
+  object-position: 50% 57%;
+}
+.field-static-grid--talent .field-static-card figcaption {
+  min-height: 104px;
+}
+
+/* 08: Chapter 05 cover uses the exact user supplied daytime city aerial
+   already committed as a binary-identical source asset in /dist/assets. */
+#chapter-5 .stage-violet .image-future {
+  background-image: url("assets/poster-real-photo-part5-city-aerial.jpg") !important;
+  background-size: cover !important;
+  background-position: center 52% !important;
+}
+#chapter-5 .stage-violet .stage-overlay {
+  background: linear-gradient(90deg,rgba(3,13,27,.84) 0%,rgba(6,18,30,.47) 50%,rgba(8,18,30,.21) 100%),
+    linear-gradient(0deg,rgba(4,10,24,.66),transparent 66%);
+}
+
+/* Epilogue: warmer poster-style gold metallic gradient and legible left-aligned small text. */
+#epilogue.epilogue--poster-reference h2 {
+  max-width: 1200px;
+  font-weight: 680;
+  letter-spacing: -.065em;
+  color: #fff6e9;
+  filter: drop-shadow(0 12px 25px rgba(0,0,0,.25));
+}
+#epilogue.epilogue--poster-reference h2 em {
+  display: inline-block;
+  font-style: normal;
+  background-image: linear-gradient(160deg,#fff3d5 0%,#f2ca8f 24%,#b88048 61%,#eac495 94%);
+  color: #eac495;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 7px 10px rgba(0,0,0,.25));
+}
+#epilogue.epilogue--poster-reference .epilogue-reference-heading {
+  font-size: clamp(13px,1.15vw,18px);
+  color: #eac38b;
+}
+#epilogue.epilogue--poster-reference .epilogue-lead {
+  max-width: 1150px;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+  font-size: clamp(20px,1.64vw,26px) !important;
+  line-height: 2.0;
+  color: #f3d4a5;
+  text-shadow: 0 1px 14px rgba(0,0,0,.28);
+}
+@media(max-width:950px) {
+  .field-static-grid--concert,.field-static-grid--talent {grid-template-columns: repeat(2,minmax(0,1fr));}
+  #chapter-5 .chapter-copy > p:not(.lede) {font-size: clamp(18px,2.1vw,21px);}
+}
+@media(max-width:640px) {
+  .hero .hero-event-location {font-size: clamp(17px,4.9vw,25px);}
+  .prologue-atlas--glass {border-radius: 20px; padding: 5px;}
+  .prologue-atlas--glass .approved-atlas-graphic {border-radius: 16px !important;}
+  .chapter .chapter-copy > p:not(.lede),
+  .prologue .prologue-body > p:not(.eyebrow),
+  .kayak-note .kayak-note-copy p,
+  .concert-feature-story p,
+  #chapter-5 .chapter-copy > p:not(.lede) {font-size: 18px;line-height:1.92;}
+  #chapter-4 .chapter-copy .lede--life, #chapter-5 .chapter-copy .lede--people {
+    font-size: clamp(26px,7.6vw,36px);
+    line-height: 1.61;
+  }
+  .field-static-grid--concert, .field-static-grid--talent {grid-template-columns: 1fr;}
+  .field-static-card img {aspect-ratio: 3/2;}
+  #chapter-5 .talent-opening-photo--panorama img {aspect-ratio: 16/10;}
+  #chapter-5 .people-takeaway-feature {border-radius: 18px; padding: 27px 19px;}
+  #chapter-5 .people-takeaway-inner p {font-size: clamp(26px,7.2vw,37px);}
+  #epilogue.epilogue--poster-reference .epilogue-lead {font-size: 19px !important;}
+}
+@media(prefers-reduced-motion:reduce) {
+ .field-static-card {transition: none;}
+ .field-static-card:hover {transform:none;}
+}
