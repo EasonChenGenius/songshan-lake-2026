@@ -36,16 +36,24 @@
 .hero .hero-eyebrow { transform: translateY(-13px); }
 .hero .hero-title-wrap { margin-top: clamp(16px, 2.6vh, 28px); }
 .hero h1 { line-height: 1.025; color: #f4ead9; }
-.hero h1 .hero-unseen {
-  color: rgba(236, 211, 174, .16);
-  -webkit-text-fill-color: rgba(236, 211, 174, .16);
-  -webkit-text-stroke: 2px rgba(244, 226, 201, .94);
-  text-shadow: none;
+.hero h1 > span.hero-title-ivory {
+  color: #f9f3e9;
+  text-shadow: 0 3px 0 rgba(83, 78, 76, .4), 0 13px 37px rgba(0, 0, 0, .48);
+}
+.hero h1 .hero-title-gold {
+  display: inline-block;
+  background: linear-gradient(160deg, #fff3d6 0%, #e6bf85 32%, #ab7a48 65%, #e5c497 88%);
+  color: #e6bf85;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, .38));
 }
 .hero h1 .title-stop {
   display: inline-block;
-  transform: translateX(.10em);
-  color: #e5d3b9;
+  margin-left: .12em;
+  font-size: 1.12em;
+  color: #f1d2a1;
 }
 .hero .hero-bottom { margin-top: clamp(23px, 3.5vh, 48px); }
 .hero .scroll-callout { gap: 16px; }

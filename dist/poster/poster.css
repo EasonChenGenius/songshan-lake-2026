@@ -654,14 +654,22 @@ strong { font-weight: 650; }
 .epilogue-qr-scan b { color: #fff; font: 600 17px var(--apple); }
 .epilogue-qr:hover .epilogue-qr-frame, .epilogue-qr:focus-visible .epilogue-qr-frame { box-shadow: 0 0 0 5px rgba(232, 199, 151, .23), 0 13px 32px rgba(0, 0, 0, .23); }
 
-/* The cover uses a deliberately cut, two-tone editorial logotype. */
+/* The cover retains its editorial Songti logotype and borrows the closing page's
+   ivory-to-warm-gold metal treatment without altering its typography. */
 .cover h1.cover-title { display: flex; flex-direction: column; align-items: flex-start; width: fit-content; margin: 43px 0 1px; color: #f9f5ec; font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif; font-size: clamp(140px, 16.7vw, 246px); font-weight: 850; line-height: 1.08; letter-spacing: -.095em; text-shadow: 0 11px 35px rgba(0, 0, 0, .31); }
 .cover-title-line { position: relative; display: flex; align-items: baseline; white-space: nowrap; }
-.cover h1.cover-title .cover-title-top { color: #f4ead9; text-shadow: 0 14px 37px rgba(0, 0, 0, .38); }
+.cover h1.cover-title .cover-title-top { color: #f9f3e9; text-shadow: 0 3px 0 rgba(83, 78, 76, .4), 0 13px 37px rgba(0, 0, 0, .48); }
 .cover-title-bottom { margin: -.12em 0 0 clamp(14px, 1.9vw, 28px); }
-.cover h1.cover-title .cover-title-negative { position: relative; color: rgba(236, 211, 174, .16); -webkit-text-fill-color: rgba(236, 211, 174, .16); -webkit-text-stroke: 2px rgba(244, 226, 201, .94); text-shadow: none; }
-.cover h1.cover-title .cover-title-visible { color: #f4ead9; text-shadow: 0 14px 37px rgba(0, 0, 0, .38); }
-.cover h1.cover-title .period { align-self: baseline; padding-left: .025em; color: #e5d3b9; font-size: .55em; letter-spacing: 0; }
+.cover h1.cover-title .cover-title-gold {
+  display: inline-block;
+  background: linear-gradient(160deg, #fff3d6 0%, #e6bf85 32%, #ab7a48 65%, #e5c497 88%);
+  color: #e6bf85;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, .38));
+}
+.cover h1.cover-title .period { align-self: baseline; margin-left: .12em; color: #f1d2a1; font-size: .78em; letter-spacing: 0; }
 .cover-title-signature { display: flex; align-items: center; gap: 17px; width: fit-content; max-width: 100%; margin: 12px 0 45px 14px; color: #ded0bc; font: 650 13px/1.7 var(--roman); letter-spacing: .17em; }
 .cover-title-signature i { width: clamp(35px, 9vw, 115px); height: 1px; background: linear-gradient(90deg, #ecd8ba, rgba(236, 216, 186, .08)); }
 
