@@ -65,34 +65,39 @@
     editorialReveals.forEach(node => node.classList.add('is-visible'));
   }
 
-  // The Chapter 04 title film is decorative: muted, seamless, and without controls.
-  // Only play while the title is on screen; preserve the still poster for reduced motion.
-  const lifeTitleVideo = document.getElementById('chapterLifeBackgroundVideo');
-  if (lifeTitleVideo) {
-    lifeTitleVideo.muted = true;
-    lifeTitleVideo.defaultMuted = true;
-    lifeTitleVideo.playsInline = true;
-    let lifeTitleIsVisible = false;
-    const syncLifeTitleVideo = () => {
-      if (motionPreference.matches || document.hidden || !lifeTitleIsVisible) {
-        lifeTitleVideo.pause();
+  // Silent, seamless inline kayaking film. No playback buttons; render the
+  // poster on reduced-motion devices and pause when outside the viewport.
+  const kayakingInlineVideo = document.getElementById('kayakingInlineVideo');
+  if (kayakingInlineVideo) {
+    kayakingInlineVideo.muted = true;
+    kayakingInlineVideo.defaultMuted = true;
+    kayakingInlineVideo.loop = true;
+    kayakingInlineVideo.playsInline = true;
+    kayakingInlineVideo.controls = false;
+    let kayakingInlineInView = false;
+    const syncKayakingInline = () => {
+      if (motionPreference.matches || document.hidden || !kayakingInlineInView) {
+        kayakingInlineVideo.pause();
       } else {
-        const playPromise = lifeTitleVideo.play();
-        if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(() => {});
+        const playPromise = kayakingInlineVideo.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(() => {});
+        }
       }
     };
     if ('IntersectionObserver' in window) {
-      const lifeTitleObserver = new IntersectionObserver(([entry]) => {
-        lifeTitleIsVisible = entry.isIntersecting;
-        syncLifeTitleVideo();
-      }, {threshold:[0, .12]});
-      lifeTitleObserver.observe(lifeTitleVideo);
+      const inlineObserver = new IntersectionObserver(([entry]) => {
+        kayakingInlineInView = entry.isIntersecting;
+        syncKayakingInline();
+      }, {threshold:[0,.1,.3]});
+      inlineObserver.observe(kayakingInlineVideo);
     } else {
-      lifeTitleIsVisible = true;
-      syncLifeTitleVideo();
+      kayakingInlineInView = true;
+      syncKayakingInline();
     }
-    document.addEventListener('visibilitychange', syncLifeTitleVideo);
-    if (typeof motionPreference.addEventListener === 'function') motionPreference.addEventListener('change', syncLifeTitleVideo);
+    document.addEventListener('visibilitychange', syncKayakingInline);
+    if (typeof motionPreference.addEventListener === 'function')
+      motionPreference.addEventListener('change', syncKayakingInline);
   }
 
   // Replays a short approach when the robotics chapter is visited again.
@@ -325,10 +330,10 @@
       {title:'当身体参与其中，\n理解便多了一层。', description:'第五张 · 羽毛球体验区里，运动不再只是纸面上的指标。'}
     ]},
     {id:'kayakingGallery', entries:[
-      {title:'挥挥手，\n向湖面出发。', description:'第一张 · 湖边举起的手，留住了出发前轻松的一刻。'},
-      {title:'救生衣穿好，\n把期待带上船。', description:'第二张 · 出发前的合影里，每个人都已做好下水准备。'},
-      {title:'夕阳把湖面，\n写成一片金色。', description:'第三张 · 双人皮划艇划过落日余晖，桨叶轻触水面。'},
-      {title:'暮色渐深，\n笑容留在镜头里。', description:'第四张 · 暮色里，我和同伴划着皮划艇靠近镜头，留下一张比夕阳更鲜活的合影。'}
+      {title:'救生衣穿好，\n把期待带上船。', description:'第一张 · 出发前的合影里，每个人都已做好下水准备。'},
+      {title:'挥挥手，\n向湖面出发。', description:'第二张 · 湖边举起的手，留住了出发前轻松的一刻。'},
+      {title:'暮色渐深，\n笑容留在镜头里。', description:'第三张 · 暮色里，我和同伴划着皮划艇靠近镜头，留下一张比夕阳更鲜活的合影。'},
+      {title:'夕阳把湖面，\n写成一片金色。', description:'第四张 · 双人皮划艇划过落日余晖，桨叶轻触水面。'}
     ]}
   ];
 
