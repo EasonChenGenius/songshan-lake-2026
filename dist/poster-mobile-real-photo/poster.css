@@ -770,7 +770,7 @@ strong { font-weight: 650; }
 /* Chapter 05: a clean text field on the left, people fully visible on the
    right, with the scene's light acting as the visual destination. */
 #people .chapter-masthead { height: 525px; }
-#people .chapter-masthead > img { object-position: center 44%; filter: brightness(.86) saturate(.96) contrast(1.04); }
+#people .chapter-masthead > img { object-position: center 75%; filter: brightness(.94) saturate(1.08) contrast(1.03); }
 #people .chapter-masthead::before {
   background: linear-gradient(90deg, rgba(5, 14, 28, .97) 0%, rgba(6, 15, 30, .94) 29%, rgba(6, 15, 30, .67) 47%, rgba(6, 15, 30, .09) 78%, transparent 100%);
 }
