@@ -1105,6 +1105,19 @@ strong { font-weight: 650; }
   white-space: nowrap;
   text-shadow: 0 1px 3px rgba(0, 0, 0, .28);
 }
+/* The two long right-hand labels are vertically staggered and edge-aligned,
+   away from pins 08 and 02. Never let them run off the map or mask a pin. */
+.atlas-pin-label--02,
+.atlas-pin-label--08 {
+  left: auto;
+  right: 12px;
+  transform: translateY(-50%);
+  max-width: calc(100% - 24px);
+  box-sizing: border-box;
+  white-space: normal;
+  text-align: right;
+}
+.atlas-pin-label--08 { top: 55%; }
 #people .chapter-masthead .chapter-number {
   font-family: "Times New Roman", "Nimbus Roman", Georgia, serif;
   font-variant-numeric: lining-nums;
