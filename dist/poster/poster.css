@@ -697,10 +697,13 @@ strong { font-weight: 650; }
   margin: 55px auto 0;
 }
 #life .lake-interlude > img {
-  aspect-ratio: 5 / 3;
+  /* Keep the full editorial width but reduce photograph height by roughly 38%. */
+  aspect-ratio: 2.4 / 1;
   object-fit: cover;
-  object-position: 50% 63%;
+  object-position: 50% 72%;
 }
+#life .lake-interlude--concert { margin-top: 70px; }
+#life .lake-interlude--concert > img { object-position: 50% 57%; }
 /* Keep all three kayaking photo frames exactly the same height.
    The third image is gently enlarged within a bottom-anchored crop, retaining the kayak. */
 #life .photos-three > .photo-card:nth-child(3) > .photo-crop {
