@@ -770,7 +770,25 @@ strong { font-weight: 650; }
 /* Chapter 05: a clean text field on the left, people fully visible on the
    right, with the scene's light acting as the visual destination. */
 #people .chapter-masthead { height: 525px; }
-#people .chapter-masthead > img { object-position: center 75%; filter: brightness(.94) saturate(1.08) contrast(1.03); }
+#people .chapter-masthead > img {
+  inset: 7% 3% auto auto;
+  width: 70%;
+  height: 86%;
+  object-position: center 60%;
+  border-radius: 18px;
+  filter: brightness(.94) saturate(1.08) contrast(1.03);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .4) 11%, #000 29%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .4) 11%, #000 29%);
+}
+@media (max-width: 760px) {
+  #people .chapter-masthead > img {
+    inset: 9% 2.5% auto auto;
+    width: 82%;
+    height: 82%;
+    border-radius: 14px;
+    object-position: 48% 54%;
+  }
+}
 #people .chapter-masthead::before {
   background: linear-gradient(90deg, rgba(5, 14, 28, .97) 0%, rgba(6, 15, 30, .94) 29%, rgba(6, 15, 30, .67) 47%, rgba(6, 15, 30, .09) 78%, transparent 100%);
 }
@@ -1105,19 +1123,29 @@ strong { font-weight: 650; }
   white-space: nowrap;
   text-shadow: 0 1px 3px rgba(0, 0, 0, .28);
 }
-/* The two long right-hand labels are vertically staggered and edge-aligned,
-   away from pins 08 and 02. Never let them run off the map or mask a pin. */
-.atlas-pin-label--02,
-.atlas-pin-label--08 {
-  left: auto;
-  right: 12px;
-  transform: translateY(-50%);
-  max-width: calc(100% - 24px);
+/* Respect the source map's layout: 02 above its pin and 08 beside its pin.
+   Anchor 08 just beyond the marker edge so the spacing survives narrower maps. */
+.atlas-pin-label--02 {
+  left: 75%;
+  right: auto;
+  top: 62%;
+  transform: translate(-50%, -50%);
+  max-width: 42%;
   box-sizing: border-box;
   white-space: normal;
-  text-align: right;
+  text-align: center;
 }
-.atlas-pin-label--08 { top: 55%; }
+.atlas-pin-label--08 {
+  left: calc(70% + 22px);
+  right: auto;
+  top: 49%;
+  width: max-content;
+  max-width: calc(30% - 30px);
+  box-sizing: border-box;
+  transform: translateY(-50%);
+  white-space: normal;
+  text-align: left;
+}
 #people .chapter-masthead .chapter-number {
   font-family: "Times New Roman", "Nimbus Roman", Georgia, serif;
   font-variant-numeric: lining-nums;
