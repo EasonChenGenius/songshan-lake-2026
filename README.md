@@ -4,6 +4,8 @@
 
 - [GitHub Pages 展示网站](https://easonchengenius.github.io/songshan-lake-2026/)
 - [长图海报版（含扫码入口）](https://easonchengenius.github.io/songshan-lake-2026/poster/)
+- [poster-电脑版（独立存档）](https://easonchengenius.github.io/songshan-lake-2026/poster-desktop/)
+- [poster-手机版（iPhone 17 竖屏适配）](https://easonchengenius.github.io/songshan-lake-2026/poster-mobile/)
 - [原站](https://see-the-unseen-songshan-2026.cheneason985.chatgpt.site/)
 
 ## 部署方式
@@ -17,6 +19,12 @@ python3 -m http.server 8000 --directory dist
 ```
 
 ## 后续修改与同步
+
+### 两套独立海报
+
+- `dist/poster-desktop/index.html` 与同目录 `poster.css`：保存拆分当时的电脑版排版，作为独立存档，不随手机版修改。
+- `dist/poster-mobile/index.html` 与同目录 `poster.css`：以 iPhone 17 的约 402 × 874 CSS 像素竖屏为设计基准，独立调整字号、图文比例、留白和单列阅读布局。
+- `dist/poster/`：保留原有长图链接与内容，兼容之前分享出去的二维码和链接。两套新海报共用 `dist/assets/` 的照片与视觉素材，但各自维护 HTML、CSS。
 
 1. 以本仓库 `main` 分支中的 `dist/` 为对外发布版本；在此处修改网页代码和资源。
 2. 每次修改完成后，提交并推送到 `main`，GitHub Actions 就会自动重新发布，公开链接保持不变。
