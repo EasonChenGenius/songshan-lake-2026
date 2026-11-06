@@ -1092,8 +1092,8 @@ strong { font-weight: 650; }
 
 /* 2026.11.06 — Pin numerals and their full names have independent positions.
    This keeps every place visible without labels hiding neighbouring markers. */
-.atlas-map-labels { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
-.atlas-map-label {
+.atlas-pin-label-layer { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.atlas-pin-label {
   position: absolute;
   left: var(--label-x);
   top: var(--label-y);
@@ -1120,6 +1120,6 @@ strong { font-weight: 650; }
 .chapter-lede--life { max-width: none; font-size: clamp(27px, 2.25vw, 36px); }
 .chapter-lede--life span, .chapter-lede--people span { display: block; text-wrap: pretty; }
 @media (max-width: 760px) {
-  .atlas-map-labels { display: none; }
+  .atlas-pin-label-layer { display: none; }
   .chapter-lede--life { font-size: 25px; }
 }
