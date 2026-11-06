@@ -1,0 +1,188 @@
+/* Online interactive story only — Nov 6 approved reference refresh.
+   No Poster Desktop / Mobile styles or assets are modified. */
+
+/* The four real field photos retain the same aspect and controls as the original gallery. */
+.neutron-gallery .health-gallery-visual { aspect-ratio: 2048 / 1365; }
+.neutron-gallery .health-gallery-slide:nth-child(3) { object-position: center 48%; }
+.kayaking-gallery .health-gallery-slide:nth-child(4) { object-position: center 49%; }
+
+/* Scene 04.3: immersive photo, followed by the original long-poster dark editorial panel. */
+.concert-feature {
+  margin-top: clamp(85px, 10vw, 155px);
+  margin-bottom: clamp(42px, 5vw, 78px);
+  background: #103349;
+  border-radius: clamp(12px, 1.5vw, 22px);
+  overflow: hidden;
+  box-shadow: 0 22px 55px rgba(7, 22, 34, .15);
+}
+.concert-feature-photo {
+  display: block;
+  width: 100%;
+  height: clamp(340px, 38vw, 600px);
+  object-fit: cover;
+  object-position: 50% 46%;
+}
+.concert-feature-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 5vw, 95px);
+  padding: clamp(30px, 4.5vw, 68px);
+  color: #f5f0e7;
+  background: linear-gradient(120deg, #173e4f 0%, #0a2639 100%);
+}
+.concert-feature-heading,
+.concert-feature-story { min-width: 0; }
+.concert-feature-kicker {
+  display: block;
+  margin-bottom: clamp(20px, 2.8vw, 38px);
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: clamp(10px, .8vw, 12px);
+  letter-spacing: .14em;
+  font-weight: 600;
+  color: #e4c393;
+}
+.concert-feature-heading h3 {
+  font-family: "Times New Roman", "Songti SC", "STSong", serif;
+  font-size: clamp(36px, 4vw, 66px);
+  line-height: 1.33;
+  font-weight: 600;
+  letter-spacing: -.045em;
+}
+.concert-feature-heading h3 em { color: #dcb27a; font-style: normal; }
+.concert-feature-story { padding-top: 8px; }
+.concert-feature-story p {
+  color: #ecf1f1;
+  font-size: clamp(14px, 1.13vw, 18px);
+  line-height: 2.04;
+  margin: 0 0 24px;
+}
+.concert-feature-story p:last-child { margin-bottom: 0; }
+.concert-feature-story strong { font-weight: 650; color: white; }
+.concert-gallery-interactive { margin-top: clamp(24px, 3vw, 55px); }
+
+/* Scene 05: substitute the flat gradient with the verified real city aerial.
+   White translucent paper over the aerial preserves the reference's readable lettering. */
+.people-takeaway-feature {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-left: 5px solid #bf9363;
+  margin-top: clamp(55px, 8vw, 120px);
+  margin-bottom: clamp(25px, 4vw, 60px);
+  padding: clamp(35px, 5vw, 85px);
+  background: #f5f0e8;
+  box-shadow: 0 25px 80px rgba(23, 41, 57, .13);
+}
+.people-takeaway-feature::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: url("assets/poster-real-photo-part5-city-aerial.jpg") center 55% / cover no-repeat;
+}
+.people-takeaway-feature::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(250,247,241,.94) 3%,rgba(250,247,241,.90) 65%,rgba(250,247,241,.82));
+}
+.people-takeaway-inner { max-width: 1180px; }
+.people-takeaway-eyebrow {
+  display: block;
+  font-family: "Times New Roman", "Songti SC", serif;
+  color: #836b53;
+  font-size: clamp(16px, 1.65vw, 26px);
+  font-weight: 600;
+  letter-spacing: .065em;
+}
+.people-takeaway-inner p {
+  margin: clamp(24px, 4vw, 58px) 0;
+  font-family: "Times New Roman", "Songti SC", "STSong", serif;
+  font-weight: 600;
+  color: #25313c;
+  letter-spacing: -.025em;
+  font-size: clamp(26px, 3vw, 51px);
+  line-height: 1.7;
+}
+.people-takeaway-rule { display: block; width: 84px; height: 3px; background: #b69570; }
+
+/* Screenshot 8: a strong ink-blue chapter close with a large cream/gold heading. */
+.epilogue--poster-reference {
+  background: linear-gradient(111deg, #08121f 0%, #0b1e33 65%, #142e47 100%) !important;
+}
+.epilogue--poster-reference .epilogue-light { display: none; }
+.epilogue--poster-reference .epilogue-inner {
+  max-width: 1260px;
+}
+.epilogue-reference-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: #deb88a;
+  font: 600 11px/1.5 "Times New Roman", Georgia, serif;
+  letter-spacing: .18em;
+}
+.epilogue-reference-heading::after {
+  content: "";
+  height: 1px;
+  background: rgba(225, 208, 180, .4);
+  flex: 1;
+  order: 1;
+}
+.epilogue-reference-heading span:last-child { order: 2; }
+.epilogue-reference-accent {
+  display: block;
+  margin: 34px 0 8px;
+  width: 54px;
+  height: 3px;
+  background: #e8bb7e;
+}
+.epilogue--poster-reference h2 {
+  font-family: "Times New Roman", "Songti SC", serif;
+  font-size: clamp(56px, 7.5vw, 123px);
+  font-weight: 650;
+  line-height: 1.36;
+  letter-spacing: -.065em;
+  color: #fcf5e8;
+  text-shadow: 0 2px 2px rgba(0,0,0,.3);
+}
+.epilogue--poster-reference h2 em { color: #d5a16a; }
+.epilogue--poster-reference .epilogue-lead {
+  max-width: 1030px;
+  color: #efeee8;
+  font-size: clamp(15px, 1.32vw, 20px);
+  line-height: 2.2;
+}
+
+/* Screenshot 9: restrained closing identity and narrow source note. */
+.footer--poster-reference {
+  background: #101c28;
+  border-top: 1px solid rgba(215,196,172,.17);
+}
+.footer--poster-reference .footer-grid {
+  align-items: start;
+  grid-template-columns: minmax(240px, .85fr) minmax(350px, 1.45fr) auto;
+  gap: clamp(30px, 4vw, 80px);
+}
+.footer--poster-reference .footer-wordmark-title {
+  color: #faf7ef;
+  font-family: "Times New Roman", "Songti SC", serif;
+  font-weight: 650;
+}
+.footer--poster-reference .footer-information {
+  font-size: clamp(12px, .95vw, 15px);
+  line-height: 2.15;
+}
+@media(max-width: 800px) {
+  .concert-feature { margin-top: 72px; }
+  .concert-feature-photo { height: auto; aspect-ratio: 4 / 3; }
+  .concert-feature-content { grid-template-columns: 1fr; padding: 28px 23px 33px; gap: 23px; }
+  .concert-feature-heading h3 { font-size: clamp(34px, 8vw, 47px); }
+  .concert-feature-story p { font-size: 14px; line-height: 1.95; }
+  .people-takeaway-feature { padding: 35px 23px; border-left-width: 4px; }
+  .people-takeaway-inner p { font-size: clamp(27px, 6.8vw, 42px); }
+  .epilogue--poster-reference h2 { font-size: clamp(45px, 9.5vw, 76px); }
+  .footer--poster-reference .footer-grid { grid-template-columns: 1fr; }
+}
