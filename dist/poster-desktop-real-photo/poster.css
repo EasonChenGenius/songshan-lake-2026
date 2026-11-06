@@ -741,6 +741,26 @@ strong { font-weight: 650; }
 #discovery .chapter-masthead > img { object-position: 50% 57%; }
 #materials .chapter-masthead > img { object-position: 52% 50%; }
 #robotics .chapter-masthead > img { object-position: 49% 51%; }
+/* Inset the XbotPark field photograph slightly lower and smaller. Keep the
+   upper edge of the source visible so its rooftop wordmark is not cropped. */
+#robotics .chapter-masthead > img {
+  inset: 7% auto auto 3%;
+  width: 94%;
+  height: 88%;
+  object-position: 50% 0%;
+  border-radius: 18px;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, .18), #000 25%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, .18), #000 25%);
+}
+@media (max-width: 760px) {
+  #robotics .chapter-masthead > img {
+    inset: 8% auto auto 2%;
+    width: 96%;
+    height: 84%;
+    object-position: 48% 0%;
+    border-radius: 13px;
+  }
+}
 #life .chapter-masthead > img { object-position: 58% 51%; }
 #life .chapter-masthead .chapter-heading,
 #people .chapter-masthead .chapter-heading { display: block; padding: 0; }
