@@ -6,6 +6,8 @@
 - [长图海报版（含扫码入口）](https://easonchengenius.github.io/songshan-lake-2026/poster/)
 - [poster-电脑版（含 AI 概念画面）](https://easonchengenius.github.io/songshan-lake-2026/poster-desktop/)
 - [poster-手机版（含 AI 概念画面，iPhone 17 竖屏适配）](https://easonchengenius.github.io/songshan-lake-2026/poster-mobile/)
+- [Poster Desktop 原图实拍](https://easonchengenius.github.io/songshan-lake-2026/poster-desktop-real-photo/)
+- [Poster Mobile 原图实拍（iPhone 17 竖屏适配）](https://easonchengenius.github.io/songshan-lake-2026/poster-mobile-real-photo/)
 - [原站](https://see-the-unseen-songshan-2026.cheneason985.chatgpt.site/)
 
 ## 部署方式
@@ -20,13 +22,15 @@ python3 -m http.server 8000 --directory dist
 
 ## 后续修改与同步
 
-### 两套独立海报
+### 四套独立海报
 
 - `dist/poster-desktop/index.html` 与同目录 `poster.css`：保存拆分当时的电脑版排版，作为独立存档，不随手机版修改。
 - `dist/poster-mobile/index.html` 与同目录 `poster.css`：以 iPhone 17 的约 402 × 874 CSS 像素竖屏为设计基准，独立调整字号、图文比例、留白和单列阅读布局。
-- 两套当前版本均包含明确标注的 AI 概念画面，不再单独建立重复的 `-ai-content` 版本文件夹。
-- `dist/poster-exports/`：`poster-desktop.png`、`poster-mobile.png` 为对应完整版长图，另有同名 JPG 文件。修改手机版后只更新手机版的图片。
-- `dist/poster/`：保留原有长图链接与内容，兼容之前分享出去的二维码和链接。两套新海报共用 `dist/assets/` 的照片与视觉素材，但各自维护 HTML、CSS。
+- `dist/poster-desktop-real-photo/index.html` 与 `poster.css`：单独保存采用实拍封面及 Part 1—4 背景的电脑版。
+- `dist/poster-mobile-real-photo/index.html` 与 `poster.css`：采用相同实拍背景的独立 iPhone 17 竖屏版。
+- 原版电脑与手机海报均保留带标注的 AI 概念画面；实拍版使用真实照片，但个别其他主题画面仍有相应 AI 标注。
+- `dist/poster-exports/`：四个版本分别有同名 PNG 无损长图和 JPG 下载文件，实拍版文件名带 `-real-photo`，互不覆盖。
+- `dist/poster/`：保留原有长图链接与内容，兼容之前分享出去的二维码和链接。四套独立海报共用 `dist/assets/` 素材，但各自维护 HTML、CSS。
 
 1. 以本仓库 `main` 分支中的 `dist/` 为对外发布版本；在此处修改网页代码和资源。
 2. 每次修改完成后，提交并推送到 `main`，GitHub Actions 就会自动重新发布，公开链接保持不变。
