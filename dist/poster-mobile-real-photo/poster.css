@@ -2744,3 +2744,12 @@ strong { font-weight: 650; }
     font-size:11px!important;
   }
 }
+
+
+/* Mobile V15: atlas scaled to 84%, centered without cropping.
+   Override V14's full-width exhibit card, but preserve its image aspect ratio. */
+.poster .prologue .atlas-card--approved .approved-atlas-graphic.atlas-image-v14 {
+  width:84%!important;
+  max-width:84%!important;
+  margin:0 auto!important;
+}
