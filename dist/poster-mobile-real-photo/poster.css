@@ -1474,3 +1474,125 @@ strong { font-weight: 650; }
     line-height: 1.72;
   }
 }
+
+/* 2026-11-07 / V7 — contrast audit for ORIGINAL-PHOTO MOBILE ONLY.
+   Dark and paper surfaces must NEVER share one default text color.
+   The previous global lead override colored the robotics heading #263140
+   on #07111f: this is the root cause of the invisible screenshot text. */
+
+/* Strong, legible typography for dark photographic/editorial sections. */
+#robotics,
+#robotics .chapter-inner,
+#robotics .chapter-editorial {
+  color: #f6f0e7;
+}
+#robotics .chapter-editorial .chapter-lede,
+#robotics .chapter-editorial .chapter-lede span,
+#robotics .chapter-editorial .chapter-lede strong {
+  color: #fff7e9 !important;
+  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-weight: 750 !important;
+  -webkit-text-stroke: .18px currentColor;
+  text-shadow: 0 2px 12px rgba(0,0,0,.22);
+}
+#robotics .chapter-editorial .chapter-columns p {
+  color: #dce3e8 !important;
+}
+#robotics .chapter-editorial .chapter-columns strong {
+  color: #fff6e8 !important;
+  font-weight: 750;
+}
+#robotics .chapter-masthead .chapter-heading-body > p {
+  color: #ece5db !important;
+}
+#robotics .questions-intro h3,
+#robotics .question h4 {
+  color: #fff6e9 !important;
+}
+#robotics .questions-intro h3 i,
+#robotics .question > span {
+  color: #e6bd86 !important;
+}
+#robotics .question p,
+#robotics .question-reflection {
+  color: #e0e6eb !important;
+}
+#robotics .question-reflection strong,
+#robotics .question p strong {
+  color: #fff9ee !important;
+}
+#robotics .photo-section-heading {
+  color: #e2bd8d !important;
+}
+
+/* Light paper sections retain dark ink: never apply ivory globally. */
+#discovery .chapter-editorial .chapter-lede,
+#materials .chapter-editorial .chapter-lede,
+#life .chapter-editorial .chapter-lede,
+#people .chapter-editorial .chapter-lede {
+  color: #24303d !important;
+  font-weight: 750 !important;
+  -webkit-text-stroke: .15px currentColor;
+}
+#discovery .chapter-columns p,
+#materials .chapter-columns p,
+#life .chapter-columns p,
+#people .chapter-columns p {
+  color: #4a5661 !important;
+}
+#discovery .chapter-columns strong,
+#materials .chapter-columns strong,
+#life .chapter-columns strong,
+#people .chapter-columns strong {
+  color: #25313f !important;
+  font-weight: 750;
+}
+.chapter:not(.chapter--dark) .takeaway > strong {
+  color: #26323f !important;
+  -webkit-text-stroke: .15px currentColor;
+}
+.chapter:not(.chapter--dark) .takeaway .takeaway-label em {
+  color: #825935 !important;
+}
+
+/* Other dark storytelling panels: preserve the navy/gold palette. */
+.lake-interlude .lake-interlude-story p,
+.lake-interlude .lake-interlude-content p {
+  color: #e3e8e8 !important;
+}
+.lake-interlude .lake-interlude-story strong {
+  color: #fff8ed !important;
+}
+.epilogue .epilogue-lede,
+.epilogue .epilogue-grid p {
+  color: #dbe2e9 !important;
+}
+.epilogue .epilogue-grid strong,
+.epilogue .epilogue-finale {
+  color: #fff7e9;
+}
+.epilogue .epilogue-finale strong {
+  color: #e7bc85;
+}
+
+/* The map raster contains a baked-in cream strip along its top edge.
+   Move it beneath the clipping frame by seven pixels, without shrinking
+   or hiding the eight-location index at the bottom. */
+.prologue .atlas-card--approved .approved-atlas-graphic {
+  overflow: hidden !important;
+  background: #15434b;
+}
+.prologue .atlas-card--approved .approved-atlas-graphic img {
+  margin-top: -7px !important;
+  margin-bottom: 0 !important;
+}
+@media (max-width: 760px) {
+  /* Keep the map close to the prologue heading without an oversized blank gap. */
+  .prologue .prologue-grid {
+    margin-top: 15px !important;
+  }
+  .prologue .atlas-card--approved {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
