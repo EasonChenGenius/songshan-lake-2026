@@ -1328,3 +1328,149 @@ strong { font-weight: 650; }
   .poster-footer { padding: 40px 23px 64px; }
   .poster-footer p { font-size: 15px; line-height: 1.8; }
 }
+
+/* 2026-11-07 · REAL-PHOTO MOBILE ONLY / photographic crop and typographic audit.
+   Preserve the already archived versions and all other poster editions. */
+
+/* The approved raster has a thin baked-in pale edge at the left.
+   Crop horizontally rather than zooming uniformly, which would truncate
+   the eight-location index at the bottom of the map. */
+.atlas-card--approved .approved-atlas-graphic {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: clamp(16px, 4.5vw, 24px);
+  background: #143f43;
+  isolation: isolate;
+  line-height: 0;
+  box-shadow: 0 12px 26px rgba(10, 29, 35, .13);
+}
+.atlas-card--approved .approved-atlas-graphic img {
+  display: block;
+  width: 104.3% !important;
+  max-width: none !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  transform: translateX(-3.6%);
+  transform-origin: center;
+  object-fit: fill !important;
+}
+.atlas-card--approved .atlas-map-note {
+  margin: 16px 3px 0 !important;
+  font-size: 12px !important;
+  line-height: 1.8 !important;
+  color: #65727b !important;
+}
+/* Keep the atlas's corner radii clean on narrow iPhone screens too. */
+@media (max-width: 760px) {
+  .prologue .atlas-card--approved {
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+    border: 0;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+  .atlas-card--approved .approved-atlas-graphic {
+    border-radius: 23px;
+  }
+}
+
+/* Unified inset for all five "我的观察角度 / 现场观察" callouts.
+   The prior mobile rule reset the left/right padding to zero. */
+.chapter .takeaway,
+.chapter .takeaway--materials {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(19px, 4vw, 30px);
+  width: 100%;
+  max-width: 100%;
+  margin: clamp(40px, 6vw, 67px) 0 0;
+  padding: clamp(24px, 5.4vw, 37px) clamp(24px, 6.4vw, 43px) !important;
+  border: 1px solid rgba(196,169,135,.45);
+  border-radius: clamp(21px, 5vw, 29px);
+  box-sizing: border-box;
+  background: linear-gradient(135deg,rgba(255,255,255,.74),rgba(245,237,226,.58));
+}
+.chapter .takeaway > .takeaway-label,
+.chapter .takeaway--materials > .takeaway-label {
+  display: flex;
+  align-items: center;
+  gap: clamp(11px, 2.6vw, 20px);
+  margin: 0;
+  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  letter-spacing: 0;
+}
+.chapter .takeaway .takeaway-label b {
+  flex: none;
+  color: #b38355;
+  font: 700 clamp(35px, 8.5vw, 51px)/1.05 Georgia,"Times New Roman",serif;
+  letter-spacing: -.055em;
+}
+.chapter .takeaway .takeaway-label b::after {
+  display: inline;
+  margin-left: clamp(8px,2vw,15px);
+  color: #b7a18b;
+  font-size: .52em;
+  font-weight: 400;
+}
+.chapter .takeaway .takeaway-label em {
+  color: #98704f;
+  font-family: "Songti SC","STSong","Noto Serif CJK SC","SimSun",serif;
+  font-size: clamp(19px, 4.65vw, 25px);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: .015em;
+}
+.chapter .takeaway > strong,
+.chapter .takeaway--materials > strong {
+  display: block;
+  max-width: none;
+  color: #253241;
+  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  font-size: clamp(22px, 5.4vw, 30px) !important;
+  font-weight: 750 !important;
+  line-height: 1.72;
+  letter-spacing: -.015em;
+  text-wrap: pretty;
+  -webkit-text-stroke: .24px currentColor;
+}
+#robotics .takeaway {
+  background: linear-gradient(132deg,#203548,#102638);
+}
+#robotics .takeaway > strong {
+  color: #f4f0e8 !important;
+  -webkit-text-stroke: .18px currentColor;
+}
+#robotics .takeaway .takeaway-label em { color: #efcbab; }
+#robotics .takeaway .takeaway-label b { color: #f3c999; }
+
+/* The large lead statement is an editorial emphasis, not normal body copy.
+   Ensure all five chapters have a visibly distinct strong weight. */
+.chapter .chapter-editorial .chapter-lede,
+.chapter .chapter-editorial .chapter-lede--life,
+.chapter .chapter-editorial .chapter-lede--people {
+  font-family: "Songti SC","STSong","Noto Serif CJK SC","SimSun",serif;
+  font-weight: 750 !important;
+  color: #263140;
+  line-height: 1.72;
+  -webkit-text-stroke: .28px currentColor;
+}
+.chapter .chapter-editorial .chapter-lede span,
+.chapter .chapter-editorial .chapter-lede strong {
+  font-weight: inherit !important;
+}
+@media(max-width:760px) {
+  .chapter .takeaway,
+  .chapter .takeaway--materials {
+    padding: 25px 24px 29px !important;
+    margin-top: 40px;
+    gap: 21px;
+  }
+  .chapter .chapter-editorial .chapter-lede {
+    font-size: clamp(25px, 6.35vw, 31px);
+    line-height: 1.72;
+  }
+}
