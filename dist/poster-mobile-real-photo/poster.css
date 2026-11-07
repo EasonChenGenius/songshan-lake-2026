@@ -2613,3 +2613,134 @@ strong { font-weight: 650; }
 }
 /* V13 atlas title adjustment is set in the verified map's in-page style:
    top 1.8%, left 8.4%, centered on the user-annotated turquoise line. */
+
+/* ===== V14 · 2026-11-07 · single approved mobile map + compact caption =====
+   One complete generated map replaces old raster and ALL old duplicate
+   HTML overlays. Its own title, numbered pins, two-column legend and
+   positional disclaimer are deliberately NOT rendered again in the DOM. */
+.poster .prologue .atlas-card--approved .approved-atlas-graphic.atlas-image-v14 {
+  position:relative!important;
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:0!important;
+  border-radius:clamp(16px,3.5vw,24px)!important;
+  background:#f6eddd!important;
+  box-shadow:none!important;
+  line-height:0!important;
+}
+.poster .prologue .atlas-card--approved .approved-atlas-graphic.atlas-image-v14::before,
+.poster .prologue .atlas-card--approved .approved-atlas-graphic.atlas-image-v14::after{
+  content:none!important;
+  display:none!important;
+}
+.poster .prologue .atlas-card--approved .approved-atlas-graphic.atlas-image-v14 > img {
+  position:static!important;
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  min-width:0!important;
+  max-width:100%!important;
+  max-height:none!important;
+  aspect-ratio:863/1822!important;
+  margin:0!important;
+  padding:0!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform:none!important;
+  filter:none!important;
+  border:0!important;
+}
+.poster .prologue .atlas-card--approved{margin:0!important;padding:0!important;}
+.poster .prologue .prologue-grid{margin-top:12px!important;}
+
+/* Official event photograph: beautiful, legible Songti; instead of a wide
+   stiff rectangle, the glass panel hugs its three short text lines exactly. */
+.poster figure.talent-stage {
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+.poster figure.talent-stage > figcaption.talent-caption-v14 {
+  position:absolute!important;
+  inset:auto 9px 9px auto!important;
+  left:auto!important;
+  top:auto!important;
+  right:9px!important;
+  bottom:9px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  gap:4px!important;
+  width:max-content!important;
+  inline-size:max-content!important;
+  max-width:calc(100% - 18px)!important;
+  min-width:0!important;
+  height:auto!important;
+  max-height:none!important;
+  padding:11px 13px 12px!important;
+  margin:0!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
+  border:1px solid rgba(237,217,186,.58)!important;
+  border-radius:13px!important;
+  background:linear-gradient(135deg,rgba(15,35,56,.91),rgba(25,40,58,.80))!important;
+  -webkit-backdrop-filter:blur(11px) saturate(125%);
+  backdrop-filter:blur(11px) saturate(125%);
+  box-shadow:0 5px 17px rgba(0,0,0,.22)!important;
+  text-align:left!important;
+  line-height:1.4!important;
+}
+.poster figure.talent-stage > figcaption.talent-caption-v14 strong {
+  display:block!important;
+  margin:0!important;
+  font-family:"Songti SC","STSong","Noto Serif CJK SC","SimSun",serif!important;
+  font-size:15px!important;
+  line-height:1.34!important;
+  font-weight:650!important;
+  letter-spacing:.03em!important;
+  white-space:nowrap!important;
+  color:#fff3e3!important;
+  text-shadow:none!important;
+}
+.poster figure.talent-stage > figcaption.talent-caption-v14 span {
+  display:block!important;
+  margin:0!important;
+  font-family:"Songti SC","STSong","Noto Serif CJK SC","SimSun",serif!important;
+  font-size:12px!important;
+  line-height:1.42!important;
+  font-weight:450!important;
+  letter-spacing:.005em!important;
+  white-space:nowrap!important;
+  color:#eae3d8!important;
+}
+.poster figure.talent-stage > figcaption.talent-caption-v14 time {
+  display:block!important;
+  margin-top:1px!important;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:11px!important;
+  line-height:1.3!important;
+  font-weight:600!important;
+  letter-spacing:.085em!important;
+  color:#dfb985!important;
+}
+@media (max-width:390px) {
+  .poster figure.talent-stage > figcaption.talent-caption-v14 {
+    right:7px!important;
+    bottom:7px!important;
+    padding:9px 11px!important;
+  }
+  .poster figure.talent-stage > figcaption.talent-caption-v14 strong{
+    font-size:14px!important;
+  }
+  .poster figure.talent-stage > figcaption.talent-caption-v14 span{
+    font-size:11px!important;
+  }
+}
