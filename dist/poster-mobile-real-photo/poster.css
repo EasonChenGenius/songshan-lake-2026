@@ -1843,3 +1843,356 @@ strong { font-weight: 650; }
     font-size: clamp(25px,6.2vw,36px);
   }
 }
+
+/* ===== V9 / 2026-11-07: TRUE iPhone 17 portrait edition =====
+   A Mobile poster must never fall back into Desktop columns simply because
+   someone opens it on a large monitor. Export remains 402 x 874 CSS px. */
+
+/* Small, secondary brush lettering; remove the duplicate oversized English
+   subtitle that collided with the English label baked into the original map. */
+.prologue .atlas-card--approved .atlas-title-art {
+  top: 2.05% !important;
+  left: 6.0% !important;
+  width: auto;
+  max-width: 64%;
+  white-space: nowrap;
+}
+.prologue .atlas-card--approved .atlas-title-art strong {
+  font-family: "Kaiti SC","STKaiti","KaiTi","Songti SC","STSong",serif;
+  font-size: clamp(19px, 5.3vw, 22px) !important;
+  font-weight: 650;
+  letter-spacing: .035em;
+  line-height: 1.35;
+  background: linear-gradient(130deg,#fffaeb,#f3d5a7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(5,32,34,.5));
+}
+.prologue .atlas-card--approved .atlas-title-art small,
+.prologue .atlas-card--approved .atlas-title-art::after {display:none !important;}
+.prologue .atlas-card--approved .approved-atlas-graphic::before {
+  width: 67%;
+  height: 8.35%;
+  background:linear-gradient(90deg,#306d71 0%,#2e696e 70%,rgba(44,99,104,0) 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%);
+}
+
+/* All galleries (including Huawei, kayaking, robotics, campus) follow a
+   single photographic reading column; no auto row-span, no 2-up cards. */
+@media (max-width: 760px) {
+  .poster .photo-grid,
+  .poster .photos-two,
+  .poster .photos-three,
+  .poster .photos-neutron {
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    grid-auto-flow:row !important;
+    gap:18px !important;
+  }
+  .poster .photo-grid > .photo-card {
+    width:100%;
+    min-width:0;
+    grid-column:auto !important;
+    grid-row:auto !important;
+    margin:0;
+  }
+  .poster .photo-card > img,
+  .poster .photo-card > .photo-crop {
+    width:100%;
+    max-width:100%;
+    height:auto;
+    aspect-ratio:3 / 2;
+  }
+  .poster .photo-card > .photo-crop > img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .poster .question-grid {
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    grid-auto-flow:row !important;
+    gap:16px !important;
+  }
+  .poster .question-grid > .question {
+    min-width:0;
+    min-height:0;
+    width:100%;
+    grid-column:auto !important;
+    grid-row:auto !important;
+    padding:25px 22px 29px;
+  }
+  .poster .question h4{font-size:clamp(22px,5.8vw,27px);margin:19px 0 13px;}
+  .poster .question p{font-size:clamp(17px,4.35vw,19px);line-height:1.85;}
+  .poster .question > span{font-size:27px;}
+  .poster .photo-section-heading{display:flex;flex-wrap:wrap;gap:7px 16px;}
+  .poster .photo-card figcaption{
+    display:grid;
+    grid-template-columns:30px minmax(0,1fr);
+    gap:12px;
+    font-size:clamp(16px,4.2vw,19px);
+    line-height:1.65;
+  }
+  .poster .photo-card figcaption b{font-size:19px;}
+  /* The field atlas is a subordinate exhibit, not a poster cover title. */
+  .prologue .atlas-card--approved .atlas-title-art strong{
+    font-size:clamp(19px,5.25vw,22px) !important;
+  }
+}
+
+/* Wide-screen preview of this *Mobile* edition: center one 402px portrait
+   column instead of turning it into a three-column desktop site. */
+@media (min-width: 761px) {
+  html,body {background:#e6e1d9;}
+  .poster {
+    width:402px !important;
+    max-width:402px !important;
+    margin:0 auto !important;
+    border-radius:0 !important;
+    box-shadow:0 18px 65px rgba(16,26,32,.21) !important;
+    overflow:hidden;
+  }
+  .poster * {min-width:0;}
+  .poster .cover{min-height:874px !important;}
+  .poster .cover::after{inset:12px;border-radius:18px;}
+  .poster .rail{padding-inline:24px;}
+  .poster .cover-top{padding-top:43px;}
+  .poster .brand-lockup{gap:13px;}
+  .poster .brand-lockup img:first-child{width:150px;}
+  .poster .brand-lockup .brand-southern{width:39px;height:39px;}
+  .poster .cover-edition{display:none;}
+  .poster .cover-center{padding-top:25px;margin-bottom:75px;}
+  .poster .cover-index{display:flex;flex-wrap:wrap;gap:1px 5px;font-size:14px;line-height:1.8;letter-spacing:.005em;}
+  .poster .cover-index i{margin-right:5px;flex:0 0 7px;}
+  .poster .cover-index span{display:inline;margin:0 0 0 6px;font-size:14px;}
+  .poster .cover h1.cover-title{
+    max-width:100%;
+    margin:28px 0 8px;
+    font-family:var(--mobile-serif);
+    font-size:79px !important;
+    font-weight:600;
+    line-height:1.035;
+    letter-spacing:-.1em;
+  }
+  .poster .cover h1.cover-title .cover-title-gold{padding-right:.09em;}
+  .poster .cover-title-bottom{margin-left:.09em;}
+  .poster .cover-title-signature{gap:9px;margin:10px 0 35px 4px;font-size:10px;letter-spacing:.06em;}
+  .poster .cover-title-signature i{width:26px;}
+  .poster .cover-subline{gap:8px;padding-left:2px;font-size:18px;line-height:1.65;}
+  .poster .cover-foot{flex-wrap:wrap;gap:8px;padding-top:18px;padding-bottom:56px;font-size:11px;line-height:1.6;}
+  .poster .cover-foot span:first-child{max-width:100%;font-size:12px;}
+  .poster .cover-foot span:last-child{display:none;}
+  .poster .cover-foot .cover-date{font-size:14px;}
+  .poster .cover-caveat{right:24px;bottom:21px;font-size:9px;}
+
+  .poster .prologue,.poster .story-index,.poster .chapter:not(.chapter--dark){
+    padding:72px 23px 88px !important;
+  }
+  .poster .chapter--dark{padding:0 !important;}
+  .poster .section-identifier{gap:12px;font-size:12px;line-height:1.65;letter-spacing:.075em;}
+  .poster .prologue-grid{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:35px !important;
+    margin-top:15px !important;
+  }
+  .poster .atlas-card{padding:0 !important;}
+  .poster .atlas-map-note{font-size:12px;}
+  .poster .prologue-copy{padding-top:0;}
+  .poster .prologue-copy h2{margin:18px 0 25px;font-size:36px;line-height:1.45;}
+  .poster .prologue-copy > p:not(.eyebrow){font-size:19px;line-height:1.96;}
+  .poster .author-card{flex-wrap:wrap;}
+  .poster .author-card div strong{font-size:22px;}
+  .poster .author-card div small{font-size:13px;}
+  .poster .story-index-heading{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+  }
+  .poster .story-index-heading h2{font-size:40px;line-height:1.31;}
+  .poster .story-index-heading > p:not(.eyebrow){font-size:19px;line-height:1.8;left:auto;}
+  .poster .story-index-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:14px;
+    margin-top:33px;
+    border:0;
+  }
+  .poster .story-index-grid>div{
+    min-height:118px;
+    display:grid;
+    grid-template-columns:65px minmax(0,1fr);
+    grid-template-rows:auto auto;
+    padding:21px 17px;
+    gap:6px 15px;
+    text-align:left;
+    align-items:center;
+  }
+  .poster .story-index-grid span{grid-column:1;font-size:14px;}
+  .poster .story-index-grid b{grid-column:1;grid-row:2;margin:0;font-size:39px;}
+  .poster .story-index-grid strong{grid-column:2;grid-row:1;font-size:26px;}
+  .poster .story-index-grid small{grid-column:2;grid-row:2;margin:0;font-size:15px;line-height:1.6;}
+
+  .poster .chapter-masthead{
+    height:445px !important;
+    margin-inline:-9px !important;
+    border-radius:20px;
+  }
+  .poster .chapter-masthead .chapter-heading,
+  .poster #discovery .chapter-masthead .chapter-heading,
+  .poster #materials .chapter-masthead .chapter-heading,
+  .poster #robotics .chapter-masthead .chapter-heading{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-end;
+    gap:10px;
+    padding:22px 27px 53px;
+  }
+  .poster .chapter-masthead .chapter-number{font-size:82px;line-height:.75;}
+  .poster .chapter-masthead .chapter-heading-body h2{
+    margin:11px 0 12px;
+    font-size:32px;
+    line-height:1.34;
+  }
+  .poster .chapter-masthead .chapter-heading-body>p{font-size:13px;line-height:1.6;}
+  .poster .chapter-masthead .eyebrow{font-size:11px;}
+  .poster .chapter-masthead figcaption{top:12px;right:12px;font-size:9px;}
+  .poster #life .chapter-masthead .chapter-number,
+  .poster #people .chapter-masthead .chapter-number{top:33px;left:25px;font-size:75px;}
+  .poster #life .chapter-masthead .chapter-heading-body,
+  .poster #people .chapter-masthead .chapter-heading-body{
+    position:absolute;
+    bottom:43px;
+    left:25px;
+    right:22px;
+  }
+  .poster #life .chapter-masthead .chapter-heading-body h2,
+  .poster #people .chapter-masthead .chapter-heading-body h2{
+    font-size:30px;
+    white-space:normal;
+  }
+  .poster #people .chapter-masthead{height:445px !important;}
+  .poster #people .chapter-masthead::before{
+    background:linear-gradient(90deg,rgba(5,14,28,.92),rgba(5,14,28,.58) 75%,rgba(5,14,28,.14));
+  }
+  .poster .chapter-editorial{margin-top:39px;}
+  .poster .chapter-lede,.poster .chapter-lede--life,.poster .chapter-lede--people{
+    max-width:100%;
+    font-size:30px!important;
+    line-height:1.76!important;
+  }
+  .poster .chapter-lede span{display:inline;}
+  .poster #people .chapter-lede--people>.people-single-line{
+    display:block;
+    white-space:normal;
+    text-wrap:pretty;
+    font-size:inherit;
+  }
+  .poster .chapter-columns{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:22px;
+    margin-top:29px;
+  }
+  .poster .chapter-columns p{font-size:19px;line-height:1.94;}
+  .poster .takeaway{grid-template-columns:1fr;margin-top:43px;}
+  .poster .takeaway > strong{font-size:25px!important;line-height:1.65;}
+  .poster .chapter-inner{padding:68px 23px 88px !important;}
+  .poster .questions-intro{margin-top:57px;}
+  .poster .questions-intro h3{font-size:37px;}
+  .poster .question-grid{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-auto-flow:row !important;
+    gap:16px !important;
+  }
+  .poster .question-grid>.question{
+    min-height:0;width:100%;padding:25px 22px 29px;
+  }
+  .poster .question>span{font-size:27px;}
+  .poster .question h4{min-height:0;margin:19px 0 13px;font-size:24px;line-height:1.46;}
+  .poster .question p{font-size:18px;line-height:1.85;}
+  .poster .question-reflection{font-size:19px;line-height:1.85;}
+
+  .poster .photo-section-heading{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px 16px;
+    margin-top:54px;
+    font-size:12px;
+    line-height:1.7;
+  }
+  .poster .photo-grid,
+  .poster .photos-two,
+  .poster .photos-three,
+  .poster .photos-neutron{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-auto-flow:row !important;
+    gap:18px !important;
+  }
+  .poster .photo-grid > .photo-card{
+    grid-column:auto !important;
+    grid-row:auto !important;
+    width:100%;
+    margin:0;
+  }
+  .poster .photo-card > img,
+  .poster .photo-card > .photo-crop{
+    width:100%;
+    height:auto;
+    aspect-ratio:3/2;
+  }
+  .poster .photo-card > .photo-crop > img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .poster .photo-card figcaption{
+    display:grid;
+    grid-template-columns:30px minmax(0,1fr);
+    gap:12px;
+    padding:19px 16px 24px;
+    font-size:18px;
+    line-height:1.67;
+  }
+  .poster .photo-card figcaption b{font-size:19px;}
+  .poster .photo-card figcaption strong{font-size:23px;}
+  .poster #people .photo-card figcaption.campus-run-caption{
+    display:block;padding:18px 15px 22px;font-size:17px;
+  }
+  .poster #people .campus-run-caption b{display:block;margin-bottom:7px;}
+  .poster #people .campus-run-caption .campus-run-nowrap{display:block;white-space:normal;}
+  .poster #people .campus-run-caption .campus-run-follow{display:block;margin-top:4px;}
+
+  .poster .lake-interlude{display:block;margin:74px 0 0;border-radius:24px;}
+  .poster .lake-interlude > img{height:auto;max-height:none;aspect-ratio:1536/1023;}
+  .poster .lake-interlude>.lake-interlude-content{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    gap:22px;padding:28px 25px 39px;
+  }
+  .poster .lake-interlude-heading h3,.poster .lake-interlude h3{font-size:41px;}
+  .poster .lake-interlude-story p,.poster .lake-interlude p{font-size:19px;line-height:1.9;}
+  .poster .talent-stage figcaption{padding:12px 14px;}
+  .poster .talent-stage figcaption strong{font-size:13px;}
+  .poster .talent-stage figcaption span{font-size:11px;}
+  .poster .epilogue{padding:84px 23px 88px;}
+  .poster .epilogue h2.epilogue-title{font-size:42px;line-height:1.28;}
+  .poster .epilogue-grid{grid-template-columns:minmax(0,1fr);gap:30px;margin-top:45px;}
+  .poster .epilogue-lede{font-size:22px;line-height:1.8;}
+  .poster .epilogue-grid p{font-size:19px;line-height:1.97;}
+  .poster .epilogue-finale{font-size:25px;}
+  .poster .epilogue-qr-card{
+    width:100%;grid-template-columns:minmax(0,1fr);
+    gap:27px;padding:26px 23px;
+  }
+  .poster .epilogue-qr{justify-self:center;}
+  .poster .poster-footer{padding:40px 23px 64px;display:block;}
+  .poster .poster-footer>span{display:block;}
+  .poster .poster-footer p{font-size:15px;line-height:1.8;}
+  .poster .atlas-card--approved .atlas-title-art strong{
+    font-size:22px!important;
+  }
+}
