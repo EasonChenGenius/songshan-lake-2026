@@ -1596,3 +1596,250 @@ strong { font-weight: 650; }
     padding-top: 0 !important;
   }
 }
+
+/* ===== 2026-11-07 V8 | Mobile real-photo poster editorial art direction =====
+   Reference: Poster Desktop real-photo's Songti-first reading texture.
+   Treat paper and ink-blue panels as distinct surfaces. Do not touch any other edition. */
+
+:root {
+  --mobile-cream: #fff4df;
+  --mobile-cream-copy: #ede4d7;
+  --mobile-champagne: #f0ce98;
+  --mobile-bronze: #b48858;
+  --mobile-paper-ink: #29313b;
+  --mobile-paper-muted: #625d56;
+  --mobile-serif: "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  --mobile-brush: "Kaiti SC", "STKaiti", "KaiTi", "Songti SC", "STSong", serif;
+}
+
+/* A. Desktop-consistent chapter opening text.
+   Previous V6/V7 changed every opening to bold 750 with painted strokes;
+   restore the original publication-style weight and letter rhythm. */
+.chapter .chapter-editorial .chapter-lede,
+.chapter .chapter-editorial .chapter-lede--life,
+.chapter .chapter-editorial .chapter-lede--people {
+  font-family: var(--mobile-serif) !important;
+  font-size: clamp(28px, 6.1vw, 39px);
+  font-weight: 400 !important;
+  line-height: 1.78 !important;
+  letter-spacing: -.022em;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none;
+  text-wrap: pretty;
+}
+.chapter .chapter-editorial .chapter-lede span,
+.chapter .chapter-editorial .chapter-lede strong {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  -webkit-text-stroke: 0 !important;
+}
+#robotics .chapter-editorial .chapter-lede,
+#robotics .chapter-editorial .chapter-lede span,
+#robotics .chapter-editorial .chapter-lede strong {
+  color: var(--mobile-cream) !important;
+  font-weight: 400 !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 0 2px 18px rgba(0,0,0,.13);
+}
+#discovery .chapter-editorial .chapter-lede,
+#materials .chapter-editorial .chapter-lede,
+#life .chapter-editorial .chapter-lede,
+#people .chapter-editorial .chapter-lede {
+  color: #302f2d !important;
+  font-weight: 400 !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+/* Introductory descriptor directly below each chapter's large cover heading. */
+.chapter .chapter-masthead .chapter-heading-body > p {
+  font-family: var(--mobile-serif);
+  font-size: clamp(15px, 3.4vw, 19px);
+  font-weight: 500;
+  letter-spacing: .015em;
+  line-height: 1.72;
+  color: #f3e6d4 !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,.23);
+}
+.chapter .chapter-masthead .eyebrow,
+.chapter .chapter-masthead figcaption {
+  color: var(--mobile-champagne) !important;
+  font-family: var(--mobile-serif);
+  letter-spacing: .075em;
+}
+
+/* B. Restrained warm editorial palette: readable dark body on paper. */
+.prologue-copy > p:not(.eyebrow),
+#discovery .chapter-columns p,
+#materials .chapter-columns p,
+#life .chapter-columns p,
+#people .chapter-columns p,
+.chapter:not(.chapter--dark) .question p {
+  color: #595750 !important;
+  font-family: var(--mobile-serif);
+}
+#discovery .chapter-columns strong,
+#materials .chapter-columns strong,
+#life .chapter-columns strong,
+#people .chapter-columns strong {
+  color: #33322f !important;
+}
+.chapter:not(.chapter--dark) .takeaway,
+.chapter:not(.chapter--dark) .takeaway--materials {
+  background: linear-gradient(128deg,rgba(255,252,244,.86),rgba(244,231,210,.65)) !important;
+  border-color: rgba(166,121,72,.42) !important;
+}
+.chapter:not(.chapter--dark) .takeaway > strong {
+  color: #37312a !important;
+  font-family: var(--mobile-serif);
+  -webkit-text-stroke: 0 !important;
+}
+.chapter:not(.chapter--dark) .takeaway .takeaway-label em {
+  color: #9b6e41 !important;
+  font-family: var(--mobile-serif);
+}
+
+/* C. Ink-blue chapter: warm ivory body and bright champagne highlights. */
+#robotics .chapter-editorial .chapter-columns p,
+#robotics .question p,
+#robotics .question-reflection {
+  color: #e9e2d9 !important;
+  font-family: var(--mobile-serif);
+}
+#robotics .chapter-editorial .chapter-columns strong,
+#robotics .question-reflection strong {
+  color: #fff6e6 !important;
+}
+#robotics .questions-intro h3,
+#robotics .question h4 {
+  color: #fff1de !important;
+  font-family: var(--mobile-serif);
+}
+#robotics .questions-intro h3 i,
+#robotics .question > span,
+#robotics .questions-intro > span {
+  color: #ebc48d !important;
+}
+#robotics .takeaway {
+  background: linear-gradient(133deg,#24374b,#102436) !important;
+  border-color: rgba(230,194,148,.4) !important;
+}
+#robotics .takeaway > strong {
+  color: #fff4e4 !important;
+  font-family: var(--mobile-serif);
+  -webkit-text-stroke: 0 !important;
+}
+#robotics .takeaway .takeaway-label em { color: #f0ca98 !important; }
+#robotics .takeaway .takeaway-label b { color: #f2c990 !important; }
+
+/* D. Secondary text and chapter signage follow the same restrained palette. */
+.chapter .photo-section-heading,
+.chapter .photo-location-note {
+  color: #9b7147;
+}
+#robotics .photo-section-heading,
+#robotics .photo-location-note {
+  color: #e6c39a !important;
+}
+.lake-interlude .lake-interlude-story p {
+  color: var(--mobile-cream-copy) !important;
+  font-family: var(--mobile-serif);
+}
+.lake-interlude .lake-interlude-story strong {
+  color: #fff6e9 !important;
+}
+.epilogue .epilogue-lede,
+.epilogue .epilogue-grid p {
+  color: var(--mobile-cream-copy) !important;
+  font-family: var(--mobile-serif);
+}
+.epilogue .epilogue-grid > div > span,
+.epilogue .epilogue-finale strong {
+  color: #e8c28d !important;
+}
+
+/* E. The map heading in the source PNG is baked in.
+   Cover only its original top-left title band, then place a live art-font heading.
+   Map pins, shorelines and all eight location-index items remain untouched. */
+.prologue .atlas-card--approved .approved-atlas-graphic {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+.prologue .atlas-card--approved .approved-atlas-graphic > img {
+  position: relative;
+  z-index: 0;
+}
+.prologue .atlas-card--approved .approved-atlas-graphic::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 66%;
+  height: 9.1%;
+  background: linear-gradient(95deg,#316c70 0%, #2b686d 54%,rgba(40,98,102,.98) 78%,rgba(40,98,102,0) 100%);
+  mask-image: linear-gradient(180deg,#000 0%,#000 70%,transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg,#000 0%,#000 70%,transparent 100%);
+}
+.prologue .atlas-card--approved .atlas-title-art {
+  position: absolute;
+  z-index: 2;
+  top: 2.0%;
+  left: 6.0%;
+  margin: 0;
+  max-width: 84%;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.prologue .atlas-card--approved .atlas-title-art strong {
+  display: block;
+  font-family: var(--mobile-brush);
+  font-weight: 700;
+  font-size: clamp(25px, 6.1vw, 43px);
+  line-height: 1.18;
+  letter-spacing: .065em;
+  background: linear-gradient(155deg,#fffaf0 0%,#ffedcc 42%,#e5c18b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #fff0d6;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 3px rgba(3,28,33,.37));
+}
+.prologue .atlas-card--approved .atlas-title-art small {
+  display: block;
+  margin-top: 6px;
+  color: #f0d5a9;
+  font-family: var(--mobile-serif);
+  font-size: clamp(8px,1.52vw,12px);
+  font-weight: 600;
+  letter-spacing: .15em;
+}
+.prologue .atlas-card--approved .atlas-title-art::after {
+  content: "";
+  display: block;
+  width: 34%;
+  height: 1px;
+  margin-top: 8px;
+  background: linear-gradient(90deg,rgba(247,217,171,.9),transparent);
+}
+
+@media(max-width:760px) {
+  .chapter .chapter-editorial .chapter-lede,
+  .chapter .chapter-editorial .chapter-lede--life,
+  .chapter .chapter-editorial .chapter-lede--people {
+    font-size: clamp(27px,6.4vw,33px);
+    line-height:1.76 !important;
+  }
+  .chapter .chapter-masthead .chapter-heading-body > p {
+    font-size: clamp(14px,3.4vw,17px);
+  }
+  .prologue .atlas-card--approved .atlas-title-art {
+    top: 1.9%;
+    left: 5.9%;
+  }
+  .prologue .atlas-card--approved .atlas-title-art strong {
+    font-size: clamp(25px,6.2vw,36px);
+  }
+}
