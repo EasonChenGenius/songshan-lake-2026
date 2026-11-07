@@ -2196,3 +2196,293 @@ strong { font-weight: 650; }
     font-size:22px!important;
   }
 }
+
+/* ===== V10 · iPhone 17 real-photo poster · 2026-11-07 =====
+   Feedback: a modest atlas heading, readable map markers/legend, editorial
+   paragraph indents, portrait-only arrangement, photography-first cards. */
+
+/* The map's labels and legend were rasterized at desktop size. At 402 CSS px
+   they are not independently resizable, so V10 exposes readable HTML layers.
+   The photographic shoreline stays the original approved source. */
+.prologue .atlas-card--approved .approved-atlas-graphic::before{display:none!important;}
+.prologue .atlas-card--approved .approved-atlas-graphic {
+  border-radius:23px!important;
+  overflow:hidden!important;
+  background:linear-gradient(160deg,#23636a 0%,#0c3b44 100%);
+  box-shadow:0 12px 29px rgba(11,33,40,.12);
+}
+.prologue .atlas-card--approved .atlas-viewport{
+  position:relative;
+  width:100%;
+  aspect-ratio:1 / 1.035;
+  overflow:hidden;
+  isolation:isolate;
+  background:#0b2d34;
+}
+.prologue .atlas-card--approved .atlas-viewport > img{
+  display:block!important;
+  width:104.3%!important;
+  height:auto!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:-7px 0 0!important;
+  transform:translateX(-3.6%)!important;
+  object-fit:fill!important;
+  position:relative;
+  z-index:0;
+}
+.prologue .atlas-card--approved .atlas-viewport::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;
+  z-index:2;
+  pointer-events:none;
+  width:66%;
+  height:14.5%;
+  background:linear-gradient(92deg,#316e71 0%,#2c6a6d 57%,rgba(44,102,106,.97) 77%,transparent 100%);
+  -webkit-mask-image:linear-gradient(#000 0%,#000 69%,transparent 100%);
+  mask-image:linear-gradient(#000 0%,#000 69%,transparent 100%);
+}
+.prologue .atlas-card--approved .atlas-viewport > .atlas-title-art{
+  position:absolute!important;
+  z-index:5!important;
+  top:1.05%!important;
+  left:6.15%!important;
+  max-width:70%;
+  margin:0!important;
+}
+.prologue .atlas-card--approved .atlas-viewport > .atlas-title-art strong,
+@media all {} /* no-op comment separated below */
+.prologue .atlas-card--approved .atlas-viewport .atlas-title-art strong{
+  display:block;
+  font-family:var(--mobile-brush),"Kaiti SC","STKaiti",serif;
+  font-weight:600;
+  font-size:18px!important;
+  letter-spacing:.065em;
+  line-height:1.32;
+  color:#f8dfbb;
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.3));
+}
+.prologue .atlas-card--approved .atlas-viewport .atlas-title-art::after{display:none!important;}
+.atlas-map-label-layer{position:absolute;inset:0;z-index:4;pointer-events:none;}
+.atlas-map-badge,.atlas-map-label{
+  position:absolute;
+  left:var(--x);
+  top:var(--y);
+  transform:translate(-50%,-50%);
+  box-sizing:border-box;
+}
+.atlas-map-badge{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:23px;height:23px;
+  border:2px solid rgba(8,43,51,.8);
+  border-radius:50%;
+  background:linear-gradient(145deg,#fff0cb,#f1bf82);
+  box-shadow:0 2px 5px rgba(0,0,0,.4);
+  color:#17323b;
+  font:700 9px/1 Georgia,serif;
+}
+.atlas-map-label{
+  max-width:45%;
+  width:max-content;
+  padding:3px 6px 4px;
+  border:1px solid rgba(218,242,237,.5);
+  border-radius:8px;
+  background:rgba(12,42,51,.96);
+  color:#fef8eb;
+  box-shadow:0 1px 5px rgba(5,19,24,.35);
+  font-family:var(--mobile-serif),"Songti SC",serif;
+  font-weight:650;
+  font-size:10px;
+  line-height:1.26;
+  letter-spacing:-.045em;
+  white-space:nowrap;
+  text-align:center;
+}
+.atlas-map-label--02{white-space:normal;max-width:126px;}
+.atlas-map-label--08{white-space:normal;max-width:125px;}
+.atlas-map-label--03{max-width:38%;font-size:9.5px;}
+.atlas-legend-mobile{
+  position:relative;
+  z-index:5;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:3px;
+  margin:0;
+  padding:13px 23px 20px 22px;
+  background:linear-gradient(153deg,#0d434b 0%,#103742 100%);
+  color:#f9f3e7;
+  list-style:none;
+}
+.atlas-legend-mobile li{
+  display:grid;
+  grid-template-columns:27px minmax(0,1fr);
+  align-items:baseline;
+  gap:5px;
+  min-width:0;
+  font:500 12px/1.56 var(--mobile-serif),"Songti SC",serif;
+  letter-spacing:-.018em;
+}
+.atlas-legend-mobile b{
+  color:#ecc18b;
+  font-family:Georgia,serif;
+  font-weight:750;
+  font-size:12px;
+}
+.atlas-card--approved .atlas-map-note{
+  margin:13px 2px 0!important;
+  padding:0!important;
+  border:0!important;
+  font-size:12px!important;
+  line-height:1.8!important;
+  color:#697681!important;
+  text-indent:0!important;
+}
+
+/* The body text uses a consistent two-em first-line paragraph indent; titles,
+   labels and standalone figure captions remain flush left. */
+.poster .prologue-copy > p:not(.eyebrow),
+.poster .story-index-heading > p:not(.eyebrow),
+.poster .chapter-columns p,
+.poster .lake-interlude-story p,
+.poster .epilogue-lede,
+.poster .epilogue-grid p,
+.poster .question p{
+  text-indent:2em;
+}
+
+/* Lift all five compact mobile chapter index tiles slightly and shift right.
+   The materials location is split at a deliberate semantic boundary. */
+.poster .story-index-grid{
+  position:relative;
+  transform:translate(6px,-10px);
+  width:calc(100% - 6px);
+  margin-bottom:-10px;
+}
+.poster .story-index-grid > div{
+  grid-template-columns:58px minmax(0,1fr)!important;
+  column-gap:13px!important;
+  padding-left:17px!important;
+  padding-right:12px!important;
+}
+.poster .story-index-grid small{
+  font-size:14px!important;
+  line-height:1.6!important;
+  letter-spacing:-.035em;
+  overflow-wrap:break-word;
+}
+
+/* Evening photo: retain more of the scene and let a softened photographic
+   echo continue under the 04.3 metadata instead of a solid color cut. */
+.poster #life .lake-interlude--concert > img{
+  height:275px!important;
+  aspect-ratio:auto!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  object-position:center 46%!important;
+}
+.poster #life .lake-interlude--concert .lake-interlude-content{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:linear-gradient(160deg,#1a4552,#0e2e3b);
+}
+.poster #life .lake-interlude--concert .lake-interlude-content::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background-image:linear-gradient(180deg,rgba(8,29,41,.28),rgba(8,31,43,.88) 74%),url("../assets/uland-concert-audience-20261024.jpg");
+  background-size:cover;
+  background-position:center 79%;
+  opacity:.40;
+}
+
+/* Chapter 05: remove left-hand image transparency so the curved white
+   architectural landmark is visibly present in the portrait composition. */
+.poster #people .chapter-masthead > img{
+  inset:6% 2% auto 2%!important;
+  width:96%!important;
+  height:89%!important;
+  object-fit:cover!important;
+  object-position:19% 52%!important;
+  -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.90) 0%,#000 22%)!important;
+  mask-image:linear-gradient(90deg,rgba(0,0,0,.90) 0%,#000 22%)!important;
+}
+.poster #people .chapter-masthead::before{
+  background:linear-gradient(90deg,rgba(5,14,28,.89) 0%,rgba(5,14,28,.66) 33%,rgba(5,14,28,.27) 77%,rgba(5,14,28,.05) 100%)!important;
+}
+.poster #people .chapter-masthead .chapter-places{margin-top:13px;}
+.poster #people .chapter-masthead .chapter-places span{
+  display:block!important;
+  white-space:normal!important;
+  font-family:var(--mobile-serif);
+  font-size:12px;
+  line-height:1.6;
+  letter-spacing:.015em;
+}
+
+/* Restrict the actual event annotation to a discreet lower-right fraction
+   of the photo; the full official event name remains in title and alt text. */
+.poster .talent-stage figcaption{
+  position:absolute!important;
+  left:auto!important;right:7px!important;bottom:7px!important;
+  width:48%!important;
+  max-width:48%!important;
+  max-height:47%!important;
+  min-width:0!important;
+  padding:8px 9px!important;
+  box-sizing:border-box;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:11px;
+  background:rgba(18,33,50,.83);
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+  line-height:1.32!important;
+}
+.poster .talent-stage figcaption strong{
+  display:block;
+  font-size:10px!important;
+  line-height:1.35!important;
+  font-weight:700;
+}
+.poster .talent-stage figcaption span{
+  display:block;
+  font-size:9px!important;
+  line-height:1.4!important;
+  letter-spacing:-.02em;
+}
+
+/* The Chinese campus subheading stays unbroken on an iPhone 17. Put
+   'FIELD IMAGES' on its own much smaller introductory line. */
+.poster #people .photo-section-heading > span:first-child{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:2px;
+  min-width:0;
+  max-width:100%;
+}
+.poster #people .photo-heading-prefix{
+  display:block;
+  font-size:9px;
+  line-height:1.5;
+  font-style:normal;
+  letter-spacing:.14em;
+}
+.poster #people .campus-one-line{
+  display:block;
+  white-space:nowrap!important;
+  font-size:12px;
+  letter-spacing:-.055em;
+  line-height:1.65;
+}
+
+/* Apply the former epilogue's warm champagne serif to all light photo
+   captions while retaining their original sizes and reading order. */
+.poster .photo-card figcaption span,
+.poster .photo-card figcaption strong{
+  font-family:var(--mobile-serif),"Songti SC",serif!important;
+  color:#997043!important;
+  font-weight:650;
+}
+.poster .photo-card figcaption b{color:#a67a4d!important;}
