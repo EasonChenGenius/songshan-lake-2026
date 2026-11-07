@@ -2753,3 +2753,26 @@ strong { font-weight: 650; }
   max-width:84%!important;
   margin:0 auto!important;
 }
+
+
+/* V15 — iPhone portrait: scale down only the approved atlas, no crop. */
+.poster .prologue .atlas-card--approved {
+  display:flex!important;
+  justify-content:center!important;
+  align-items:flex-start!important;
+  width:100%!important;
+}
+.poster .prologue .atlas-card--approved .approved-atlas-graphic.atlas-image-v14 {
+  width:84%!important;
+  max-width:84%!important;
+  flex:0 0 84%!important;
+  margin:0 auto!important;
+  height:auto!important;
+  aspect-ratio:auto!important;
+}
+.poster .prologue .atlas-card--approved .approved-atlas-graphic.atlas-image-v14 > img {
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+}
