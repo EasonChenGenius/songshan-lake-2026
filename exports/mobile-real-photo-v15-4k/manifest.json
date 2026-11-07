@@ -1,0 +1,69 @@
+{
+  "edition": "Poster Mobile 原图实拍 V15",
+  "source": "dist/poster-mobile-real-photo/index.html",
+  "url": "https://easonchengenius.github.io/songshan-lake-2026/poster-mobile-real-photo/?v=15",
+  "full_image": "dist/poster-exports-4k/poster-mobile-real-photo-4k.png",
+  "css_viewport_width": 402,
+  "physical_width": 2160,
+  "physical_full_height": 156584,
+  "chapter_count": 7,
+  "note": "The 7 real page sections are 00 prologue, chapters 01–05, and epilogue. Pixel-perfect crops, no artificial image generation.",
+  "sections": [
+    {
+      "file": "01-before-chapter-01-prologue-4k.png",
+      "title": "第一章之前（封面、参访地图、导读）",
+      "width": 2160,
+      "height": 20847,
+      "starts_at_pixel": 0,
+      "ends_before_pixel": 20847
+    },
+    {
+      "file": "02-chapter-01-discovery-4k.png",
+      "title": "第一章｜发现",
+      "width": 2160,
+      "height": 17714,
+      "starts_at_pixel": 20847,
+      "ends_before_pixel": 38561
+    },
+    {
+      "file": "03-chapter-02-research-4k.png",
+      "title": "第二章｜研究",
+      "width": 2160,
+      "height": 17230,
+      "starts_at_pixel": 38561,
+      "ends_before_pixel": 55791
+    },
+    {
+      "file": "04-chapter-03-transformation-4k.png",
+      "title": "第三章｜转化",
+      "width": 2160,
+      "height": 22784,
+      "starts_at_pixel": 55791,
+      "ends_before_pixel": 78575
+    },
+    {
+      "file": "05-chapter-04-life-4k.png",
+      "title": "第四章｜生活",
+      "width": 2160,
+      "height": 42068,
+      "starts_at_pixel": 78575,
+      "ends_before_pixel": 120643
+    },
+    {
+      "file": "06-chapter-05-people-4k.png",
+      "title": "第五章｜人才",
+      "width": 2160,
+      "height": 22166,
+      "starts_at_pixel": 120643,
+      "ends_before_pixel": 142809
+    },
+    {
+      "file": "07-epilogue-4k.png",
+      "title": "尾页｜写在最后",
+      "width": 2160,
+      "height": 13775,
+      "starts_at_pixel": 142809,
+      "ends_before_pixel": 156584
+    }
+  ]
+}
