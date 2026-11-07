@@ -2589,3 +2589,27 @@ strong { font-weight: 650; }
   position:relative!important;
   z-index:1!important;
 }
+
+
+/* ===== V13 · 2026-11-07 · compact mobile cover =====
+   The V9 min-height:max(760px,100svh) left excessive empty night sky
+   above the editorial title on iPhone 17 (402×874). Bring the entire
+   title block and footer upward by compacting ONLY this Mobile poster's
+   cover; keep the logos, portrait layout and existing type hierarchy. */
+.poster > header.cover{
+  height:760px!important;
+  min-height:760px!important;
+  box-sizing:border-box!important;
+}
+.poster > header.cover > .cover-center{
+  padding-top:18px!important;
+  margin-bottom:66px!important;
+}
+.poster > header.cover > .cover-foot{
+  padding-bottom:49px!important;
+}
+.poster > header.cover > .cover-caveat{
+  bottom:17px!important;
+}
+/* V13 atlas title adjustment is set in the verified map's in-page style:
+   top 1.8%, left 8.4%, centered on the user-annotated turquoise line. */
