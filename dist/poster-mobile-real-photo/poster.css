@@ -2486,3 +2486,106 @@ strong { font-weight: 650; }
   font-weight:650;
 }
 .poster .photo-card figcaption b{color:#a67a4d!important;}
+
+
+/* ===== V12 · 2026-11-07 · pinpoint corrections to real-photo Mobile =====
+   Keep one Chinese word together in Takeaway 02.
+   Only section 04.2 overlaps the fading sunset photo; section 04.3 text
+   deliberately has no photographic background. */
+
+/* The three-character phrase is a semantic word, not separate line glyphs. */
+.poster #materials .takeaway--materials .no-break-word{
+  display:inline-block!important;
+  white-space:nowrap!important;
+  word-break:keep-all!important;
+  overflow-wrap:normal!important;
+  font:inherit;
+  color:inherit;
+  letter-spacing:inherit;
+}
+
+/* 04.2 / Kayaking: reveal extra vertical lake photograph and extend its
+   *existing* image behind the 04.2 label, with a gentle fade that ends
+   before the large '离开展厅' headline. No second photo appears under prose. */
+.poster #life .lake-interlude:not(.lake-interlude--concert){
+  position:relative!important;
+  isolation:isolate;
+  background:#123845!important;
+}
+.poster #life .lake-interlude:not(.lake-interlude--concert)>img{
+  display:block!important;
+  width:100%!important;
+  height:268px!important;
+  max-height:none!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  object-fit:cover!important;
+  object-position:center 69%!important;
+}
+.poster #life .lake-interlude:not(.lake-interlude--concert)>.lake-interlude-content{
+  position:relative!important;
+  z-index:1!important;
+  isolation:isolate!important;
+  margin-top:-88px!important;
+  padding-top:27px!important;
+  background:transparent!important;
+}
+.poster #life .lake-interlude:not(.lake-interlude--concert)>.lake-interlude-content::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  z-index:-1!important;
+  inset:0!important;
+  pointer-events:none!important;
+  background:linear-gradient(
+    180deg,
+    rgba(16,49,62,.18) 0,
+    rgba(16,49,62,.48) 43px,
+    rgba(18,56,69,.9) 87px,
+    #123845 114px,
+    #123845 100%
+  )!important;
+}
+.poster #life .lake-interlude:not(.lake-interlude--concert) .lake-interlude-heading{
+  position:relative!important;
+  z-index:1!important;
+}
+.poster #life .lake-interlude:not(.lake-interlude--concert) .lake-interlude-heading > span{
+  display:block;
+  position:relative;
+  z-index:2;
+  color:#f0c998!important;
+  text-shadow:0 2px 5px rgba(4,23,31,.75);
+}
+.poster #life .lake-interlude:not(.lake-interlude--concert) .lake-interlude-heading h3{
+  margin-top:67px!important;
+  position:relative!important;
+  z-index:2!important;
+  color:#fff7e9!important;
+  text-shadow:none!important;
+}
+.poster #life .lake-interlude:not(.lake-interlude--concert) .lake-interlude-story{
+  position:relative!important;
+  z-index:1!important;
+  background:transparent!important;
+}
+
+/* 04.3 / ULAND concert: keep ONLY the top photograph. The entire heading,
+   04.3 label and following paragraphs sit on clean blue glass, not an
+   additional translucent photograph. */
+.poster #life .lake-interlude--concert > .lake-interlude-content{
+  background:linear-gradient(150deg,#224652 0%,#102e3b 72%,#0d2b39 100%)!important;
+  isolation:isolate!important;
+}
+.poster #life .lake-interlude--concert > .lake-interlude-content::before,
+.poster #life .lake-interlude--concert > .lake-interlude-content::after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  background-image:none!important;
+}
+.poster #life .lake-interlude--concert .lake-interlude-heading,
+.poster #life .lake-interlude--concert .lake-interlude-story{
+  position:relative!important;
+  z-index:1!important;
+}
