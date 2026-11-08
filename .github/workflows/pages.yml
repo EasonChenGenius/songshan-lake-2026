@@ -27,6 +27,8 @@ jobs:
           test -s dist/index.html
           test -s dist/styles.css
           test -s dist/main.js
+          test -s dist/poster-mobile-real-photo/index.html
+          test -s dist/poster-exports-4k/poster-mobile-real-photo-4k.png
       - uses: actions/configure-pages@v5
         with:
           enablement: true
